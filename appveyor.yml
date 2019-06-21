@@ -32,7 +32,7 @@ install:
   - set
 
 before_build:
-  - cd c:\project\Simulatorr_pi
+  - cd c:\project\Simulator_pi
   - cd buildwin
   - ps: Start-FileDownload https://downloads.sourceforge.net/project/opencpnplugins/opencpn_packaging_data/PVW32Con.exe
   - cd ..
