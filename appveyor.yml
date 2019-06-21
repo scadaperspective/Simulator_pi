@@ -39,7 +39,7 @@ before_build:
   - ps: Start-FileDownload http://opencpn.navnux.org/build_deps/OpenCPN_buildwin-4.99a.7z
   - cmd: 7z x -y OpenCPN_buildwin-4.99a.7z -oc:\project\Simulator_pi\buildwin
   - cd ..
-#  - mkdir build
+  - mkdir build
   - cd build
   - cmake -T v141_xp ..
 
