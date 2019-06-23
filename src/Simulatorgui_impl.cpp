@@ -384,10 +384,10 @@ void Dlg::Notify()
 		
 	}
 
-	GSV = createGSVSentence(initprn1, initprn2, initprn3, initprn4, initsatinV, initaz1, initaz2, initaz3, initaz4, initel1, initel2, initel3, initel4);
-	GSV2 = createGSVSentence2();
-	GSV3 = createGSVSentence3();
-	GSV4 = createGSVSentence4();
+	GSV = createGSVSentence(initprn1, initprn2, initprn3, initprn4, initsatinV, initaz1, initaz2, initaz3, initaz4, initel1, initel2, initel3, initel4, initsnr1, initsnr2, initsnr3, initsnr4);
+	GSV2 = createGSVSentence2(initsatinV);
+	GSV3 = createGSVSentence3(initsatinV);
+	GSV4 = createGSVSentence4(initsatinV);
 
 	GLL = createGLLSentence(mdt, initLat, initLon, initSpd, myDir); // Geographic Position La/Lo HDG
 
@@ -459,11 +459,58 @@ void Dlg::Notify()
     double pitch = (initPitch);
 
 	initHeel = m_spHeel->GetValue();
-	double heel = (initHeel);
+	double  heel = (initHeel);
+
+	initsatinV = m_spSatsinV->GetValue();
+	double satinV = (initsatinV);
 
 	initprn1 = m_spPrn1->GetValue();
 	double prn1 = (initprn1);
 
+	initprn2 = m_spPrn2->GetValue();
+	double prn2 = (initprn2);
+
+	initprn3 = m_spPrn3->GetValue();
+	double prn3 = (initprn3);
+
+	initprn4 = m_spPrn4->GetValue();
+	double prn4 = (initprn4);
+
+	initaz1 = m_spAZ1->GetValue();
+	double aZ1 = (initaz1);
+
+	initaz2 = m_spAZ2->GetValue();
+	double aZ2 = (initaz2);
+
+	initaz3 = m_spAZ3->GetValue();
+	double aZ3 = (initaz3);
+
+	initaz4 = m_spAZ4->GetValue();
+	double aZ4 = (initaz4);
+
+	initel1 = m_spELE1->GetValue();
+	double el1 = (initel1);
+
+	initel2 = m_spELE2->GetValue();
+	double el2 = (initel2);
+
+	initel3 = m_spELE3->GetValue();
+	double el3 = (initel3);
+
+	initel4 = m_spELE4->GetValue();
+	double el4 = (initel4);
+
+	initsnr1 = m_spSNR1->GetValue();
+	double snR1 = (initsnr1);
+
+	initsnr2 = m_spSNR2->GetValue();
+	double snR2 = (initsnr2);
+
+	initsnr3 = m_spSNR3->GetValue();
+	double snR3 = (initsnr3);
+
+	initsnr4 = m_spSNR4->GetValue();
+	double snR4 = (initsnr4);
 
 }
 
@@ -482,7 +529,7 @@ void Dlg::SetInterval(int interval){
 
 //wxString Dlg::createGSVSentence(double satNum1, double satNum2, double satNum3, double satNum4, double satInView ){
 
-	wxString Dlg::createGSVSentence(double prn1, double prn2, double prn3, double prn4, double satinV, double az1, double az2, double az3, double az4, double el1, double el2, double el3, double el4){
+	wxString Dlg::createGSVSentence(double prn1, double prn2, double prn3, double prn4, double satinV, double az1, double az2, double az3, double az4, double el1, double el2, double el3, double el4, double snr1, double snr2, double snr3, double snr4){
              /**
 
              *
@@ -532,35 +579,52 @@ void Dlg::SetInterval(int interval){
         wxString nsF = _T("4");
         wxString nsL= _T("1");
 
-        wxString satInView;
-        satInView = _T("12");
-
+        wxString satInV = _T("12");
+        satInV = wxString::Format(_T("%3f"), satinV);
 
 
         wxString nC = _T(",");
 
 
-        wxString pRn1 =_T("01");
+        wxString pRn1 = _T("01");
         wxString pRn2 = _T("02");
         wxString pRn3 = _T("12");
         wxString pRn4 = _T("14");
-        pRn1 = wxString::Format(_T("%3f"), prn1);
 
+        pRn1 = wxString::Format(_T("%3f"), prn1);
+        pRn2 = wxString::Format(_T("%3f"), prn2);
+        pRn3 = wxString::Format(_T("%3f"), prn3);
+        pRn4 = wxString::Format(_T("%3f"), prn4);
 
         wxString eL1 =_T("40");
         wxString eL2 = _T("17");
         wxString eL3 = _T("07");
         wxString eL4 = _T("22");
 
+        eL1 = wxString::Format(_T("%3f"), el1);
+        eL2 = wxString::Format(_T("%3f"), el2);
+        eL3 = wxString::Format(_T("%3f"), el3);
+        eL4 = wxString::Format(_T("%3f"), el4);
+
         wxString aZ1 =_T("083");
         wxString aZ2 = _T("308");
         wxString aZ3 = _T("344");
         wxString aZ4 = _T("228");
 
+        aZ1 = wxString::Format(_T("%3f"), az1);
+        aZ2 = wxString::Format(_T("%3f"), az2);
+        aZ3 = wxString::Format(_T("%3f"), az3);
+        aZ4 = wxString::Format(_T("%3f"), az4);
+
         wxString snR1 = _T("46");
         wxString snR2 = _T("41");
         wxString snR3 = _T("39");
         wxString snR4 = _T("45");
+
+        snR1 = wxString::Format(_T("%3f"), snr1);
+        snR2 = wxString::Format(_T("%3f"), snr2);
+        snR3 = wxString::Format(_T("%3f"), snr3);
+        snR4 = wxString::Format(_T("%3f"), snr4);
 
         wxString nForCheckSum; // Grab the strings that need to be XOR'd
         wxString nFinal;       // Complete GPGSV Message String for sending routine
@@ -571,61 +635,15 @@ void Dlg::SetInterval(int interval){
 //        nSpd = wxString::Format(_T("%3.1f"), windspeed);
 //        nDir = wxString::Format(_T("%3.1f"), winddirection);
 
-        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInView + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4;
+        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4;
         nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
         return nFinal; // Goodbye :)
 
 
 }
 
-	wxString Dlg::createDBTSentence(double depth, double meters, double fathoms){
-		/**
-		             *
-		             * Depth Below TXD Surface
-		             *
-		             * $IIDBT,100.1,f,30.5,M,16.7,F*10
-		             * 1) Depth, in feet
-		             * 2) f Feet
-		             * 3) Depth, in meters
-		             * 4) M meters
-		             * 5) Depth in Fathoms
-		             * 6) F Fathoms
-		             * 7) *checksum
-		             *
-		             * ,100.1,f,30.5,M,16.7,F"
-		             *
-		             *  depthSetting = depth;
-		             *
-		             */
-		meters = depth * 0.3408;
-	   fathoms = depth * 0.166667;
-		        wxString nDBT = _T("IIDBT,");
-				wxString nDepth;
-				wxString nMeters;
-				wxString nFathoms;
 
-				wxString nForCheckSum;
-				wxString nFinal;
-
-				wxString nC = _T(",");
-				wxString nuFeet = _T("f,");
-				wxString nuMeters = _T("M,");
-				wxString nuFathoms = _T("F");
-
-				wxString ndlr = _T("$");
-				wxString nast = _T("*");
-
-				nDepth = wxString::Format(_T("%3.1f"), depth);
-				nMeters = wxString::Format(_T("%3.1f"), meters);
-				nFathoms = wxString::Format(_T("%3.1f"), fathoms);
-
-				nForCheckSum = nDBT + nDepth + nC + nuFeet + nMeters + nC + nuMeters + nFathoms + nC + nuFathoms;
-				nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
-				return nFinal;
-
-}
-
-wxString Dlg::createGSVSentence2(){
+wxString Dlg::createGSVSentence2(double satinV){
              /** GSV Sentence 2
              *
              *
@@ -639,9 +657,9 @@ wxString Dlg::createGSVSentence2(){
         wxString nsF = _T("4");
         wxString nsL= _T("2");
 
-        wxString satInView;
-        satInView = _T("12");
-
+        wxString satInV;
+        satInV = _T("12");
+        satInV = wxString::Format(_T("%3f"), satinV);
 
 
         wxString nC = _T(",");
@@ -678,13 +696,13 @@ wxString Dlg::createGSVSentence2(){
 //        nSpd = wxString::Format(_T("%3.1f"), windspeed);
 //        nDir = wxString::Format(_T("%3.1f"), winddirection);
 
-        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInView + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4;
+        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4;
         nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
         return nFinal; // Goodbye #2  :)
 
 
 }
-	wxString Dlg::createGSVSentence3(){
+	wxString Dlg::createGSVSentence3(double satinV){
              /** GSV Sentence 3
              *
              * nmeaServer.sendMessage("$GPGSV,4,3,12,14,25,170,00,16,57,208,39,18,67,296,40,19,40,246,00*71" + "\r\n");
@@ -697,8 +715,9 @@ wxString Dlg::createGSVSentence2(){
         wxString nsF = _T("4");
         wxString nsL= _T("3");
 
-        wxString satInView;
-        satInView = _T("12");
+        wxString satInV;
+        satInV = _T("12");
+        satInV = wxString::Format(_T("%3f"), satinV);
 
 
 
@@ -736,13 +755,13 @@ wxString Dlg::createGSVSentence2(){
 //        nSpd = wxString::Format(_T("%3.1f"), windspeed);
 //        nDir = wxString::Format(_T("%3.1f"), winddirection);
 
-        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInView + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4;
+        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4;
         nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
         return nFinal; // Goodbye #3  :)
 
 
 }
-	wxString Dlg::createGSVSentence4(){
+	wxString Dlg::createGSVSentence4(double satinV){
 /** GSV Sentence 4
              *
              * nmeaServer.sendMessage("$GPGSV,4,4,12,22,42,067,60,24,14,311,43,27,05,244,85,,,,*43" + "\r\n");
@@ -755,8 +774,9 @@ wxString Dlg::createGSVSentence2(){
         wxString nsF = _T("4");
         wxString nsL= _T("4");
 
-        wxString satInView;
-        satInView = _T("12");
+        wxString satInV;
+        satInV = _T("12");
+        satInV = wxString::Format(_T("%3f"), satinV);
 
 
 
@@ -792,7 +812,7 @@ wxString Dlg::createGSVSentence2(){
         wxString nast = _T("*");
 
 
-        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInView + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + nC + nC + nC;
+        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + nC + nC + nC;
         nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
         return nFinal; // Goodbye #4  :)
 
@@ -852,6 +872,52 @@ wxString Dlg::createGSVSentence2(){
 
 }
 
+	wxString Dlg::createDBTSentence(double depth, double meters, double fathoms){
+		/**
+		             *
+		             * Depth Below TXD Surface
+		             *
+		             * $IIDBT,100.1,f,30.5,M,16.7,F*10
+		             * 1) Depth, in feet
+		             * 2) f Feet
+		             * 3) Depth, in meters
+		             * 4) M meters
+		             * 5) Depth in Fathoms
+		             * 6) F Fathoms
+		             * 7) *checksum
+		             *
+		             * ,100.1,f,30.5,M,16.7,F"
+		             *
+		             *  depthSetting = depth;
+		             *
+		             */
+		meters = depth * 0.3408;
+	   fathoms = depth * 0.166667;
+		        wxString nDBT = _T("IIDBT,");
+				wxString nDepth;
+				wxString nMeters;
+				wxString nFathoms;
+
+				wxString nForCheckSum;
+				wxString nFinal;
+
+				wxString nC = _T(",");
+				wxString nuFeet = _T("f,");
+				wxString nuMeters = _T("M,");
+				wxString nuFathoms = _T("F");
+
+				wxString ndlr = _T("$");
+				wxString nast = _T("*");
+
+				nDepth = wxString::Format(_T("%3.1f"), depth);
+				nMeters = wxString::Format(_T("%3.1f"), meters);
+				nFathoms = wxString::Format(_T("%3.1f"), fathoms);
+
+				nForCheckSum = nDBT + nDepth + nC + nuFeet + nMeters + nC + nuMeters + nFathoms + nC + nuFathoms;
+				nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+				return nFinal;
+
+}
 	wxString Dlg::createVDRSentence(double curset, double curdrift, double magVar, double driftMag){
 
 /**

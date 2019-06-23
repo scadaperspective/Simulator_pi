@@ -932,7 +932,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer108131->SetFlexibleDirection( wxBOTH );
 	fgSizer108131->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	m_staticText13141 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Sat # 1"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText13141 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Sat 1"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText13141->Wrap( -1 );
 	fgSizer108131->Add( m_staticText13141, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
@@ -945,7 +945,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticText1341231->Wrap( -1 );
 	fgSizer108131->Add( m_staticText1341231, 0, wxALL, 5 );
 
-	m_staticText131231 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Sat # 2"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText131231 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Sat 2"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText131231->Wrap( -1 );
 	fgSizer108131->Add( m_staticText131231, 0, wxALL, 2 );
 
@@ -958,7 +958,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticText134331->Wrap( -1 );
 	fgSizer108131->Add( m_staticText134331, 0, wxALL, 5 );
 
-	m_staticText13231 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Sat # 3"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText13231 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Sat 3"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText13231->Wrap( -1 );
 	fgSizer108131->Add( m_staticText13231, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
@@ -971,7 +971,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticText134151->Wrap( -1 );
 	fgSizer108131->Add( m_staticText134151, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 
-	m_staticText1311121 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Sat # 4"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText1311121 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Sat 4"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1311121->Wrap( -1 );
 	fgSizer108131->Add( m_staticText1311121, 0, wxALL, 2 );
 
@@ -984,7 +984,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticText13451->Wrap( -1 );
 	fgSizer108131->Add( m_staticText13451, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 
-	m_staticText1341132 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Quality"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText1341132 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("SNR %"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1341132->Wrap( -1 );
 	fgSizer108131->Add( m_staticText1341132, 0, wxALL, 2 );
 
@@ -993,20 +993,20 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer108131->Add( m_spSatQal, 0, wxALL, 2 );
 
-	m_staticText134231 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("0-100%"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText134231 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("0-100"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText134231->Wrap( -1 );
 	fgSizer108131->Add( m_staticText134231, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
-	m_sSatVis = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("# GPS"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_sSatVis->Wrap( -1 );
-	fgSizer108131->Add( m_sSatVis, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
+	m_spSatinView = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("In View"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_spSatinView->Wrap( -1 );
+	fgSizer108131->Add( m_spSatinView, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
-	m_spSatQuant = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 1, 999, 5 );
-	m_spSatQuant->SetToolTip( _("# of GPS in view maximum of 12") );
+	m_spSatsinV = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 33, 12 );
+	m_spSatsinV->SetToolTip( _("# of GPS in view maximum of 12") );
 
-	fgSizer108131->Add( m_spSatQuant, 0, wxALL, 2 );
+	fgSizer108131->Add( m_spSatsinV, 0, wxALL, 2 );
 
-	m_staticText13411311 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Vis"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText13411311 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("# GPS"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText13411311->Wrap( -1 );
 	fgSizer108131->Add( m_staticText13411311, 0, wxALL, 2 );
 
@@ -1029,7 +1029,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_spSatAnt->SetDigits( 1 );
 	fgSizer108131->Add( m_spSatAnt, 0, wxALL, 2 );
 
-	m_staticText13311121 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("A/B Geo"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText13311121 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("A/B G"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText13311121->Wrap( -1 );
 	fgSizer108131->Add( m_staticText13311121, 0, wxALL, 2 );
 
@@ -1092,23 +1092,23 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer10813->Add( sbSizer63, 1, wxEXPAND, 2 );
 
 	wxFlexGridSizer* fgSizer2881;
-	fgSizer2881 = new wxFlexGridSizer( 0, 4, 0, 0 );
+	fgSizer2881 = new wxFlexGridSizer( 0, 5, 0, 0 );
 	fgSizer2881->SetFlexibleDirection( wxBOTH );
 	fgSizer2881->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
 	wxStaticBoxSizer* sbSizer632;
-	sbSizer632 = new wxStaticBoxSizer( new wxStaticBox( m_panelGPS, wxID_ANY, _("GPS Azmuth and Elevation ") ), wxVERTICAL );
+	sbSizer632 = new wxStaticBoxSizer( new wxStaticBox( m_panelGPS, wxID_ANY, _("GPS Azmuth, Elevation and SNR") ), wxVERTICAL );
 
 	wxFlexGridSizer* fgSizer1081312;
-	fgSizer1081312 = new wxFlexGridSizer( 0, 3, 0, 0 );
+	fgSizer1081312 = new wxFlexGridSizer( 0, 4, 0, 0 );
 	fgSizer1081312->SetFlexibleDirection( wxBOTH );
 	fgSizer1081312->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	m_staticText131412 = new wxStaticText( sbSizer632->GetStaticBox(), wxID_ANY, _("Sat #1 AZ / EL"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText131412->Wrap( -1 );
-	fgSizer1081312->Add( m_staticText131412, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
+	m_staticText131411 = new wxStaticText( sbSizer632->GetStaticBox(), wxID_ANY, _("A/E/SNR"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText131411->Wrap( -1 );
+	fgSizer1081312->Add( m_staticText131411, 0, wxALL, 2 );
 
-	m_spAZ1 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 16 );
+	m_spAZ1 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 66 );
 	m_spAZ1->SetToolTip( _("Sattelite #1 ID#") );
 
 	fgSizer1081312->Add( m_spAZ1, 0, wxALL, 2 );
@@ -1118,11 +1118,16 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer1081312->Add( m_spELE1, 0, wxALL, 2 );
 
-	m_staticText1314122 = new wxStaticText( sbSizer632->GetStaticBox(), wxID_ANY, _("Sat #2 AZ / EL"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText1314122->Wrap( -1 );
-	fgSizer1081312->Add( m_staticText1314122, 0, wxALL, 2 );
+	m_spSNR1 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 100, 58 );
+	m_spSNR1->SetToolTip( _("Sattelite #1 ID#") );
 
-	m_spAZ2 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 250 );
+	fgSizer1081312->Add( m_spSNR1, 0, wxALL, 2 );
+
+	m_staticText131412 = new wxStaticText( sbSizer632->GetStaticBox(), wxID_ANY, _("A/E/SNR"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText131412->Wrap( -1 );
+	fgSizer1081312->Add( m_staticText131412, 0, wxALL, 2 );
+
+	m_spAZ2 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 192 );
 	m_spAZ2->SetToolTip( _("Sattelite #2 ID#") );
 
 	fgSizer1081312->Add( m_spAZ2, 0, wxALL, 2 );
@@ -1132,12 +1137,17 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer1081312->Add( m_spELE2, 0, wxALL, 2 );
 
-	m_staticText1314121 = new wxStaticText( sbSizer632->GetStaticBox(), wxID_ANY, _("Sat #3 AZ / EL"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText1314121->Wrap( -1 );
-	fgSizer1081312->Add( m_staticText1314121, 0, wxALL, 2 );
+	m_spSNR2 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 100, 45 );
+	m_spSNR2->SetToolTip( _("Sattelite #3 ID#") );
 
-	m_spAZ3 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 22 );
-	m_spAZ3->SetToolTip( _("Sattelite #3 ID#") );
+	fgSizer1081312->Add( m_spSNR2, 0, wxALL, 2 );
+
+	m_staticText131413 = new wxStaticText( sbSizer632->GetStaticBox(), wxID_ANY, _("A/E/SNR"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText131413->Wrap( -1 );
+	fgSizer1081312->Add( m_staticText131413, 0, wxALL, 2 );
+
+	m_spAZ3 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 36 );
+	m_spAZ3->SetToolTip( _("Sattelite #2 ID#") );
 
 	fgSizer1081312->Add( m_spAZ3, 0, wxALL, 2 );
 
@@ -1146,12 +1156,17 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer1081312->Add( m_spELE3, 0, wxALL, 2 );
 
-	m_staticText1314123 = new wxStaticText( sbSizer632->GetStaticBox(), wxID_ANY, _("Sat #4 AZ / EL"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText1314123->Wrap( -1 );
-	fgSizer1081312->Add( m_staticText1314123, 0, wxALL, 2 );
+	m_spSNR3 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 100, 90 );
+	m_spSNR3->SetToolTip( _("GPS RX Signal Quality") );
 
-	m_spAZ4 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 130 );
-	m_spAZ4->SetToolTip( _("GPS RX Signal Quality") );
+	fgSizer1081312->Add( m_spSNR3, 0, wxALL, 2 );
+
+	m_staticText1314131 = new wxStaticText( sbSizer632->GetStaticBox(), wxID_ANY, _("A/E/SNR"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText1314131->Wrap( -1 );
+	fgSizer1081312->Add( m_staticText1314131, 0, wxALL, 2 );
+
+	m_spAZ4 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 250 );
+	m_spAZ4->SetToolTip( _("Sattelite #2 ID#") );
 
 	fgSizer1081312->Add( m_spAZ4, 0, wxALL, 2 );
 
@@ -1159,6 +1174,11 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_spELE4->SetToolTip( _("GPS #4 Elevation") );
 
 	fgSizer1081312->Add( m_spELE4, 0, wxALL, 2 );
+
+	m_spSNR4 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 100, 32 );
+	m_spSNR4->SetToolTip( _("GPS RX Signal Quality") );
+
+	fgSizer1081312->Add( m_spSNR4, 0, wxALL, 2 );
 
 	wxFlexGridSizer* fgSizer2032;
 	fgSizer2032 = new wxFlexGridSizer( 0, 2, 0, 0 );
