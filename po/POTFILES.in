@@ -1,0 +1,9 @@
+src/Simulator_pi.h
+src/Simulator_pi.cpp
+src/icons.h
+src/icons.cpp
+src/Simulatorgui.h
+src/Simulatorgui.cpp
+src/Simulatorgui_impl.cpp
+src/Simulatorgui_impl.h
+

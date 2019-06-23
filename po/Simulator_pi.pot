@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the OpenCPN  package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Simulator_pi 2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-03 15:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Simulator_pi.cpp:125 src/Simulator_pi.cpp:128 src/Simulator_pi.cpp:213
+#: src/Simulatorgui_impl.h:87
+msgid "Simulator"
+msgstr ""
+
+#: src/Simulator_pi.cpp:134
+msgid "Select VesselSim Start Pos"
+msgstr ""
+
+#: src/Simulator_pi.cpp:219
+msgid "Simulator"
+msgstr ""
+
+#: src/Simulator_pi.cpp:224
+msgid "Maritime Protocol Msg Sim"
+msgstr ""
+
+#: src/Simulator_pi.cpp:446
+msgid "Grib plugin version not supported."
+msgstr ""
+
+#: src/Simulator_pi.cpp:448
+#, c-format
+msgid "Use versions %d.%d to %d.%d"
+msgstr ""
+
+#: src/Simulator_pi.cpp:449
+msgid "Weather Routing"
+msgstr ""
+
+#: src/Simulatorgui.h:108
+msgid "Preferences"
+msgstr ""
+
+#: src/Simulatorgui.cpp:50
+msgid "Rudder Control"
+msgstr ""
+
+#: src/Simulatorgui.cpp:71
+msgid "|"
+msgstr ""
+
+#: src/Simulatorgui.cpp:74
+msgid "Midships"
+msgstr ""
+
+#: src/Simulatorgui.cpp:95
+msgid "Start"
+msgstr ""
+
+#: src/Simulatorgui.cpp:102
+msgid "Stop"
+msgstr ""
+
+#: src/Simulatorgui.cpp:120
+msgid "  Heading:  "
+msgstr ""
+
+#: src/Simulatorgui.cpp:126
+msgid "000"
+msgstr ""
+
+#: src/Simulatorgui.cpp:132
+msgid "             Speed: "
+msgstr ""
+
+#: src/Simulatorgui.cpp:138 src/Simulatorgui.cpp:165
+msgid "0"
+msgstr ""
+
+#: src/Simulatorgui.cpp:144
+msgid "        Kts"
+msgstr ""
+
+#: src/Simulatorgui.cpp:175
+msgid "Speed Control"
+msgstr ""
+
+#: src/Simulatorgui.cpp:179
+msgid "100"
+msgstr ""
+
+#: src/Simulatorgui.cpp:199
+msgid "Stby"
+msgstr ""
+
+#: src/Simulatorgui.cpp:202
+msgid "Hand Steering"
+msgstr ""
+
+#: src/Simulatorgui.cpp:207
+msgid "Auto"
+msgstr ""
+
+#: src/Simulatorgui.cpp:210
+msgid "Autopilot Control"
+msgstr ""
+
+#: src/Simulatorgui.cpp:220
+msgid "Sail"
+msgstr ""
+
+#: src/Simulatorgui.cpp:223
+msgid "Using Sail"
+msgstr ""
+
+#: src/Simulatorgui.cpp:228
+msgid "-1"
+msgstr ""
+
+#: src/Simulatorgui.cpp:234
+msgid "-10"
+msgstr ""
+
+#: src/Simulatorgui.cpp:240
+msgid "+10"
+msgstr ""
+
+#: src/Simulatorgui.cpp:246
+msgid "+1"
+msgstr ""
+
+#: src/Simulatorgui.cpp:301
+msgid "AIS"
+msgstr ""
+
+#: src/Simulatorgui.cpp:308
+msgid "Transmit"
+msgstr ""
+
+#: src/Simulatorgui.cpp:311
+msgid "Save to file"
+msgstr ""
+
+#: src/Simulatorgui.cpp:318
+msgid "MMSI"
+msgstr ""
+
+#: src/Simulatorgui_impl.cpp:87 src/Simulatorgui_impl.cpp:987
+msgid "Please right-click and choose vessel start position"
+msgstr ""
+
+#: src/Simulatorgui_impl.cpp:95
+msgid "MMSI must be a number, please change in Preferences"
+msgstr ""
+
+#: src/Simulatorgui_impl.cpp:114
+msgid "Simulator has been stopped"
+msgstr ""
+
+#: src/Simulatorgui_impl.cpp:991
+msgid "Please start Simulator"
+msgstr ""
