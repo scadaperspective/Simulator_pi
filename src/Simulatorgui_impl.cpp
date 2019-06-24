@@ -69,7 +69,7 @@ Dlg::Dlg(wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& 
 		pConf->Read(_T("simulatorUseAis"), &m_bUseAis, 0);
 		pConf->Read(_T("simulatorUseFile"), &m_bUseFile, 0);
 		pConf->Read(_T("simulatorMMSI"), &m_tMMSI, "000012345");
-//		pConf->Read(_T("simulatorUseGSV"), &m_bUseGSV, 1);
+
 	}
 }
 
@@ -242,7 +242,7 @@ void Dlg::OnAuto(wxCommandEvent& event){
 	m_buttonStandby->SetBackgroundColour(wxColour(83, 0, 24));
         m_buttonAuto->SetBackgroundColour(wxColour(15, 86, 31));
         
-        m_bUseGSV = true;
+
 
 	Refresh(); // Debug
 
@@ -269,9 +269,12 @@ void Dlg::OnClose(wxCloseEvent& event)
 {
 //	if (m_Timer->IsRunning()) m_Timer->Stop();
 	plugin->OnSimulatorDialogClose();
+
+
 }
-void Dlg::Notify()
-{
+
+void Dlg::Notify(){
+
 	initSpd = m_SliderSpeed->GetValue();
 	initRudder = m_SliderRudder->GetValue();
 
@@ -357,9 +360,6 @@ void Dlg::Notify()
     			initDriftMag -= 360;
     }
 
-
-
-
 	m_stSpeed->SetLabel(wxString::Format(_T("%03.2f"), initSpd)); // Messaging Warming Up
 
 
@@ -409,11 +409,17 @@ void Dlg::Notify()
     DBT = createDBTSentence(initDepth, initMeters, initFathoms);
     VDR = createVDRSentence(initCurSet, initCurDrift, initmagVar, initDriftMag); // Current Set and Drift
 
+    m_bUseGSV = true;
 
-	if (m_bUseGSV) PushNMEABuffer(GSV + _T("\n"));
-	if (m_bUseGSV) PushNMEABuffer(GSV2 + _T("\n"));
-	if (m_bUseGSV) PushNMEABuffer(GSV3 + _T("\n"));
-	if (m_bUseGSV) PushNMEABuffer(GSV4 + _T("\n"));
+    if (m_bUseGSV){
+
+ 	PushNMEABuffer(GSV + _T("\n"));
+    PushNMEABuffer(GSV2 + _T("\n"));
+	PushNMEABuffer(GSV3 + _T("\n"));
+    PushNMEABuffer(GSV4 + _T("\n"));
+
+    }
+
 
 	PushNMEABuffer(GLL + _T("\n"));
 
@@ -584,7 +590,7 @@ void Dlg::SetInterval(int interval){
         wxString nsL= _T("1");
 
         wxString satInV = _T("12");
-        satInV = wxString::Format(_T("%0.0f"), satinV);
+        satInV = wxString::Format(_T("%1.0f"), satinV);
 
 
         wxString nC = _T(",");
@@ -595,40 +601,40 @@ void Dlg::SetInterval(int interval){
         wxString pRn3 = _T("12");
         wxString pRn4 = _T("14");
 
-        pRn1 = wxString::Format(_T("%0.0f"), prn1);
-        pRn2 = wxString::Format(_T("%0.0f"), prn2);
-        pRn3 = wxString::Format(_T("%0.0f"), prn3);
-        pRn4 = wxString::Format(_T("%0.0f"), prn4);
+        pRn1 = wxString::Format(_T("%1.0f"), prn1);
+        pRn2 = wxString::Format(_T("%1.0f"), prn2);
+        pRn3 = wxString::Format(_T("%1.0f"), prn3);
+        pRn4 = wxString::Format(_T("%1.0f"), prn4);
 
         wxString eL1 =_T("40");
         wxString eL2 = _T("17");
         wxString eL3 = _T("07");
         wxString eL4 = _T("22");
 
-        eL1 = wxString::Format(_T("%0.0f"), el1);
-        eL2 = wxString::Format(_T("%0.0f"), el2);
-        eL3 = wxString::Format(_T("%0.0f"), el3);
-        eL4 = wxString::Format(_T("%0.0f"), el4);
+        eL1 = wxString::Format(_T("%1.0f"), el1);
+        eL2 = wxString::Format(_T("%1.0f"), el2);
+        eL3 = wxString::Format(_T("%1.0f"), el3);
+        eL4 = wxString::Format(_T("%1.0f"), el4);
 
         wxString aZ1 =_T("083");
         wxString aZ2 = _T("308");
         wxString aZ3 = _T("344");
         wxString aZ4 = _T("228");
 
-        aZ1 = wxString::Format(_T("%0.0f"), az1);
-        aZ2 = wxString::Format(_T("%0.0f"), az2);
-        aZ3 = wxString::Format(_T("%0.0f"), az3);
-        aZ4 = wxString::Format(_T("%0.0f"), az4);
+        aZ1 = wxString::Format(_T("%1.0f"), az1);
+        aZ2 = wxString::Format(_T("%1.0f"), az2);
+        aZ3 = wxString::Format(_T("%1.0f"), az3);
+        aZ4 = wxString::Format(_T("%1.0f"), az4);
 
         wxString snR1 = _T("46");
         wxString snR2 = _T("41");
         wxString snR3 = _T("39");
         wxString snR4 = _T("45");
 
-        snR1 = wxString::Format(_T("%0.0f"), snr1);
-        snR2 = wxString::Format(_T("%0.0f"), snr2);
-        snR3 = wxString::Format(_T("%0.0f"), snr3);
-        snR4 = wxString::Format(_T("%0.0f"), snr4);
+        snR1 = wxString::Format(_T("%1.0f"), snr1);
+        snR2 = wxString::Format(_T("%1.0f"), snr2);
+        snR3 = wxString::Format(_T("%1.0f"), snr3);
+        snR4 = wxString::Format(_T("%1.0f"), snr4);
 
         wxString nForCheckSum; // Grab the strings that need to be XOR'd
         wxString nFinal;       // Complete GPGSV Message String for sending routine
@@ -663,7 +669,7 @@ wxString Dlg::createGSVSentence2(double satinV){
 
         wxString satInV;
         satInV = _T("12");
-        satInV = wxString::Format(_T("%0.0f"), satinV);
+        satInV = wxString::Format(_T("%1.0f"), satinV);
 
 
         wxString nC = _T(",");
@@ -721,7 +727,7 @@ wxString Dlg::createGSVSentence2(double satinV){
 
         wxString satInV;
         satInV = _T("12");
-        satInV = wxString::Format(_T("%0.0f"), satinV);
+        satInV = wxString::Format(_T("%1.0f"), satinV);
 
 
 
@@ -780,7 +786,7 @@ wxString Dlg::createGSVSentence2(double satinV){
 
         wxString satInV;
         satInV = _T("12");
-        satInV = wxString::Format(_T("%0.0f"), satinV);
+        satInV = wxString::Format(_T("%1.0f"), satinV);
 
 
 

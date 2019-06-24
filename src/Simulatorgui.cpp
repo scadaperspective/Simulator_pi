@@ -467,6 +467,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_stWPLatD1s = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("00.000"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stWPLatD1s->Wrap( -1 );
 	m_stWPLatD1s->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_stWPLatD1s->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_stWPLatD1s->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_stWPLatD1s->SetToolTip( _("Vessel Heading") );
 
 	fgSizer22111111->Add( m_stWPLatD1s, 0, wxALL, 1 );
@@ -474,12 +476,16 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticTextKnots11111111131 = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("Lat"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextKnots11111111131->Wrap( -1 );
 	m_staticTextKnots11111111131->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_staticTextKnots11111111131->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticTextKnots11111111131->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 
 	fgSizer22111111->Add( m_staticTextKnots11111111131, 0, wxALL, 1 );
 
 	m_stWPLongD1 = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("000"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stWPLongD1->Wrap( -1 );
 	m_stWPLongD1->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_stWPLongD1->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_stWPLongD1->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_stWPLongD1->SetToolTip( _("Vessel Heading") );
 
 	fgSizer22111111->Add( m_stWPLongD1, 0, wxALL, 1 );
@@ -487,6 +493,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_stWPLongD1m = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("00"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stWPLongD1m->Wrap( -1 );
 	m_stWPLongD1m->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_stWPLongD1m->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_stWPLongD1m->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_stWPLongD1m->SetToolTip( _("Vessel Heading") );
 
 	fgSizer22111111->Add( m_stWPLongD1m, 0, wxALL, 1 );
@@ -494,6 +502,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_stWPLongD1s = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("00.000"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stWPLongD1s->Wrap( -1 );
 	m_stWPLongD1s->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_stWPLongD1s->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_stWPLongD1s->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_stWPLongD1s->SetToolTip( _("Vessel Heading") );
 
 	fgSizer22111111->Add( m_stWPLongD1s, 0, wxALL, 1 );
@@ -501,6 +511,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticTextKnots111111111121 = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("Long"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextKnots111111111121->Wrap( -1 );
 	m_staticTextKnots111111111121->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_staticTextKnots111111111121->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticTextKnots111111111121->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 
 	fgSizer22111111->Add( m_staticTextKnots111111111121, 0, wxALL, 1 );
 
@@ -510,6 +522,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_stWPLatD2 = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("00.000"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stWPLatD2->Wrap( -1 );
 	m_stWPLatD2->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_stWPLatD2->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_stWPLatD2->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_stWPLatD2->SetToolTip( _("Vessel Heading") );
 
 	fgSizer22111111->Add( m_stWPLatD2, 0, wxALL, 1 );
@@ -517,6 +531,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_stWPLatD2m = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("00.000"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stWPLatD2m->Wrap( -1 );
 	m_stWPLatD2m->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_stWPLatD2m->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_stWPLatD2m->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_stWPLatD2m->SetToolTip( _("Vessel Heading") );
 
 	fgSizer22111111->Add( m_stWPLatD2m, 0, wxALL, 1 );
@@ -524,6 +540,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticTextKnots111111111221 = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("Lat"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextKnots111111111221->Wrap( -1 );
 	m_staticTextKnots111111111221->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_staticTextKnots111111111221->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticTextKnots111111111221->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 
 	fgSizer22111111->Add( m_staticTextKnots111111111221, 0, wxALL, 1 );
 
@@ -533,6 +551,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_stWPLongD2 = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("00.000"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stWPLongD2->Wrap( -1 );
 	m_stWPLongD2->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_stWPLongD2->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_stWPLongD2->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_stWPLongD2->SetToolTip( _("Vessel Heading") );
 
 	fgSizer22111111->Add( m_stWPLongD2, 0, wxALL, 1 );
@@ -540,6 +560,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_stWPLongD2m = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("00.000"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stWPLongD2m->Wrap( -1 );
 	m_stWPLongD2m->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_stWPLongD2m->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_stWPLongD2m->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_stWPLongD2m->SetToolTip( _("Vessel Heading") );
 
 	fgSizer22111111->Add( m_stWPLongD2m, 0, wxALL, 1 );
@@ -547,6 +569,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticTextKnots1111111111121 = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("Long"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextKnots1111111111121->Wrap( -1 );
 	m_staticTextKnots1111111111121->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_staticTextKnots1111111111121->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticTextKnots1111111111121->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 
 	fgSizer22111111->Add( m_staticTextKnots1111111111121, 0, wxALL, 1 );
 
@@ -559,6 +583,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_stWPLatD3 = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("000.000"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stWPLatD3->Wrap( -1 );
 	m_stWPLatD3->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_stWPLatD3->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_stWPLatD3->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_stWPLatD3->SetToolTip( _("Vessel Heading") );
 
 	fgSizer22111111->Add( m_stWPLatD3, 0, wxALL, 1 );
@@ -566,6 +592,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticTextKnots1111111112111 = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("Lat"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextKnots1111111112111->Wrap( -1 );
 	m_staticTextKnots1111111112111->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_staticTextKnots1111111112111->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticTextKnots1111111112111->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 
 	fgSizer22111111->Add( m_staticTextKnots1111111112111, 0, wxALL, 1 );
 
@@ -578,6 +606,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_stWPLongD3 = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("000.000"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stWPLongD3->Wrap( -1 );
 	m_stWPLongD3->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_stWPLongD3->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_stWPLongD3->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_stWPLongD3->SetToolTip( _("Vessel Heading") );
 
 	fgSizer22111111->Add( m_stWPLongD3, 0, wxALL, 1 );
@@ -585,6 +615,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticTextKnots11111111111111 = new wxStaticText( sbLongS11->GetStaticBox(), wxID_ANY, _("Long"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextKnots11111111111111->Wrap( -1 );
 	m_staticTextKnots11111111111111->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_staticTextKnots11111111111111->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticTextKnots11111111111111->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 
 	fgSizer22111111->Add( m_staticTextKnots11111111111111, 0, wxALL, 1 );
 
@@ -1279,49 +1311,49 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer23211->SetFlexibleDirection( wxBOTH );
 	fgSizer23211->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	m_bUseGGA = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GGA On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_bUseGGA = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GGA On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_bUseGGA->SetValue(true);
 	m_bUseGGA->SetToolTip( _("$GPGGA") );
 
 	fgSizer23211->Add( m_bUseGGA, 0, wxALL, 2 );
 
-	m_cbGPGGL = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GLL On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
-	m_cbGPGGL->SetValue(true);
-	m_cbGPGGL->SetToolTip( _("$GPGLL Lat Long & UTC Time") );
+	m_bUseGLL = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GLL On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_bUseGLL->SetValue(true);
+	m_bUseGLL->SetToolTip( _("$GPGLL Lat Long & UTC Time") );
 
-	fgSizer23211->Add( m_cbGPGGL, 0, wxALL, 2 );
+	fgSizer23211->Add( m_bUseGLL, 0, wxALL, 2 );
 
-	m_bUseGSV = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GSV On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_bUseGSV = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GSV On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_bUseGSV->SetValue(true);
 	m_bUseGSV->SetToolTip( _("$GPGSV Satellites in view") );
 
 	fgSizer23211->Add( m_bUseGSV, 0, wxALL, 2 );
 
-	m_cbGPVTG = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPVTG On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
-	m_cbGPVTG->SetValue(true);
-	m_cbGPVTG->SetToolTip( _("$GPGVTG") );
+	m_bUseVTG = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPVTG On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_bUseVTG->SetValue(true);
+	m_bUseVTG->SetToolTip( _("$GPGVTG") );
 
-	fgSizer23211->Add( m_cbGPVTG, 0, wxALL, 2 );
+	fgSizer23211->Add( m_bUseVTG, 0, wxALL, 2 );
 
-	m_cbGPHDT = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPHDT On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
-	m_cbGPHDT->SetValue(true);
-	m_cbGPHDT->SetToolTip( _("$GPHDT") );
+	m_bUseHDT = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPHDT On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_bUseHDT->SetValue(true);
+	m_bUseHDT->SetToolTip( _("$GPHDT") );
 
-	fgSizer23211->Add( m_cbGPHDT, 0, wxALL, 2 );
+	fgSizer23211->Add( m_bUseHDT, 0, wxALL, 2 );
 
-	m_cbGPHDM = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPHDM On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
-	m_cbGPHDM->SetValue(true);
-	m_cbGPHDM->SetToolTip( _("$HCHDM") );
+	m_bUseHDM = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPHDM On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_bUseHDM->SetValue(true);
+	m_bUseHDM->SetToolTip( _("$HCHDM") );
 
-	fgSizer23211->Add( m_cbGPHDM, 0, wxALL, 2 );
+	fgSizer23211->Add( m_bUseHDM, 0, wxALL, 2 );
 
-	m_cbIIMWV = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("IIMWV On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbIIMWV = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("IIMWV On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbIIMWV->SetValue(true);
 	m_cbIIMWV->SetToolTip( _("$IIMWV") );
 
 	fgSizer23211->Add( m_cbIIMWV, 0, wxALL, 2 );
 
-	m_cbGPRMC = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPRMC On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbGPRMC = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPRMC On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbGPRMC->SetValue(true);
 	m_cbGPRMC->SetToolTip( _("$GPRMC") );
 
@@ -1349,9 +1381,9 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_cbSpare1211->SetValue(true);
 	fgSizer23211->Add( m_cbSpare1211, 0, wxALL, 2 );
 
-	m_cbSpare2211 = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("Spare"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
-	m_cbSpare2211->SetValue(true);
-	fgSizer23211->Add( m_cbSpare2211, 0, wxALL, 2 );
+	m_cbSpare12111 = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("Spare"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_cbSpare12111->SetValue(true);
+	fgSizer23211->Add( m_cbSpare12111, 0, wxALL, 5 );
 
 
 	sbSizer53311->Add( fgSizer23211, 1, wxEXPAND, 2 );
@@ -3576,11 +3608,11 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_buttonPlus1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnPlus1 ), NULL, this );
 	m_buttonMid->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnMidships ), NULL, this );
 	m_bUseGGA->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_cbGPGGL->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseGLL->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseGSV->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_cbGPVTG->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_cbGPHDT->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_cbGPHDM->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseVTG->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseHDT->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseHDM->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbIIMWV->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbGPRMC->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbTWS211->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
@@ -3588,7 +3620,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_cbGPSAntP->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbGPSAntS->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbSpare1211->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_cbSpare2211->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_cbSpare12111->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbAISLat->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbAISLong->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbAISSOG->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
@@ -3706,11 +3738,11 @@ SimulatorBase::~SimulatorBase()
 	m_buttonPlus1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnPlus1 ), NULL, this );
 	m_buttonMid->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnMidships ), NULL, this );
 	m_bUseGGA->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_cbGPGGL->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseGLL->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseGSV->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_cbGPVTG->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_cbGPHDT->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_cbGPHDM->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseVTG->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseHDT->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseHDM->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbIIMWV->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbGPRMC->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbTWS211->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
@@ -3718,7 +3750,7 @@ SimulatorBase::~SimulatorBase()
 	m_cbGPSAntP->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbGPSAntS->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbSpare1211->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_cbSpare2211->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_cbSpare12111->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbAISLat->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbAISLong->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbAISSOG->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );

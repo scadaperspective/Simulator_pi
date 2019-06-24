@@ -161,7 +161,7 @@ public:
 	bool m_bUseAis;
 	bool m_bUseFile;
 
-    bool m_bUseGSV;
+	bool m_bUseGSV;
 
 	wxString m_tMMSI;
 
@@ -209,6 +209,9 @@ private:
 	void OnPlus1(wxCommandEvent& event);
 	void OnStandby(wxCommandEvent& event);
 	void OnAuto(wxCommandEvent& event);
+
+	void OnGSV(wxCommandEvent& event);
+
 
 	bool m_bAuto;
 	long m_iMMSI;
