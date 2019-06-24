@@ -920,7 +920,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_panelGPS->SetToolTip( _("GPS Settings") );
 
 	wxFlexGridSizer* fgSizer10813;
-	fgSizer10813 = new wxFlexGridSizer( 0, 4, 0, 0 );
+	fgSizer10813 = new wxFlexGridSizer( 2, 4, 0, 0 );
 	fgSizer10813->SetFlexibleDirection( wxBOTH );
 	fgSizer10813->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
@@ -949,7 +949,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticText131231->Wrap( -1 );
 	fgSizer108131->Add( m_staticText131231, 0, wxALL, 2 );
 
-	m_spPrn2 = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 999, 18 );
+	m_spPrn2 = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 999, 17 );
 	m_spPrn2->SetToolTip( _("Sattelite #2 ID#") );
 
 	fgSizer108131->Add( m_spPrn2, 0, wxALL, 2 );
@@ -988,10 +988,10 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticText1341132->Wrap( -1 );
 	fgSizer108131->Add( m_staticText1341132, 0, wxALL, 2 );
 
-	m_spSatQal = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 1, 999, 45 );
-	m_spSatQal->SetToolTip( _("GPS RX Signal Quality") );
+	m_spSNRQual = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 33, 45 );
+	m_spSNRQual->SetToolTip( _("GPS RX Signal Quality") );
 
-	fgSizer108131->Add( m_spSatQal, 0, wxALL, 2 );
+	fgSizer108131->Add( m_spSNRQual, 0, wxALL, 2 );
 
 	m_staticText134231 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("0-100"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText134231->Wrap( -1 );
@@ -1001,7 +1001,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_spSatinView->Wrap( -1 );
 	fgSizer108131->Add( m_spSatinView, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
-	m_spSatsinV = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 33, 12 );
+	m_spSatsinV = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 24, 12 );
 	m_spSatsinV->SetToolTip( _("# of GPS in view maximum of 12") );
 
 	fgSizer108131->Add( m_spSatsinV, 0, wxALL, 2 );
@@ -1092,7 +1092,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer10813->Add( sbSizer63, 1, wxEXPAND, 2 );
 
 	wxFlexGridSizer* fgSizer2881;
-	fgSizer2881 = new wxFlexGridSizer( 0, 5, 0, 0 );
+	fgSizer2881 = new wxFlexGridSizer( 2, 5, 0, 0 );
 	fgSizer2881->SetFlexibleDirection( wxBOTH );
 	fgSizer2881->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
@@ -1165,7 +1165,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticText1314131->Wrap( -1 );
 	fgSizer1081312->Add( m_staticText1314131, 0, wxALL, 2 );
 
-	m_spAZ4 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 250 );
+	m_spAZ4 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 130 );
 	m_spAZ4->SetToolTip( _("Sattelite #2 ID#") );
 
 	fgSizer1081312->Add( m_spAZ4, 0, wxALL, 2 );
@@ -1181,7 +1181,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer1081312->Add( m_spSNR4, 0, wxALL, 2 );
 
 	wxFlexGridSizer* fgSizer2032;
-	fgSizer2032 = new wxFlexGridSizer( 0, 2, 0, 0 );
+	fgSizer2032 = new wxFlexGridSizer( 2, 2, 0, 0 );
 	fgSizer2032->SetFlexibleDirection( wxBOTH );
 	fgSizer2032->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
@@ -1213,11 +1213,11 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer23211->SetFlexibleDirection( wxBOTH );
 	fgSizer23211->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	m_cbGPGGA = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GGA On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
-	m_cbGPGGA->SetValue(true);
-	m_cbGPGGA->SetToolTip( _("$GPGGA") );
+	m_bUseGGA = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GGA On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_bUseGGA->SetValue(true);
+	m_bUseGGA->SetToolTip( _("$GPGGA") );
 
-	fgSizer23211->Add( m_cbGPGGA, 0, wxALL, 2 );
+	fgSizer23211->Add( m_bUseGGA, 0, wxALL, 2 );
 
 	m_cbGPGGL = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GLL On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
 	m_cbGPGGL->SetValue(true);
@@ -1225,11 +1225,11 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer23211->Add( m_cbGPGGL, 0, wxALL, 2 );
 
-	m_cbGPGSV = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GSV On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
-	m_cbGPGSV->SetValue(true);
-	m_cbGPGSV->SetToolTip( _("$GPGSV Satellites in view") );
+	m_bUseGSV = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GSV On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_bUseGSV->SetValue(true);
+	m_bUseGSV->SetToolTip( _("$GPGSV Satellites in view") );
 
-	fgSizer23211->Add( m_cbGPGSV, 0, wxALL, 2 );
+	fgSizer23211->Add( m_bUseGSV, 0, wxALL, 2 );
 
 	m_cbGPVTG = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPVTG On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
 	m_cbGPVTG->SetValue(true);
@@ -3497,9 +3497,9 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_buttonPlus10->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnPlus10 ), NULL, this );
 	m_buttonPlus1->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnPlus1 ), NULL, this );
 	m_buttonMid->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnMidships ), NULL, this );
-	m_cbGPGGA->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseGGA->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbGPGGL->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_cbGPGSV->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseGSV->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbGPVTG->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbGPHDT->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbGPHDM->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
@@ -3627,9 +3627,9 @@ SimulatorBase::~SimulatorBase()
 	m_buttonPlus10->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnPlus10 ), NULL, this );
 	m_buttonPlus1->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnPlus1 ), NULL, this );
 	m_buttonMid->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnMidships ), NULL, this );
-	m_cbGPGGA->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseGGA->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbGPGGL->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_cbGPGSV->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseGSV->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbGPVTG->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbGPHDT->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_cbGPHDM->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
@@ -3746,16 +3746,15 @@ SimulatorPreferences::SimulatorPreferences( wxWindow* parent, wxWindowID id, con
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 
 	wxStaticBoxSizer* sbSizer50;
-	sbSizer50 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _("AIS") ), wxVERTICAL );
+	sbSizer50 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _("Message Selection Config") ), wxVERTICAL );
 
 	wxFlexGridSizer* fgSizer52;
 	fgSizer52 = new wxFlexGridSizer( 0, 1, 0, 0 );
 	fgSizer52->SetFlexibleDirection( wxBOTH );
 	fgSizer52->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	m_cbTransmitAis = new wxCheckBox( sbSizer50->GetStaticBox(), wxID_ANY, _("Transmit"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_cbTransmitAis->SetValue(true);
-	fgSizer52->Add( m_cbTransmitAis, 0, wxALL, 5 );
+	m_cbTransmitAis = new wxCheckBox( sbSizer50->GetStaticBox(), wxID_ANY, _("Transmit All AIS"), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer52->Add( m_cbTransmitAis, 0, wxALL, 2 );
 
 	m_cbAisToFile = new wxCheckBox( sbSizer50->GetStaticBox(), wxID_ANY, _("Save to file"), wxDefaultPosition, wxDefaultSize, 0 );
 	fgSizer52->Add( m_cbAisToFile, 0, wxALL, 5 );

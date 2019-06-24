@@ -160,6 +160,9 @@ public:
 
 	bool m_bUseAis;
 	bool m_bUseFile;
+
+    bool m_bUseGSV;
+
 	wxString m_tMMSI;
 
 	wxDateTime m_GribTimelineTime;
