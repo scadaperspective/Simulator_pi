@@ -130,8 +130,7 @@ class SimulatorBase : public wxFrame
 		wxStaticText* m_staticText131412;
 		wxStaticText* m_staticText131413;
 		wxStaticText* m_staticText1314131;
-		wxCheckBox* m_cbGPGGA;
-		wxCheckBox* m_cbGPGSV;
+		wxCheckBox* m_bUseGGA;
 		wxCheckBox* m_cbGPVTG;
 		wxCheckBox* m_cbGPHDT;
 		wxCheckBox* m_cbGPHDM;
@@ -468,7 +467,7 @@ class SimulatorBase : public wxFrame
 		wxSpinCtrl* m_spPrn2;
 		wxSpinCtrl* m_spPrn3;
 		wxSpinCtrl* m_spPrn4;
-		wxSpinCtrl* m_spSatQal;
+		wxSpinCtrl* m_spSNRQual;
 		wxSpinCtrl* m_spSatsinV;
 		wxSpinCtrl* m_spSatHDOP;
 		wxSpinCtrl* m_spGPSAntBow;
@@ -486,6 +485,7 @@ class SimulatorBase : public wxFrame
 		wxSpinCtrl* m_spELE4;
 		wxSpinCtrl* m_spSNR4;
 		wxCheckBox* m_cbGPGGL;
+		wxCheckBox* m_bUseGSV;
 		wxTextCtrl* m_textCtrlAISMMSI;
 		wxTextCtrl* m_textCtrlAISMO;
 		wxTextCtrl* m_textCtrlAISCallsign;
@@ -530,7 +530,7 @@ class SimulatorBase : public wxFrame
 		wxStaticText* m_stGPSLongD31;
 		wxTimer m_timer;
 
-		SimulatorBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Vessel Data Message Simulator"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 901,624 ), long style = wxCAPTION|wxCLOSE_BOX|wxDEFAULT_FRAME_STYLE|wxFRAME_FLOAT_ON_PARENT|wxFRAME_NO_TASKBAR|wxRESIZE_BORDER|wxSYSTEM_MENU|wxTAB_TRAVERSAL );
+		SimulatorBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Vessel Data Message Simulator"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 901,703 ), long style = wxCAPTION|wxCLOSE_BOX|wxDEFAULT_FRAME_STYLE|wxFRAME_FLOAT_ON_PARENT|wxFRAME_NO_TASKBAR|wxRESIZE_BORDER|wxSYSTEM_MENU|wxTAB_TRAVERSAL );
 
 		~SimulatorBase();
 
