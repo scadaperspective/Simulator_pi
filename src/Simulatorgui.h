@@ -103,9 +103,9 @@ class SimulatorBase : public wxFrame
 		wxTextCtrl* m_textCtrlRudderStbd;
 		wxPanel* m_panelGPS;
 		wxStaticText* m_staticText13141;
-		wxStaticText* m_staticText1341231;
+		wxStaticText* m_staticText1341511;
 		wxStaticText* m_staticText131231;
-		wxStaticText* m_staticText134331;
+		wxStaticText* m_staticText1341512;
 		wxStaticText* m_staticText13231;
 		wxStaticText* m_staticText134151;
 		wxStaticText* m_staticText1311121;

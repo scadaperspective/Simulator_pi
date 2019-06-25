@@ -42,7 +42,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_bpPlay = new wxButton( this, wxID_ANY, _("Start"), wxDefaultPosition, wxSize( -1,-1 ), 0 );
 	m_bpPlay->SetFont( wxFont( 13, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
 	m_bpPlay->SetForegroundColour( wxColour( 29, 219, 13 ) );
-	m_bpPlay->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNFACE ) );
+	m_bpPlay->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_bpPlay->SetToolTip( _("Press here to load grib data and start the simulator") );
 
 	fgSizer229->Add( m_bpPlay, 0, wxALL, 2 );
@@ -50,21 +50,21 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_bpStop = new wxButton( this, wxID_ANY, _("Stop"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_bpStop->SetFont( wxFont( 13, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
 	m_bpStop->SetForegroundColour( wxColour( 158, 23, 23 ) );
-	m_bpStop->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNFACE ) );
+	m_bpStop->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_bpStop->SetToolTip( _("Press here to stop the simulator") );
 
 	fgSizer229->Add( m_bpStop, 0, wxALL, 2 );
 
 	m_buttonAuto = new wxButton( this, wxID_ANY, _("Auto"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_buttonAuto->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
-	m_buttonAuto->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNFACE ) );
+	m_buttonAuto->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_buttonAuto->SetToolTip( _("Press Set to engauge the Autopilot ") );
 
 	fgSizer229->Add( m_buttonAuto, 0, wxALL, 2 );
 
 	m_buttonStandby = new wxButton( this, wxID_ANY, _("Stdby"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_buttonStandby->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
-	m_buttonStandby->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNFACE ) );
+	m_buttonStandby->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_buttonStandby->SetToolTip( _("Manual ") );
 
 	fgSizer229->Add( m_buttonStandby, 0, wxALL, 2 );
@@ -301,6 +301,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticTextKnots1111111111111 = new wxStaticText( sbLongS1->GetStaticBox(), wxID_ANY, _("Long."), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT );
 	m_staticTextKnots1111111111111->Wrap( -1 );
 	m_staticTextKnots1111111111111->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_staticTextKnots1111111111111->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticTextKnots1111111111111->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 
 	fgSizer2211111->Add( m_staticTextKnots1111111111111, 0, wxALL, 1 );
 
@@ -634,6 +636,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_stWPHeading = new wxStaticText( sbLongS3->GetStaticBox(), wxID_ANY, _("000.0"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stWPHeading->Wrap( -1 );
 	m_stWPHeading->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_stWPHeading->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_stWPHeading->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_stWPHeading->SetToolTip( _("Vessel Heading") );
 
 	fgSizer2211113->Add( m_stWPHeading, 0, wxALL, 1 );
@@ -641,12 +645,16 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticTextKnots122111112 = new wxStaticText( sbLongS3->GetStaticBox(), wxID_ANY, _("ºt"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextKnots122111112->Wrap( -1 );
 	m_staticTextKnots122111112->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_staticTextKnots122111112->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticTextKnots122111112->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 
 	fgSizer2211113->Add( m_staticTextKnots122111112, 0, wxALL, 1 );
 
 	m_stWPDistance = new wxStaticText( sbLongS3->GetStaticBox(), wxID_ANY, _("000.0"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stWPDistance->Wrap( -1 );
 	m_stWPDistance->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_stWPDistance->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_stWPDistance->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_stWPDistance->SetToolTip( _("Log Speed") );
 
 	fgSizer2211113->Add( m_stWPDistance, 0, wxALL, 1 );
@@ -654,6 +662,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticText18121112 = new wxStaticText( sbLongS3->GetStaticBox(), wxID_ANY, _("N Mi"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText18121112->Wrap( -1 );
 	m_staticText18121112->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_staticText18121112->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticText18121112->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 
 	fgSizer2211113->Add( m_staticText18121112, 0, wxALL, 1 );
 
@@ -726,12 +736,16 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_staticTxtRudder = new wxStaticText( m_panelHelm, wxID_ANY, _("Rudder / Trim         "), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTxtRudder->Wrap( -1 );
 	m_staticTxtRudder->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_staticTxtRudder->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticTxtRudder->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_staticTxtRudder->SetToolTip( _("To Adjust rudder angle ( including trim)") );
 
 	bSizer132->Add( m_staticTxtRudder, 0, wxALL, 2 );
 
 	m_SliderRudder = new wxSpinCtrlDouble( m_panelHelm, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER_HORIZONTAL|wxSP_ARROW_KEYS, -35, 35, 0.000000, 0.01 );
 	m_SliderRudder->SetDigits( 2 );
+	m_SliderRudder->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_SliderRudder->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_SliderRudder->SetToolTip( _("Rudder Angle -P + S") );
 
 	bSizer132->Add( m_SliderRudder, 0, wxALIGN_RIGHT|wxALL, 2 );
@@ -770,6 +784,9 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	bSizer721->Add( 0, 0, 1, wxEXPAND, 5 );
 
 	m_staticline121 = new wxStaticLine( sbSizer481->GetStaticBox(), wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_HORIZONTAL );
+	m_staticline121->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticline121->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
+
 	bSizer721->Add( m_staticline121, 0, wxEXPAND | wxALL, 5 );
 
 
@@ -792,19 +809,24 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	m_textCtrlRudderPort = new wxTextCtrl( m_panelHelm, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY|wxTE_CENTER|wxBORDER_RAISED|wxBORDER_SUNKEN );
 	m_textCtrlRudderPort->SetFont( wxFont( 13, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_textCtrlRudderPort->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_textCtrlRudderPort->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_textCtrlRudderPort->SetToolTip( _("Port Rudder Angle Value") );
 
 	bSizer1311->Add( m_textCtrlRudderPort, 0, wxALIGN_CENTER_VERTICAL|wxALIGN_RIGHT, 0 );
 
 	m_buttonMid = new wxButton( m_panelHelm, wxID_ANY, _(">|<"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_buttonMid->SetFont( wxFont( 11, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
-	m_buttonMid->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNFACE ) );
+	m_buttonMid->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_buttonMid->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_buttonMid->SetToolTip( _("Centre Rudder Midships") );
 
 	bSizer1311->Add( m_buttonMid, 0, wxALIGN_CENTER_VERTICAL, 2 );
 
 	m_textCtrlRudderStbd = new wxTextCtrl( m_panelHelm, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_CENTER|wxTE_READONLY|wxBORDER_SUNKEN );
 	m_textCtrlRudderStbd->SetFont( wxFont( 13, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
+	m_textCtrlRudderStbd->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_textCtrlRudderStbd->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_textCtrlRudderStbd->SetToolTip( _("Starboard Rudder Angle Value") );
 
 	bSizer1311->Add( m_textCtrlRudderStbd, 0, wxALIGN_CENTER_VERTICAL, 2 );
@@ -870,8 +892,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	m_SliderSpeed = new wxSlider( sbSizer2811->GetStaticBox(), wxID_ANY, 0, -50, 250, wxPoint( -1,-1 ), wxSize( -1,200 ), wxSL_AUTOTICKS|wxSL_BOTH|wxSL_HORIZONTAL|wxSL_INVERSE|wxSL_LEFT|wxSL_MIN_MAX_LABELS|wxSL_VALUE_LABEL|wxBORDER_DEFAULT );
 	m_SliderSpeed->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
-	m_SliderSpeed->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_INFOTEXT ) );
-	m_SliderSpeed->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNFACE ) );
+	m_SliderSpeed->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_SliderSpeed->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_SliderSpeed->SetToolTip( _("Port Eng Speed (Kts)") );
 
 	fgSizer9521->Add( m_SliderSpeed, 0, wxALL, 5 );
@@ -909,8 +931,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	m_SliderSpStarb = new wxSlider( sbSizer292->GetStaticBox(), wxID_ANY, 0, -50, 250, wxPoint( -1,-1 ), wxSize( -1,200 ), wxSL_AUTOTICKS|wxSL_BOTH|wxSL_HORIZONTAL|wxSL_INVERSE|wxSL_LEFT|wxSL_MIN_MAX_LABELS|wxSL_VALUE_LABEL|wxBORDER_DEFAULT );
 	m_SliderSpStarb->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
-	m_SliderSpStarb->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_INFOTEXT ) );
-	m_SliderSpStarb->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNFACE ) );
+	m_SliderSpStarb->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_SliderSpStarb->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_SliderSpStarb->SetToolTip( _("Starboard Eng Speed (Kts)") );
 
 	fgSizer115112->Add( m_SliderSpStarb, 0, wxALL, 5 );
@@ -985,7 +1007,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_gaugeRudderPort = new wxGauge( m_panelHelm, wxID_ANY, 10, wxDefaultPosition, wxSize( -1,-1 ), wxGA_VERTICAL );
 	m_gaugeRudderPort->SetValue( 0 );
 	m_gaugeRudderPort->SetForegroundColour( wxColour( 251, 0, 7 ) );
-	m_gaugeRudderPort->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNFACE ) );
+	m_gaugeRudderPort->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_gaugeRudderPort->SetToolTip( _("Port RSA ") );
 
 	bSizer77->Add( m_gaugeRudderPort, 1, wxALIGN_RIGHT|wxBOTTOM|wxEXPAND|wxTOP, 5 );
@@ -993,7 +1015,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_gaugeRudderStbd = new wxGauge( m_panelHelm, wxID_ANY, 10, wxDefaultPosition, wxSize( -1,-1 ), wxGA_VERTICAL );
 	m_gaugeRudderStbd->SetValue( 0 );
 	m_gaugeRudderStbd->SetForegroundColour( wxColour( 35, 255, 10 ) );
-	m_gaugeRudderStbd->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNFACE ) );
+	m_gaugeRudderStbd->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_gaugeRudderStbd->SetToolTip( _("Starboard RSA ") );
 
 	bSizer77->Add( m_gaugeRudderStbd, 1, wxBOTTOM|wxEXPAND|wxTOP, 5 );
@@ -1032,35 +1054,47 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	m_staticText13141 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Sat 1"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText13141->Wrap( -1 );
+	m_staticText13141->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticText13141->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
+
 	fgSizer108131->Add( m_staticText13141, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
 	m_spPrn1 = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 999, 4 );
+	m_spPrn1->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spPrn1->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spPrn1->SetToolTip( _("Sattelite #1 ID#") );
 
 	fgSizer108131->Add( m_spPrn1, 0, wxALL, 2 );
 
-	m_staticText1341231 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText1341231->Wrap( -1 );
-	fgSizer108131->Add( m_staticText1341231, 0, wxALL, 5 );
+	m_staticText1341511 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText1341511->Wrap( -1 );
+	fgSizer108131->Add( m_staticText1341511, 0, wxALL, 5 );
 
 	m_staticText131231 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Sat 2"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText131231->Wrap( -1 );
+	m_staticText131231->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticText131231->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
+
 	fgSizer108131->Add( m_staticText131231, 0, wxALL, 2 );
 
 	m_spPrn2 = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 999, 17 );
+	m_spPrn2->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spPrn2->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spPrn2->SetToolTip( _("Sattelite #2 ID#") );
 
 	fgSizer108131->Add( m_spPrn2, 0, wxALL, 2 );
 
-	m_staticText134331 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	m_staticText134331->Wrap( -1 );
-	fgSizer108131->Add( m_staticText134331, 0, wxALL, 5 );
+	m_staticText1341512 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText1341512->Wrap( -1 );
+	fgSizer108131->Add( m_staticText1341512, 0, wxALL, 5 );
 
 	m_staticText13231 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("Sat 3"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText13231->Wrap( -1 );
 	fgSizer108131->Add( m_staticText13231, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
 	m_spPrn3 = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 999, 22 );
+	m_spPrn3->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spPrn3->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spPrn3->SetToolTip( _("Sattelite #3 ID#") );
 
 	fgSizer108131->Add( m_spPrn3, 0, wxALL, 2 );
@@ -1074,6 +1108,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer108131->Add( m_staticText1311121, 0, wxALL, 2 );
 
 	m_spPrn4 = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 999, 24 );
+	m_spPrn4->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spPrn4->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spPrn4->SetToolTip( _("Sattelite #4 ID#") );
 
 	fgSizer108131->Add( m_spPrn4, 0, wxALL, 2 );
@@ -1087,6 +1123,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer108131->Add( m_staticText1341132, 0, wxALL, 2 );
 
 	m_spSNRQual = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 33, 45 );
+	m_spSNRQual->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spSNRQual->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spSNRQual->SetToolTip( _("GPS RX Signal Quality") );
 
 	fgSizer108131->Add( m_spSNRQual, 0, wxALL, 2 );
@@ -1100,6 +1138,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer108131->Add( m_spSatinView, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
 	m_spSatsinV = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 24, 12 );
+	m_spSatsinV->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spSatsinV->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spSatsinV->SetToolTip( _("# of GPS in view maximum of 12") );
 
 	fgSizer108131->Add( m_spSatsinV, 0, wxALL, 2 );
@@ -1113,6 +1153,9 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer108131->Add( m_statictextHDOP, 0, wxALL, 2 );
 
 	m_spSatHDOP = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 1, 999, 10 );
+	m_spSatHDOP->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spSatHDOP->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
+
 	fgSizer108131->Add( m_spSatHDOP, 0, wxALL, 2 );
 
 	m_staticText1342131 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("#"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -1125,6 +1168,9 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	m_spSatAnt = new wxSpinCtrlDouble( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -100, 100, 0, 0.1 );
 	m_spSatAnt->SetDigits( 1 );
+	m_spSatAnt->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spSatAnt->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
+
 	fgSizer108131->Add( m_spSatAnt, 0, wxALL, 2 );
 
 	m_staticText13311121 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("A/B G"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -1137,6 +1183,9 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	m_spSatGEO = new wxSpinCtrlDouble( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -100, 100, 0, 0.1 );
 	m_spSatGEO->SetDigits( 1 );
+	m_spSatGEO->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spSatGEO->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
+
 	fgSizer108131->Add( m_spSatGEO, 0, wxALL, 2 );
 
 	m_staticText13421112 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("m"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -1152,6 +1201,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer108131->Add( m_staticText1341111311, 0, wxALL, 2 );
 
 	m_spGPSAntBow = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 1, 999, 4 );
+	m_spGPSAntBow->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spGPSAntBow->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spGPSAntBow->SetToolTip( _("GPS Ant Distance from Bow (M)") );
 
 	fgSizer108131->Add( m_spGPSAntBow, 0, wxALL, 2 );
@@ -1167,6 +1218,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer108131->Add( m_staticText13411113112, 0, wxALL, 2 );
 
 	m_spSatAntBeam = new wxSpinCtrl( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 1, 999, 4 );
+	m_spSatAntBeam->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spSatAntBeam->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spSatAntBeam->SetToolTip( _("Distance from P/S outer hull ") );
 
 	fgSizer108131->Add( m_spSatAntBeam, 0, wxALL, 2 );
@@ -1207,16 +1260,22 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer1081312->Add( m_staticText131411, 0, wxALL, 2 );
 
 	m_spAZ1 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 66 );
+	m_spAZ1->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spAZ1->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spAZ1->SetToolTip( _("Sattelite #1 ID#") );
 
 	fgSizer1081312->Add( m_spAZ1, 0, wxALL, 2 );
 
 	m_spELE1 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, -90, 90, 4 );
+	m_spELE1->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spELE1->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spELE1->SetToolTip( _("Sattelite #1 ID#") );
 
 	fgSizer1081312->Add( m_spELE1, 0, wxALL, 2 );
 
 	m_spSNR1 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 100, 58 );
+	m_spSNR1->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spSNR1->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spSNR1->SetToolTip( _("Sattelite #1 ID#") );
 
 	fgSizer1081312->Add( m_spSNR1, 0, wxALL, 2 );
@@ -1226,16 +1285,22 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer1081312->Add( m_staticText131412, 0, wxALL, 2 );
 
 	m_spAZ2 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 192 );
+	m_spAZ2->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spAZ2->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spAZ2->SetToolTip( _("Sattelite #2 ID#") );
 
 	fgSizer1081312->Add( m_spAZ2, 0, wxALL, 2 );
 
 	m_spELE2 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, -90, 90, 90 );
+	m_spELE2->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spELE2->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spELE2->SetToolTip( _("Sattelite #1 ID#") );
 
 	fgSizer1081312->Add( m_spELE2, 0, wxALL, 2 );
 
 	m_spSNR2 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 100, 45 );
+	m_spSNR2->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spSNR2->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spSNR2->SetToolTip( _("Sattelite #3 ID#") );
 
 	fgSizer1081312->Add( m_spSNR2, 0, wxALL, 2 );
@@ -1245,16 +1310,21 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer1081312->Add( m_staticText131413, 0, wxALL, 2 );
 
 	m_spAZ3 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 36 );
+	m_spAZ3->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spAZ3->SetToolTip( _("Sattelite #2 ID#") );
 
 	fgSizer1081312->Add( m_spAZ3, 0, wxALL, 2 );
 
 	m_spELE3 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, -90, 90, 24 );
+	m_spELE3->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spELE3->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spELE3->SetToolTip( _("Sat #3 Elevation") );
 
 	fgSizer1081312->Add( m_spELE3, 0, wxALL, 2 );
 
 	m_spSNR3 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 100, 90 );
+	m_spSNR3->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spSNR3->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spSNR3->SetToolTip( _("GPS RX Signal Quality") );
 
 	fgSizer1081312->Add( m_spSNR3, 0, wxALL, 2 );
@@ -1264,16 +1334,21 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer1081312->Add( m_staticText1314131, 0, wxALL, 2 );
 
 	m_spAZ4 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 360, 130 );
+	m_spAZ4->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spAZ4->SetToolTip( _("Sattelite #2 ID#") );
 
 	fgSizer1081312->Add( m_spAZ4, 0, wxALL, 2 );
 
 	m_spELE4 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, -90, 90, 45 );
+	m_spELE4->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spELE4->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spELE4->SetToolTip( _("GPS #4 Elevation") );
 
 	fgSizer1081312->Add( m_spELE4, 0, wxALL, 2 );
 
 	m_spSNR4 = new wxSpinCtrl( sbSizer632->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 100, 32 );
+	m_spSNR4->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spSNR4->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spSNR4->SetToolTip( _("GPS RX Signal Quality") );
 
 	fgSizer1081312->Add( m_spSNR4, 0, wxALL, 2 );
@@ -1646,6 +1721,9 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	m_cbAISETA = new wxCheckBox( sbSizer3->GetStaticBox(), wxID_ANY, _("ETA Voyage Dest"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
 	m_cbAISETA->SetValue(true);
+	m_cbAISETA->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_cbAISETA->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
+
 	fgSizer1111->Add( m_cbAISETA, 0, wxALL, 2 );
 
 
@@ -1653,9 +1731,15 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	m_staticText28 = new wxStaticText( sbSizer3->GetStaticBox(), wxID_ANY, _("Date"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText28->Wrap( -1 );
+	m_staticText28->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_staticText28->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
+
 	fgSizer1111->Add( m_staticText28, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
 	m_dpAISETADate = new wxDatePickerCtrl( sbSizer3->GetStaticBox(), wxID_ANY, wxDefaultDateTime, wxDefaultPosition, wxDefaultSize, wxDP_ALLOWNONE|wxDP_DEFAULT );
+	m_dpAISETADate->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_dpAISETADate->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
+
 	fgSizer1111->Add( m_dpAISETADate, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
 	m_staticText302 = new wxStaticText( sbSizer3->GetStaticBox(), wxID_ANY, _("Time * (24Hr)"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -1665,6 +1749,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer1111->Add( m_staticText302, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
 	m_tpAISETATime = new wxTimePickerCtrl( sbSizer3->GetStaticBox(), wxID_ANY, wxDefaultDateTime, wxDefaultPosition, wxDefaultSize, wxDP_DEFAULT );
+	m_tpAISETATime->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_tpAISETATime->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_tpAISETATime->SetToolTip( _("Time converted to 24hr time ") );
 
 	fgSizer1111->Add( m_tpAISETATime, 0, wxALIGN_CENTER_VERTICAL|wxALL|wxEXPAND, 2 );
@@ -2693,194 +2779,254 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	m_staticTextHDT = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("HDT"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextHDT->Wrap( -1 );
+	m_staticTextHDT->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_staticTextHDT->SetToolTip( _("Vessel Heading True") );
 
 	fgSizer489->Add( m_staticTextHDT, 0, wxALL, 2 );
 
 	m_spS_HDT = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 359.9, 0.000000, 0.1 );
 	m_spS_HDT->SetDigits( 1 );
+	m_spS_HDT->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spS_HDT->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spS_HDT->SetToolTip( _("To adjust HDT 0-359.9º t (true)") );
 
 	fgSizer489->Add( m_spS_HDT, 0, wxALL, 2 );
 
 	m_staticText4201 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("º true"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText4201->Wrap( -1 );
+	m_staticText4201->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+
 	fgSizer489->Add( m_staticText4201, 0, wxALL, 2 );
 
 	m_staticTextSTW = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("STW"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextSTW->Wrap( -1 );
+	m_staticTextSTW->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_staticTextSTW->SetToolTip( _("Vessel Speed \"Through\" (On) Water") );
 
 	fgSizer489->Add( m_staticTextSTW, 0, wxALL, 2 );
 
 	m_spS_STW = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -50, 250, 0.000000, 0.1 );
 	m_spS_STW->SetDigits( 1 );
+	m_spS_STW->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spS_STW->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spS_STW->SetToolTip( _("To adjust STW -50/250 Kts") );
 
 	fgSizer489->Add( m_spS_STW, 0, wxALL, 2 );
 
 	m_staticText43431 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("Kts (Speed)"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText43431->Wrap( -1 );
+	m_staticText43431->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+
 	fgSizer489->Add( m_staticText43431, 0, wxALL, 2 );
 
 	m_staticTCOG = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("COG"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTCOG->Wrap( -1 );
+	m_staticTCOG->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_staticTCOG->SetToolTip( _("Vessel Course Over Ground") );
 
 	fgSizer489->Add( m_staticTCOG, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
 	m_spS_COG = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 359.9, 0.000000, 0.1 );
 	m_spS_COG->SetDigits( 1 );
+	m_spS_COG->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spS_COG->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spS_COG->SetToolTip( _("To adjust COG 0-360ºt (true)") );
 
 	fgSizer489->Add( m_spS_COG, 0, wxALL, 2 );
 
 	m_staticText43412 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("º true"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText43412->Wrap( -1 );
+	m_staticText43412->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+
 	fgSizer489->Add( m_staticText43412, 0, wxALL, 2 );
 
 	m_staticTHDM = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("HDM"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTHDM->Wrap( -1 );
+	m_staticTHDM->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_staticTHDM->SetToolTip( _("Vessel Heading Magnetic") );
 
 	fgSizer489->Add( m_staticTHDM, 0, wxALL, 2 );
 
 	m_spS_HDM = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 359.9, 0.000000, 0.1 );
 	m_spS_HDM->SetDigits( 1 );
+	m_spS_HDM->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spS_HDM->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spS_HDM->SetToolTip( _("To adjust HDM 0-360ºMag") );
 
 	fgSizer489->Add( m_spS_HDM, 0, wxALL, 2 );
 
 	m_staticText43151 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("º MAG"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText43151->Wrap( -1 );
+	m_staticText43151->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+
 	fgSizer489->Add( m_staticText43151, 0, wxALL, 2 );
 
 	m_staticTHDG = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("HDG"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTHDG->Wrap( -1 );
+	m_staticTHDG->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_staticTHDG->SetToolTip( _("Heading Magnetic & Variation ?") );
 
 	fgSizer489->Add( m_staticTHDG, 0, wxALL, 2 );
 
 	m_spS_HDG = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, -25, 25, 10.600000, 0.1 );
 	m_spS_HDG->SetDigits( 3 );
+	m_spS_HDG->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spS_HDG->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spS_HDG->SetToolTip( _("To adjust HDG ± E/W Mag Varº") );
 
 	fgSizer489->Add( m_spS_HDG, 0, wxALL, 2 );
 
 	m_staticText434211 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("º MAG ± E/W"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText434211->Wrap( -1 );
+	m_staticText434211->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+
 	fgSizer489->Add( m_staticText434211, 0, wxALL, 2 );
 
 	m_staticTextSOG = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("SOG"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextSOG->Wrap( -1 );
+	m_staticTextSOG->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_staticTextSOG->SetToolTip( _("Vessel Speed Over Ground") );
 
 	fgSizer489->Add( m_staticTextSOG, 0, wxALL, 2 );
 
 	m_spS_SOG = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -50, 250, 0.000000, 0.1 );
 	m_spS_SOG->SetDigits( 1 );
+	m_spS_SOG->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spS_SOG->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spS_SOG->SetToolTip( _("To adjust SOG -50/250 Kts") );
 
 	fgSizer489->Add( m_spS_SOG, 0, wxALL, 2 );
 
 	m_staticText41343 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("Kts (Speed)"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText41343->Wrap( -1 );
+	m_staticText41343->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+
 	fgSizer489->Add( m_staticText41343, 0, wxALL, 2 );
 
 	m_staticText4132 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("SET"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText4132->Wrap( -1 );
+	m_staticText4132->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_staticText4132->SetToolTip( _("Set the bearing (direction) the surface current is heading towards") );
 
 	fgSizer489->Add( m_staticText4132, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
 	m_spCurSet = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxT("144"), wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 359.9, 0.000000, 0.1 );
 	m_spCurSet->SetDigits( 1 );
+	m_spCurSet->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spCurSet->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spCurSet->SetToolTip( _("To adjust Set (Drift bearing) 0-360 ºtrue") );
 
 	fgSizer489->Add( m_spCurSet, 0, wxALL, 2 );
 
 	m_staticText41341 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("º true"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText41341->Wrap( -1 );
+	m_staticText41341->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+
 	fgSizer489->Add( m_staticText41341, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
 	m_staticTextDrift = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("DRIFT"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextDrift->Wrap( -1 );
+	m_staticTextDrift->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_staticTextDrift->SetToolTip( _("Speed of surface current - how fast you will drift without sail or engines in the direction the current is heading") );
 
 	fgSizer489->Add( m_staticTextDrift, 0, wxALL, 2 );
 
 	m_spCurDrift = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 38, 0.500000, 0.1 );
 	m_spCurDrift->SetDigits( 2 );
+	m_spCurDrift->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spCurDrift->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spCurDrift->SetToolTip( _("To adjust Drift Speed -38/+38 Kts") );
 
 	fgSizer489->Add( m_spCurDrift, 0, wxALL, 2 );
 
 	m_staticText43434 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("Kts (Speed)"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText43434->Wrap( -1 );
+	m_staticText43434->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+
 	fgSizer489->Add( m_staticText43434, 0, wxALL, 2 );
 
 	m_staticText43411 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("TWA"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText43411->Wrap( -1 );
+	m_staticText43411->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_staticText43411->SetToolTip( _("True Wind Angle") );
 
 	fgSizer489->Add( m_staticText43411, 0, wxALL, 2 );
 
 	m_spS_TWA = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 359.9, 0.000000, 0.1 );
 	m_spS_TWA->SetDigits( 1 );
+	m_spS_TWA->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spS_TWA->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spS_TWA->SetToolTip( _("To adjust True Wind Angle 0-360º") );
 
 	fgSizer489->Add( m_spS_TWA, 0, wxALL, 2 );
 
 	m_staticText4342 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("º"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText4342->Wrap( -1 );
+	m_staticText4342->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+
 	fgSizer489->Add( m_staticText4342, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
 	m_staticText4133 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("TWS"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText4133->Wrap( -1 );
+	m_staticText4133->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_staticText4133->SetToolTip( _("True Wind Speed") );
 
 	fgSizer489->Add( m_staticText4133, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
 	m_spS_TWS = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 230, 0.000000, 0.1 );
 	m_spS_TWS->SetDigits( 2 );
+	m_spS_TWS->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spS_TWS->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spS_TWS->SetToolTip( _("To adjust True Wind Speed 0-230 Kts") );
 
 	fgSizer489->Add( m_spS_TWS, 0, wxALL, 2 );
 
 	m_staticText4134 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("Kts (Speed)"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText4134->Wrap( -1 );
+	m_staticText4134->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+
 	fgSizer489->Add( m_staticText4134, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
 	m_staticText134111 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("AWA"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText134111->Wrap( -1 );
+	m_staticText134111->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_staticText134111->SetToolTip( _("Apparent Wind Angle") );
 
 	fgSizer489->Add( m_staticText134111, 0, wxALL, 2 );
 
 	m_spiS_AWA = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, -180, 180, 0.000000, 0.1 );
 	m_spiS_AWA->SetDigits( 1 );
+	m_spiS_AWA->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spiS_AWA->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spiS_AWA->SetToolTip( _("To adjust Apparent Wind Angle (Relative) -180 / +180") );
 
 	fgSizer489->Add( m_spiS_AWA, 0, wxALL, 2 );
 
 	m_staticText413421 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("º App"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText413421->Wrap( -1 );
+	m_staticText413421->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+
 	fgSizer489->Add( m_staticText413421, 0, wxALL, 2 );
 
 	m_staticText41341111 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("AWS"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText41341111->Wrap( -1 );
+	m_staticText41341111->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_staticText41341111->SetToolTip( _("Apparent Wind Speed") );
 
 	fgSizer489->Add( m_staticText41341111, 0, wxALL, 2 );
 
 	m_spS_AWS = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -230, 230, 0.000000, 0.1 );
 	m_spS_AWS->SetDigits( 2 );
+	m_spS_AWS->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+	m_spS_AWS->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spS_AWS->SetToolTip( _("To adjust Apparent Wind Speed") );
 
 	fgSizer489->Add( m_spS_AWS, 0, wxALL, 2 );
 
 	m_staticText4133111 = new wxStaticText( sbSizer452->GetStaticBox(), wxID_ANY, _("Kts App"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText4133111->Wrap( -1 );
+	m_staticText4133111->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
+
 	fgSizer489->Add( m_staticText4133111, 0, wxALL, 2 );
 
 
