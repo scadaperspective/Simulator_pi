@@ -1386,79 +1386,79 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer23211->SetFlexibleDirection( wxBOTH );
 	fgSizer23211->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	m_bUseGGA = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GGA On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_bUseGGA = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GGA On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_bUseGGA->SetValue(true);
 	m_bUseGGA->SetToolTip( _("$GPGGA") );
 
 	fgSizer23211->Add( m_bUseGGA, 0, wxALL, 2 );
 
-	m_bUseGLL = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GLL On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_bUseGLL = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GLL On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_bUseGLL->SetValue(true);
 	m_bUseGLL->SetToolTip( _("$GPGLL Lat Long & UTC Time") );
 
 	fgSizer23211->Add( m_bUseGLL, 0, wxALL, 2 );
 
-	m_bUseGSV = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GSV On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_bUseGSV = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GSV On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_bUseGSV->SetValue(true);
 	m_bUseGSV->SetToolTip( _("$GPGSV Satellites in view") );
 
 	fgSizer23211->Add( m_bUseGSV, 0, wxALL, 2 );
 
-	m_bUseVTG = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPVTG On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_bUseVTG = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPVTG On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_bUseVTG->SetValue(true);
 	m_bUseVTG->SetToolTip( _("$GPGVTG") );
 
 	fgSizer23211->Add( m_bUseVTG, 0, wxALL, 2 );
 
-	m_bUseHDT = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPHDT On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_bUseHDT = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPHDT On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_bUseHDT->SetValue(true);
 	m_bUseHDT->SetToolTip( _("$GPHDT") );
 
 	fgSizer23211->Add( m_bUseHDT, 0, wxALL, 2 );
 
-	m_bUseHDM = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPHDM On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_bUseHDM = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPHDM On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_bUseHDM->SetValue(true);
 	m_bUseHDM->SetToolTip( _("$HCHDM") );
 
 	fgSizer23211->Add( m_bUseHDM, 0, wxALL, 2 );
 
-	m_cbIIMWV = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("IIMWV On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_cbIIMWV = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("IIMWV On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_cbIIMWV->SetValue(true);
 	m_cbIIMWV->SetToolTip( _("$IIMWV") );
 
 	fgSizer23211->Add( m_cbIIMWV, 0, wxALL, 2 );
 
-	m_cbGPRMC = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPRMC On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
+	m_cbGPRMC = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPRMC On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_cbGPRMC->SetValue(true);
 	m_cbGPRMC->SetToolTip( _("$GPRMC") );
 
 	fgSizer23211->Add( m_cbGPRMC, 0, wxALL, 2 );
 
-	m_cbTWS211 = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("T"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbTWS211 = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("T"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbTWS211->SetValue(true);
 	fgSizer23211->Add( m_cbTWS211, 0, wxALL, 2 );
 
-	m_cbAWA211 = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("App"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbAWA211 = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("App"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbAWA211->SetValue(true);
 	fgSizer23211->Add( m_cbAWA211, 0, wxALL, 2 );
 
-	m_cbGPSAntP = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("ANTP"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbGPSAntP = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("ANTP"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbGPSAntP->SetValue(true);
 	m_cbGPSAntP->SetToolTip( _("Ant Port") );
 
 	fgSizer23211->Add( m_cbGPSAntP, 0, wxALL, 2 );
 
-	m_cbGPSAntS = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("ANTS"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbGPSAntS = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("ANTS"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbGPSAntS->SetValue(true);
 	fgSizer23211->Add( m_cbGPSAntS, 0, wxALL, 2 );
 
-	m_cbSpare1211 = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("Spare"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSpare1211 = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("Spare"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSpare1211->SetValue(true);
 	fgSizer23211->Add( m_cbSpare1211, 0, wxALL, 2 );
 
 	m_cbSpare12111 = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("Spare"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSpare12111->SetValue(true);
-	fgSizer23211->Add( m_cbSpare12111, 0, wxALL, 5 );
+	fgSizer23211->Add( m_cbSpare12111, 0, wxALL, 2 );
 
 
 	sbSizer53311->Add( fgSizer23211, 1, wxEXPAND, 2 );
@@ -1589,29 +1589,29 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer197->Add( m_spiAISDraught, 0, wxALL, 2 );
 
-	m_cbAISLat = new wxCheckBox( sbSizer61->GetStaticBox(), wxID_ANY, _("Lattitude"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbAISLat = new wxCheckBox( sbSizer61->GetStaticBox(), wxID_ANY, _("Lattitude"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbAISLat->SetValue(true);
 	m_cbAISLat->SetToolTip( _("Lattitude Accurate to within 0.0001 minutes") );
 
 	fgSizer197->Add( m_cbAISLat, 0, wxALL, 2 );
 
-	m_cbAISLong = new wxCheckBox( sbSizer61->GetStaticBox(), wxID_ANY, _("Longitude"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbAISLong = new wxCheckBox( sbSizer61->GetStaticBox(), wxID_ANY, _("Longitude"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbAISLong->SetValue(true);
 	m_cbAISLong->SetToolTip( _("Longitude Accurate to within 0.0001 minutes") );
 
 	fgSizer197->Add( m_cbAISLong, 0, wxALL, 2 );
 
-	m_cbAISSOG = new wxCheckBox( sbSizer61->GetStaticBox(), wxID_ANY, _("SOG"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbAISSOG = new wxCheckBox( sbSizer61->GetStaticBox(), wxID_ANY, _("SOG"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbAISSOG->SetValue(true);
 	m_cbAISSOG->SetToolTip( _("Speed Over Ground 0.1 knot to 102 knots") );
 
 	fgSizer197->Add( m_cbAISSOG, 0, wxALL, 2 );
 
-	m_cbAISHDT = new wxCheckBox( sbSizer61->GetStaticBox(), wxID_ANY, _("HDT"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbAISHDT = new wxCheckBox( sbSizer61->GetStaticBox(), wxID_ANY, _("HDT"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbAISHDT->SetValue(true);
 	fgSizer197->Add( m_cbAISHDT, 0, wxALL, 2 );
 
-	m_cbAISCOG = new wxCheckBox( sbSizer61->GetStaticBox(), wxID_ANY, _("COG"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbAISCOG = new wxCheckBox( sbSizer61->GetStaticBox(), wxID_ANY, _("COG"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbAISCOG->SetValue(true);
 	m_cbAISCOG->SetToolTip( _("Course Over Ground 0.1ºt") );
 
@@ -1626,7 +1626,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer197->Add( m_textCtrlAISROT, 0, wxALL, 2 );
 
-	m_cbAISROT = new wxCheckBox( sbSizer61->GetStaticBox(), wxID_ANY, _("Rate of Turn"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbAISROT = new wxCheckBox( sbSizer61->GetStaticBox(), wxID_ANY, _("Rate of Turn"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbAISROT->SetValue(true);
 	m_cbAISROT->SetToolTip( _("Rate of turn 0 to 720 degrees per minute") );
 
@@ -1670,19 +1670,19 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer274->SetFlexibleDirection( wxBOTH );
 	fgSizer274->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	m_cbAISAIVDO = new wxCheckBox( sbSizer64->GetStaticBox(), wxID_ANY, _("AIVDO Reports from own vessel"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbAISAIVDO = new wxCheckBox( sbSizer64->GetStaticBox(), wxID_ANY, _("AIVDO Reports from own vessel"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbAISAIVDO->SetValue(true);
 	fgSizer274->Add( m_cbAISAIVDO, 0, wxALL, 2 );
 
-	m_cbAISAIVDM = new wxCheckBox( sbSizer64->GetStaticBox(), wxID_ANY, _("AIVDM Rx from other vessels"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbAISAIVDM = new wxCheckBox( sbSizer64->GetStaticBox(), wxID_ANY, _("AIVDM Rx from other vessels"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbAISAIVDM->SetValue(true);
 	fgSizer274->Add( m_cbAISAIVDM, 0, wxALL, 2 );
 
-	m_cbTransmitAis1 = new wxCheckBox( sbSizer64->GetStaticBox(), wxID_ANY, _("Transmit AIS"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_cbTransmitAis1 = new wxCheckBox( sbSizer64->GetStaticBox(), wxID_ANY, _("Transmit AIS"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbTransmitAis1->SetValue(true);
 	fgSizer274->Add( m_cbTransmitAis1, 0, wxALL, 2 );
 
-	m_cbAisToFile1 = new wxCheckBox( sbSizer64->GetStaticBox(), wxID_ANY, _("Save AIS data generated to File"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_cbAisToFile1 = new wxCheckBox( sbSizer64->GetStaticBox(), wxID_ANY, _("Save AIS data generated to File"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	fgSizer274->Add( m_cbAisToFile1, 0, wxALL, 2 );
 
 
@@ -2083,7 +2083,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_cbAISNavS->AddPage( m_panelAISN15, _("15 AIS_SART, MOB-AIS"), false );
 	fgSizer23212->Add( m_cbAISNavS, 1, wxEXPAND | wxALL, 2 );
 
-	m_cbAISNavSelect = new wxCheckBox( sbSizerNavStatus->GetStaticBox(), wxID_ANY, _("Navigation Status"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbAISNavSelect = new wxCheckBox( sbSizerNavStatus->GetStaticBox(), wxID_ANY, _("Navigation Status"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbAISNavSelect->SetValue(true);
 	fgSizer23212->Add( m_cbAISNavSelect, 0, wxALL, 2 );
 
@@ -2286,56 +2286,56 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer231->SetFlexibleDirection( wxBOTH );
 	fgSizer231->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	m_cbXDRBAR = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Barometer"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRBAR = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Barometer"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRBAR->SetValue(true);
 	fgSizer231->Add( m_cbXDRBAR, 0, wxALL, 2 );
 
 	m_cbDetect61 = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Detect    "), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT|wxCHK_3STATE );
 	fgSizer231->Add( m_cbDetect61, 0, wxALL, 2 );
 
-	m_cbXDRATemp = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Air Temp"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRATemp = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Air Temp"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRATemp->SetValue(true);
 	fgSizer231->Add( m_cbXDRATemp, 0, wxALL, 2 );
 
 	m_cbOptimize62 = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Optimize"), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT|wxCHK_3STATE );
 	fgSizer231->Add( m_cbOptimize62, 0, wxALL, 2 );
 
-	m_cbXDRWTemp = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Water Temp"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRWTemp = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Water Temp"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRWTemp->SetValue(true);
 	fgSizer231->Add( m_cbXDRWTemp, 0, wxALL, 2 );
 
 	m_cbOptimize112 = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Optimize"), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT|wxCHK_3STATE );
 	fgSizer231->Add( m_cbOptimize112, 0, wxALL, 2 );
 
-	m_cbXDRVPitch = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Vessel Pitch"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRVPitch = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Vessel Pitch"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRVPitch->SetValue(true);
 	fgSizer231->Add( m_cbXDRVPitch, 0, wxALL, 2 );
 
 	m_cbOptimize113 = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Optimize"), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT|wxCHK_3STATE );
 	fgSizer231->Add( m_cbOptimize113, 0, wxALL, 2 );
 
-	m_cbXDRVRoll = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Vessel Roll"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRVRoll = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Vessel Roll"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRVRoll->SetValue(true);
 	fgSizer231->Add( m_cbXDRVRoll, 0, wxALL, 2 );
 
 	m_cbOptimize121 = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Optimize"), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT|wxCHK_3STATE );
 	fgSizer231->Add( m_cbOptimize121, 0, wxALL, 2 );
 
-	m_cbXDRVHeel = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Vessel Heel"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRVHeel = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Vessel Heel"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRVHeel->SetValue(true);
 	fgSizer231->Add( m_cbXDRVHeel, 0, wxALL, 2 );
 
 	m_cbOptimize131 = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Optimize"), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT|wxCHK_3STATE );
 	fgSizer231->Add( m_cbOptimize131, 0, wxALL, 2 );
 
-	m_cbXDREngT1 = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Engine Temp1"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDREngT1 = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Engine Temp1"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDREngT1->SetValue(true);
 	fgSizer231->Add( m_cbXDREngT1, 0, wxALL, 2 );
 
 	m_cbOptimize141 = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Optimize"), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT|wxCHK_3STATE );
 	fgSizer231->Add( m_cbOptimize141, 0, wxALL, 2 );
 
-	m_cbXDREngT2 = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Engine Temp2"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDREngT2 = new wxCheckBox( sbSizer6532->GetStaticBox(), wxID_ANY, _("Engine Temp2"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDREngT2->SetValue(true);
 	fgSizer231->Add( m_cbXDREngT2, 0, wxALL, 2 );
 
@@ -2409,59 +2409,59 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer6611->SetFlexibleDirection( wxBOTH );
 	fgSizer6611->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	m_cbXDRMTW = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("MTW"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRMTW = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("MTW"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRMTW->SetValue(true);
 	m_cbXDRMTW->SetToolTip( _("$MTW") );
 
 	fgSizer6611->Add( m_cbXDRMTW, 0, wxALL, 2 );
 
-	m_cbXDRVLW = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("VLW"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRVLW = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("VLW"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRVLW->SetValue(true);
 	m_cbXDRVLW->SetToolTip( _("$MTW") );
 
 	fgSizer6611->Add( m_cbXDRVLW, 0, wxALL, 2 );
 
-	m_cbXDRMWD = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("MWD"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRMWD = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("MWD"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRMWD->SetValue(true);
 	fgSizer6611->Add( m_cbXDRMWD, 0, wxALL, 2 );
 
-	m_cbXDRMWV = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("MWV"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRMWV = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("MWV"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRMWV->SetValue(true);
 	m_cbXDRMWV->SetToolTip( _("$MTW") );
 
 	fgSizer6611->Add( m_cbXDRMWV, 0, wxALL, 2 );
 
-	m_cbXDRRSA = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("RSA"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRRSA = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("RSA"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRRSA->SetValue(true);
 	m_cbXDRRSA->SetToolTip( _("$MTW") );
 
 	fgSizer6611->Add( m_cbXDRRSA, 0, wxALL, 2 );
 
-	m_cbXDRVHW = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("VHW"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRVHW = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("VHW"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRVHW->SetValue(true);
 	m_cbXDRVHW->SetToolTip( _("$MTW") );
 
 	fgSizer6611->Add( m_cbXDRVHW, 0, wxALL, 2 );
 
-	m_cbXDRVTG = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("VTG"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRVTG = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("VTG"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRVTG->SetValue(true);
 	m_cbXDRVTG->SetToolTip( _("$MTW") );
 
 	fgSizer6611->Add( m_cbXDRVTG, 0, wxALL, 2 );
 
-	m_cbXDRVWR = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("VWR"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRVWR = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("VWR"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRVWR->SetValue(true);
 	m_cbXDRVWR->SetToolTip( _("$MTW") );
 
 	fgSizer6611->Add( m_cbXDRVWR, 0, wxALL, 2 );
 
-	m_cbXDRVWT = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("VLW"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRVWT = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("VLW"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRVWT->SetValue(true);
 	m_cbXDRVWT->SetToolTip( _("$MTW") );
 
 	fgSizer6611->Add( m_cbXDRVWT, 0, wxALL, 2 );
 
-	m_cbXDRXDR = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("XDR"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbXDRXDR = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("XDR"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbXDRXDR->SetValue(true);
 	m_cbXDRXDR->SetToolTip( _("$MTW") );
 
@@ -2636,7 +2636,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer18->SetFlexibleDirection( wxBOTH );
 	fgSizer18->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	m_cbBoundary = new wxCheckBox( sbSizer91->GetStaticBox(), wxID_ANY, _("GUID"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_cbBoundary = new wxCheckBox( sbSizer91->GetStaticBox(), wxID_ANY, _("GUID"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	fgSizer18->Add( m_cbBoundary, 0, wxALL, 2 );
 
 	m_tBoundary = new wxTextCtrl( sbSizer91->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
@@ -2687,10 +2687,10 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer45->SetFlexibleDirection( wxBOTH );
 	fgSizer45->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	m_cbConfirmBearingChange = new wxCheckBox( sbSizer10->GetStaticBox(), wxID_ANY, _("Confirm Bearing Change\nOn Waypoint Arrival"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_cbConfirmBearingChange = new wxCheckBox( sbSizer10->GetStaticBox(), wxID_ANY, _("Confirm Bearing Change\nOn Waypoint Arrival"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	fgSizer45->Add( m_cbConfirmBearingChange, 0, wxALL, 2 );
 
-	m_cbInterceptRoute = new wxCheckBox( sbSizer10->GetStaticBox(), wxID_ANY, _("Intercept Route\nOn Current Course"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_cbInterceptRoute = new wxCheckBox( sbSizer10->GetStaticBox(), wxID_ANY, _("Intercept Route\nOn Current Course"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	fgSizer45->Add( m_cbInterceptRoute, 0, wxALL, 2 );
 
 	wxString m_cComputationChoices[] = { _("Great Circle (Shortest Distance)"), _("Mercator (Constant Bearings)") };
@@ -3051,90 +3051,90 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer4823->SetFlexibleDirection( wxBOTH );
 	fgSizer4823->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
-	m_cbSHDT = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Heading True"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSHDT = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Heading True"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSHDT->SetValue(true);
 	m_cbSHDT->SetToolTip( _("Tick to select static value ") );
 
 	fgSizer4823->Add( m_cbSHDT, 0, wxALL, 2 );
 
-	m_cbSpare = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Depth Below Txd"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSpare = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Depth Below Txd"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSpare->SetValue(true);
 	fgSizer4823->Add( m_cbSpare, 0, wxALL, 2 );
 
-	m_cbSSTW = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Speed Through Water"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSSTW = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Speed Through Water"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSSTW->SetValue(true);
 	m_cbSSTW->SetToolTip( _("Tick to select  speed through water") );
 
 	fgSizer4823->Add( m_cbSSTW, 0, wxALL, 2 );
 
-	m_cbSpare2 = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Depth Below Wl"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSpare2 = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Depth Below Wl"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSpare2->SetValue(true);
 	fgSizer4823->Add( m_cbSpare2, 0, wxALL, 2 );
 
-	m_cbSCOG = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Course Over Ground"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSCOG = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Course Over Ground"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSCOG->SetValue(true);
 	fgSizer4823->Add( m_cbSCOG, 0, wxALL, 2 );
 
 
 	fgSizer4823->Add( 0, 0, 1, wxEXPAND, 5 );
 
-	m_cbSHDM = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Heading Magnetic"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSHDM = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Heading Magnetic"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSHDM->SetValue(true);
 	fgSizer4823->Add( m_cbSHDM, 0, wxALL, 2 );
 
 
 	fgSizer4823->Add( 0, 0, 1, wxEXPAND, 5 );
 
-	m_cbSHDG = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Magnetic Variation"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSHDG = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Magnetic Variation"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSHDG->SetValue(true);
 	fgSizer4823->Add( m_cbSHDG, 0, wxALL, 2 );
 
 
 	fgSizer4823->Add( 0, 0, 1, wxEXPAND, 5 );
 
-	m_cbSSOG = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Speed Over Ground"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSSOG = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Speed Over Ground"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSSOG->SetValue(true);
 	fgSizer4823->Add( m_cbSSOG, 0, wxALL, 2 );
 
 
 	fgSizer4823->Add( 0, 0, 1, wxEXPAND, 5 );
 
-	m_cbSSet = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Set Bearing"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSSet = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Set current direction"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSSet->SetValue(true);
 	fgSizer4823->Add( m_cbSSet, 0, wxALL, 2 );
 
 
 	fgSizer4823->Add( 0, 0, 1, wxEXPAND, 5 );
 
-	m_cbSDrift = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Drift"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSDrift = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Drift (current speed)"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSDrift->SetValue(true);
 	fgSizer4823->Add( m_cbSDrift, 0, wxALL, 2 );
 
 
 	fgSizer4823->Add( 0, 0, 1, wxEXPAND, 5 );
 
-	m_cbSTWA = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("True Wind Angle"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSTWA = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("True Wind Angle"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSTWA->SetValue(true);
 	fgSizer4823->Add( m_cbSTWA, 0, wxALL, 2 );
 
 
 	fgSizer4823->Add( 0, 0, 1, wxEXPAND, 5 );
 
-	m_cbSTWS = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("True Wind Speed"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSTWS = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("True Wind Speed"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSTWS->SetValue(true);
 	fgSizer4823->Add( m_cbSTWS, 0, wxALL, 2 );
 
 
 	fgSizer4823->Add( 0, 0, 1, wxEXPAND, 5 );
 
-	m_cbSAWA = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Apparent Wind Angle"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSAWA = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Apparent Wind Angle"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSAWA->SetValue(true);
 	fgSizer4823->Add( m_cbSAWA, 0, wxALL, 2 );
 
 
 	fgSizer4823->Add( 0, 0, 1, wxEXPAND, 2 );
 
-	m_cbSAWS = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Apparent Wind Speed"), wxDefaultPosition, wxDefaultSize, wxCHK_3STATE );
+	m_cbSAWS = new wxCheckBox( sbSizer453->GetStaticBox(), wxID_ANY, _("Apparent Wind Speed"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_cbSAWS->SetValue(true);
 	fgSizer4823->Add( m_cbSAWS, 0, wxALL, 2 );
 

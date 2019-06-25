@@ -264,7 +264,6 @@ void Dlg::OnStandby(wxCommandEvent& event){
         Refresh();
 }
 
-
 void Dlg::OnClose(wxCloseEvent& event)
 {
 //	if (m_Timer->IsRunning()) m_Timer->Stop();
@@ -272,6 +271,7 @@ void Dlg::OnClose(wxCloseEvent& event)
 
 
 }
+
 
 void Dlg::Notify(){
 
@@ -409,16 +409,16 @@ void Dlg::Notify(){
     DBT = createDBTSentence(initDepth, initMeters, initFathoms);
     VDR = createVDRSentence(initCurSet, initCurDrift, initmagVar, initDriftMag); // Current Set and Drift
 
-    m_bUseGSV = true;
 
-    if (m_bUseGSV){
+
+//    if (m_bUseGSV){
 
  	PushNMEABuffer(GSV + _T("\n"));
     PushNMEABuffer(GSV2 + _T("\n"));
 	PushNMEABuffer(GSV3 + _T("\n"));
     PushNMEABuffer(GSV4 + _T("\n"));
 
-    }
+//    }
 
 
 	PushNMEABuffer(GLL + _T("\n"));
