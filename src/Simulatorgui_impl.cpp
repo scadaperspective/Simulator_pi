@@ -98,7 +98,7 @@ void Dlg::OnStart(wxCommandEvent& event) {
         m_buttonAuto->SetBackgroundColour(wxColour(35, 35, 35));	
         m_buttonWind->SetBackgroundColour(wxColour(35, 35, 35));        
        
-        Refresh(); // So Button Colour changes perform asexpected on macOS 
+        Refresh(); // So Button Colour changes perform as expected on macOS
        
         m_bUsingWind = false;
 
@@ -328,7 +328,7 @@ void Dlg::Notify(){
 	initmagVar = m_spS_HDG->GetValue(); // Static Value comes from here
 	magVar = (initmagVar);
 
-	myDirMag = myDir + magVar ; // Compass Mag Var into here
+	myDirMag = myDir + magVar ; // Compass Mag Var lookup or routine selection into here
 
 	if (myDirMag < 0){
 		myDirMag += 360;
@@ -360,7 +360,7 @@ void Dlg::Notify(){
     			initDriftMag -= 360;
     }
 
-	m_stSpeed->SetLabel(wxString::Format(_T("%03.2f"), initSpd)); // Messaging Warming Up
+	m_stSpeed->SetLabel(wxString::Format(_T("%03.2f"), initSpd)); // Messaging is Warming Up
 
 
 	SetNextStep(initLat, initLon, myDir, initSpd / 7200, stepLat, stepLon);
@@ -409,20 +409,12 @@ void Dlg::Notify(){
     DBT = createDBTSentence(initDepth, initMeters, initFathoms);
     VDR = createVDRSentence(initCurSet, initCurDrift, initmagVar, initDriftMag); // Current Set and Drift
 
-
-
-//    if (m_bUseGSV){
-
  	PushNMEABuffer(GSV + _T("\n"));
     PushNMEABuffer(GSV2 + _T("\n"));
 	PushNMEABuffer(GSV3 + _T("\n"));
     PushNMEABuffer(GSV4 + _T("\n"));
 
-//    }
-
-
 	PushNMEABuffer(GLL + _T("\n"));
-
 
 	PushNMEABuffer(HDT + _T("\n"));
 	PushNMEABuffer(HDM + _T("\n"));
@@ -720,7 +712,6 @@ wxString Dlg::createGSVSentence2(double satinV){
 
         wxString nGSV;
         nGSV = _T("GPGSV");
-       // nGSV = _T("GPGSV");
 
         wxString nsF = _T("4");
         wxString nsL= _T("3");
