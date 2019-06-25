@@ -1,5 +1,5 @@
 # Simulator_pi
-An Marine Automation Instrumented Vessel Simulator plugin for OpenCPN ov50. 
+A Marine Automation Instrumented Vessel Simulator plugin for OpenCPN ov50. 
 
 Message Sentences Generated
 
