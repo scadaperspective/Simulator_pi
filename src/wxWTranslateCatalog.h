@@ -6,8 +6,8 @@
  * Author:   Jon Gough
  *
  ***************************************************************************
- *   Copyright (C) 2010 by David S. Register   *
- *   $EMAIL$   *
+ *   Copyright (C) 2010 - 2019  by David S. Register                       *
+ *   $EMAIL$   *                                                           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -22,7 +22,7 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,  USA.             *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,  USA.         *
  ***************************************************************************
  */
 #ifndef _ODCATTRANS_H_
@@ -32,7 +32,7 @@
 #ifdef _
 #undef _
 #endif // _
-#define _(s) wxGetTranslation((s), wxS("opencpn-watchdog_pi"))
+#define _(s) wxGetTranslation((s), wxS("opencpn-Simulator_pi"))
 #endif // WXINTL_NO_GETTEXT_MACRO
 
 #endif

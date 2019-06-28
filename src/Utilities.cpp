@@ -1,10 +1,10 @@
 /***************************************************************************
  *
- * Project:  OpenCPN Weather Routing plugin
+ * Project:  From OpenCPN Weather Routing plugin
  * Author:   Sean D'Epagnier
  *
  ***************************************************************************
- *   Copyright (C) 2015 by Sean D'Epagnier                                 *
+ *   Copyright (C) 2015 - 2019 by Sean D'Epagnier                          *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *

@@ -2,10 +2,10 @@
  *
  * Project:  OpenCPN
  * Purpose:  Simulator Plugin
- * Author:   Ron Southworth and many others especially Mike Rossiter  
+ * Author:   Ron Southworth Mike Rossiter, and many others especially
  *
  ***************************************************************************
- *   Copyright (C) 2019 by Ron Southworth  Mike Rossiter & many Others     *
+ *   Copyright (C) 1985-2019 by Ron Southworth  Mike Rossiter & many Others*
  *   $EMAIL$                                                               *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
