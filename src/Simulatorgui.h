@@ -419,7 +419,7 @@ class SimulatorBase : public wxFrame
 		wxSpinCtrl* m_spSNR4;
 		wxCheckBox* m_bUseGGA;
 		wxCheckBox* m_bUseGLL;
-		wxCheckBox* m_bUseGSV;
+		wxCheckBox* m_bUseGSV1;
 		wxCheckBox* m_bUseVTG;
 		wxCheckBox* m_bUseHDT;
 		wxCheckBox* m_bUseHDM;
@@ -548,9 +548,14 @@ class SimulatorPreferences : public wxDialog
 		wxButton* m_sdbSizerOK;
 		wxButton* m_sdbSizerCancel;
 
+		// Virtual event handlers, overide them in your derived class
+		virtual void OnUpdate( wxCommandEvent& event ) { event.Skip(); }
+
+
 	public:
 		wxCheckBox* m_cbTransmitAis;
 		wxCheckBox* m_cbAisToFile;
+		wxCheckBox* m_bUseGSV;
 		wxTextCtrl* m_textCtrlMMSI;
 
 		SimulatorPreferences( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 497,254 ), long style = wxCAPTION|wxRESIZE_BORDER );

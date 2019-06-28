@@ -159,6 +159,7 @@ public:
 	wxTextFile* nmeafile;
 
 	bool m_bUseAis;
+	bool m_bUseGSV;
 	bool m_bUseFile;
 
 	wxString m_tMMSI;

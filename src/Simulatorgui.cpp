@@ -102,7 +102,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer221111->Add( m_staticTextKnots122, 0, wxALL, 1 );
 
-	m_stSpeed = new wxStaticText( sbLongS->GetStaticBox(), wxID_ANY, _("000.0"), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT );
+	m_stSpeed = new wxStaticText( sbLongS->GetStaticBox(), wxID_ANY, _("000.00"), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT );
 	m_stSpeed->Wrap( -1 );
 	m_stSpeed->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
 	m_stSpeed->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
@@ -111,7 +111,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer221111->Add( m_stSpeed, 0, wxALL, 1 );
 
-	m_staticText8111111 = new wxStaticText( sbLongS->GetStaticBox(), wxID_ANY, _(" Kts "), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT );
+	m_staticText8111111 = new wxStaticText( sbLongS->GetStaticBox(), wxID_ANY, _("  Kts "), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT );
 	m_staticText8111111->Wrap( -1 );
 	m_staticText8111111->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
 	m_staticText8111111->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
@@ -1398,11 +1398,11 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer23211->Add( m_bUseGLL, 0, wxALL, 2 );
 
-	m_bUseGSV = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GSV On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_bUseGSV->SetValue(true);
-	m_bUseGSV->SetToolTip( _("$GPGSV Satellites in view") );
+	m_bUseGSV1 = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GSV On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_bUseGSV1->SetValue(true);
+	m_bUseGSV1->SetToolTip( _("$GPGSV Satellites in view") );
 
-	fgSizer23211->Add( m_bUseGSV, 0, wxALL, 2 );
+	fgSizer23211->Add( m_bUseGSV1, 0, wxALL, 2 );
 
 	m_bUseVTG = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPVTG On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_bUseVTG->SetValue(true);
@@ -3755,7 +3755,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_buttonMid->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnMidships ), NULL, this );
 	m_bUseGGA->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseGLL->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_bUseGSV->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseGSV1->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseVTG->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseHDT->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseHDM->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
@@ -3885,7 +3885,7 @@ SimulatorBase::~SimulatorBase()
 	m_buttonMid->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnMidships ), NULL, this );
 	m_bUseGGA->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseGLL->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_bUseGSV->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseGSV1->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseVTG->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseHDT->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseHDM->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
@@ -4023,6 +4023,12 @@ SimulatorPreferences::SimulatorPreferences( wxWindow* parent, wxWindowID id, con
 
 	fgSizer52->Add( m_cbAisToFile, 0, wxALL, 5 );
 
+	m_bUseGSV = new wxCheckBox( sbSizer50->GetStaticBox(), wxID_ANY, _("GSV On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_bUseGSV->SetValue(true);
+	m_bUseGSV->SetToolTip( _("$GPGSV Satellites in view") );
+
+	fgSizer52->Add( m_bUseGSV, 0, wxALL, 5 );
+
 
 	sbSizer50->Add( fgSizer52, 1, wxEXPAND, 5 );
 
@@ -4052,10 +4058,16 @@ SimulatorPreferences::SimulatorPreferences( wxWindow* parent, wxWindowID id, con
 	this->Layout();
 
 	this->Centre( wxBOTH );
+
+	// Connect Events
+	m_bUseGSV->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorPreferences::OnUpdate ), NULL, this );
 }
 
 SimulatorPreferences::~SimulatorPreferences()
 {
+	// Disconnect Events
+	m_bUseGSV->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorPreferences::OnUpdate ), NULL, this );
+
 }
 
 SimulatorPreferences1::SimulatorPreferences1( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )

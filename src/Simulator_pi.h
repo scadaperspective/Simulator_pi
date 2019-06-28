@@ -198,6 +198,7 @@ private:
 	  bool				m_bShowSimulator;
 
 	  bool m_bCopyUseAis;
+	  bool m_bCopyUseGSV;
 	  bool m_bCopyUseFile;
 	  wxString m_tCopyMMSI;
 

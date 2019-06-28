@@ -67,6 +67,7 @@ Dlg::Dlg(wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& 
 		pConf->SetPath(_T("/Settings/Simulator_pi"));
 
 		pConf->Read(_T("simulatorUseAis"), &m_bUseAis, 0);
+		pConf->Read(_T("simulatorUseGSV"), &m_bUseGSV, 0);
 		pConf->Read(_T("simulatorUseFile"), &m_bUseFile, 0);
 		pConf->Read(_T("simulatorMMSI"), &m_tMMSI, "000012345");
 
@@ -409,10 +410,10 @@ void Dlg::Notify(){
     DBT = createDBTSentence(initDepth, initMeters, initFathoms);
     VDR = createVDRSentence(initCurSet, initCurDrift, initmagVar, initDriftMag); // Current Set and Drift
 
- 	PushNMEABuffer(GSV + _T("\n"));
-    PushNMEABuffer(GSV2 + _T("\n"));
-	PushNMEABuffer(GSV3 + _T("\n"));
-    PushNMEABuffer(GSV4 + _T("\n"));
+    if (m_bUseGSV)PushNMEABuffer(GSV + _T("\n"));
+    if (m_bUseGSV)PushNMEABuffer(GSV2 + _T("\n"));
+    if (m_bUseGSV)PushNMEABuffer(GSV3 + _T("\n"));
+    if (m_bUseGSV)PushNMEABuffer(GSV4 + _T("\n"));
 
 	PushNMEABuffer(GLL + _T("\n"));
 

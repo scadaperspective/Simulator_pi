@@ -122,8 +122,10 @@ Simulator_pi::~Simulator_pi(void)
 			 pConf->SetPath(_T("/Settings/Simulator_pi")); // Might have been a bug in settings here 
 
 			 pConf->Write(_T("simulatorUseAis"), m_bCopyUseAis);
+			 pConf->Write(_T("simulatorUseGSV"), m_bCopyUseGSV);
 			 pConf->Write(_T("simulatorUseFile"), m_bCopyUseFile);
 			 pConf->Write(_T("simulatorMMSI"), m_tCopyMMSI);
+			 pConf->Write(_T("simulatorUseGSV"), m_bCopyUseGSV);
 		 }
 	 }
      
@@ -273,17 +275,20 @@ void Simulator_pi::ShowPreferencesDialog(wxWindow* parent)
 	SimulatorPreferences *Pref = new SimulatorPreferences(parent);
 
 	Pref->m_cbTransmitAis->SetValue(m_bCopyUseAis);
+	Pref->m_bUseGSV->SetValue(m_bCopyUseGSV);
 	Pref->m_cbAisToFile->SetValue(m_bCopyUseFile);
 	Pref->m_textCtrlMMSI->SetValue(m_tCopyMMSI);
 
 	if (Pref->ShowModal() == wxID_OK) {
 		
 		bool copyAis = Pref->m_cbTransmitAis->GetValue();
+		bool copyUseGSV = Pref->m_bUseGSV->GetValue();
 		bool copyFile = Pref->m_cbAisToFile->GetValue();
 		wxString copyMMSI = Pref->m_textCtrlMMSI->GetValue();
 
-		if (m_bCopyUseAis != copyAis || m_bCopyUseFile != copyFile || m_tCopyMMSI != copyMMSI) {
+		if (m_bCopyUseAis != copyAis || m_bCopyUseFile != copyFile || m_tCopyMMSI != copyMMSI || m_bCopyUseGSV != copyUseGSV) {
 			m_bCopyUseAis = copyAis;
+			m_bCopyUseGSV = copyUseGSV;
 			m_bCopyUseFile = copyFile;
 			m_tCopyMMSI = copyMMSI;
 		}
@@ -291,6 +296,7 @@ void Simulator_pi::ShowPreferencesDialog(wxWindow* parent)
 		if (m_pDialog)
 		{		
 			m_pDialog->m_bUseAis = m_bCopyUseAis;
+			m_pDialog->m_bUseGSV = m_bCopyUseGSV;
 			m_pDialog->m_bUseFile = m_bCopyUseFile;
 			m_pDialog->m_tMMSI = m_tCopyMMSI;
 		}
@@ -358,6 +364,7 @@ bool Simulator_pi::LoadConfig(void)
             pConf->SetPath ( _T( "/Settings/Simulator_pi" ) );
 			pConf->Read ( _T( "ShowSimulatorIcon" ), &m_bSimulatorShowIcon, 1 );
 			pConf->Read(_T("SimulatorUseAis"), &m_bCopyUseAis, 0);
+			pConf->Read(_T("SimulatorUseGSV"), &m_bCopyUseGSV, 0);
 			pConf->Read(_T("SimulatorUseFile"), &m_bCopyUseFile, 0);
 			m_tCopyMMSI = pConf->Read(_T("SimulatorMMSI"), _T("12345"));
 
@@ -389,6 +396,7 @@ bool Simulator_pi::SaveConfig(void)
             pConf->SetPath ( _T ( "/Settings/Simulator_pi" ) );
 			pConf->Write ( _T ( "ShowSimulatorIcon" ), m_bSimulatorShowIcon );
 			pConf->Write(_T("SimulatorUseAis"), m_bCopyUseAis);
+			pConf->Write(_T("SimulatorUseGSV"), m_bCopyUseGSV);
 			pConf->Write(_T("SimulatorUseFile"), m_bCopyUseFile);
 			pConf->Write(_T("SimulatorMMSI"), m_tCopyMMSI);
 
