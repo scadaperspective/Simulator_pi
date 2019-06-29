@@ -123,9 +123,25 @@ Simulator_pi::~Simulator_pi(void)
 
 			 pConf->Write(_T("simulatorUseAis"), m_bCopyUseAis);
 			 pConf->Write(_T("simulatorUseGSV"), m_bCopyUseGSV);
+			 pConf->Write(_T("simulatorUseGGA"), m_bCopyUseGGA);
+			 pConf->Write(_T("simulatorUseGLL"), m_bCopyUseGLL);
+			 pConf->Write(_T("simulatorUseHDT"), m_bCopyUseHDT);
+			 pConf->Write(_T("simulatorUseHDM"), m_bCopyUseHDM);
+			 pConf->Write(_T("simulatorUseVTG"), m_bCopyUseVTG);
+			 pConf->Write(_T("simulatorUseRMC"), m_bCopyUseRMC);
+			 pConf->Write(_T("simulatorUseVHW"), m_bCopyUseVHW);
+			 pConf->Write(_T("simulatorUseRSA"), m_bCopyUseRSA);
+			 pConf->Write(_T("simulatorUseMWVA"), m_bCopyUseMWVA);
+			 pConf->Write(_T("simulatorUseMWVT"), m_bCopyUseMWVT);
+			 pConf->Write(_T("simulatorUseDBT"), m_bCopyUseDBT);
+			 pConf->Write(_T("simulatorUseVDR"), m_bCopyUseVDR);
+			 pConf->Write(_T("simulatorUseXDRPR"), m_bCopyUseXDRPR);
+			 pConf->Write(_T("simulatorUseXDRAW"), m_bCopyUseXDRAW);
+			 pConf->Write(_T("simulatorUseXDRMB"), m_bCopyUseXDRMB);
+
 			 pConf->Write(_T("simulatorUseFile"), m_bCopyUseFile);
 			 pConf->Write(_T("simulatorMMSI"), m_tCopyMMSI);
-			 pConf->Write(_T("simulatorUseGSV"), m_bCopyUseGSV);
+//			 pConf->Write(_T("simulatorUseGSV"), m_bCopyUseGSV);
 		 }
 	 }
      
@@ -276,19 +292,74 @@ void Simulator_pi::ShowPreferencesDialog(wxWindow* parent)
 
 	Pref->m_cbTransmitAis->SetValue(m_bCopyUseAis);
 	Pref->m_bUseGSV->SetValue(m_bCopyUseGSV);
+	Pref->m_bUseGGA->SetValue(m_bCopyUseGGA);
+	Pref->m_bUseGLL->SetValue(m_bCopyUseGLL);
+	Pref->m_bUseHDT->SetValue(m_bCopyUseHDT);
+	Pref->m_bUseHDM->SetValue(m_bCopyUseHDM);
+	Pref->m_bUseVTG->SetValue(m_bCopyUseVTG);
+	Pref->m_bUseRMC->SetValue(m_bCopyUseRMC);
+	Pref->m_bUseVHW->SetValue(m_bCopyUseVHW);
+	Pref->m_bUseRSA->SetValue(m_bCopyUseRSA);
+	Pref->m_bUseMWVA->SetValue(m_bCopyUseMWVA);
+	Pref->m_bUseMWVT->SetValue(m_bCopyUseMWVT);
+	Pref->m_bUseDBT->SetValue(m_bCopyUseDBT);
+	Pref->m_bUseVDR->SetValue(m_bCopyUseVDR);
+	Pref->m_bUseXDRPR->SetValue(m_bCopyUseXDRPR);
+	Pref->m_bUseXDRAW->SetValue(m_bCopyUseXDRAW);
+	Pref->m_bUseXDRMB->SetValue(m_bCopyUseXDRMB);
+
 	Pref->m_cbAisToFile->SetValue(m_bCopyUseFile);
 	Pref->m_textCtrlMMSI->SetValue(m_tCopyMMSI);
+
 
 	if (Pref->ShowModal() == wxID_OK) {
 		
 		bool copyAis = Pref->m_cbTransmitAis->GetValue();
 		bool copyUseGSV = Pref->m_bUseGSV->GetValue();
+		bool copyUseGGA = Pref->m_bUseGGA->GetValue();
+		bool copyUseGLL = Pref->m_bUseGLL->GetValue();
+		bool copyUseHDT = Pref->m_bUseHDT->GetValue();
+		bool copyUseHDM = Pref->m_bUseHDM->GetValue();
+		bool copyUseVTG = Pref->m_bUseVTG->GetValue();
+		bool copyUseRMC = Pref->m_bUseRMC->GetValue();
+		bool copyUseVHW = Pref->m_bUseVHW->GetValue();
+		bool copyUseRSA = Pref->m_bUseRSA->GetValue();
+		bool copyUseMWVA = Pref->m_bUseMWVA->GetValue();
+		bool copyUseMWVT = Pref->m_bUseMWVT->GetValue();
+		bool copyUseDBT = Pref->m_bUseDBT->GetValue();
+		bool copyUseVDR = Pref->m_bUseVDR->GetValue();
+		bool copyUseXDRPR = Pref->m_bUseXDRPR->GetValue();
+		bool copyUseXDRAW = Pref->m_bUseXDRAW->GetValue();
+		bool copyUseXDRMB = Pref->m_bUseXDRMB->GetValue();
+
 		bool copyFile = Pref->m_cbAisToFile->GetValue();
+
 		wxString copyMMSI = Pref->m_textCtrlMMSI->GetValue();
 
-		if (m_bCopyUseAis != copyAis || m_bCopyUseFile != copyFile || m_tCopyMMSI != copyMMSI || m_bCopyUseGSV != copyUseGSV) {
+		if (m_bCopyUseAis != copyAis || m_bCopyUseFile != copyFile || m_tCopyMMSI != copyMMSI
+				 || m_bCopyUseGSV != copyUseGSV || m_bCopyUseGGA != copyUseGGA || m_bCopyUseGLL != copyUseGLL
+				 || m_bCopyUseHDT != copyUseHDT || m_bCopyUseHDM != copyUseHDM || m_bCopyUseVTG != copyUseVTG || m_bCopyUseRMC != copyUseRMC || m_bCopyUseVHW != copyUseVHW
+				 || m_bCopyUseRSA != copyUseRSA || m_bCopyUseMWVA != copyUseMWVA || m_bCopyUseMWVT != copyUseMWVT || m_bCopyUseDBT != copyUseDBT
+				 || m_bCopyUseVDR != copyUseVDR || m_bCopyUseXDRPR != copyUseXDRPR || m_bCopyUseXDRAW != copyUseXDRAW || m_bCopyUseXDRMB != copyUseXDRMB) {
+
 			m_bCopyUseAis = copyAis;
 			m_bCopyUseGSV = copyUseGSV;
+			m_bCopyUseGGA = copyUseGGA;
+			m_bCopyUseGLL = copyUseGLL;
+			m_bCopyUseHDT = copyUseHDT;
+			m_bCopyUseHDM = copyUseHDM;
+			m_bCopyUseVTG = copyUseVTG;
+			m_bCopyUseRMC = copyUseRMC;
+			m_bCopyUseVHW = copyUseVHW;
+			m_bCopyUseRSA = copyUseRSA;
+			m_bCopyUseMWVA = copyUseMWVA;
+			m_bCopyUseMWVT = copyUseMWVT;
+			m_bCopyUseDBT = copyUseDBT;
+			m_bCopyUseVDR = copyUseVDR;
+			m_bCopyUseXDRPR = copyUseXDRPR;
+			m_bCopyUseXDRAW = copyUseXDRAW;
+			m_bCopyUseXDRMB = copyUseXDRMB;
+
 			m_bCopyUseFile = copyFile;
 			m_tCopyMMSI = copyMMSI;
 		}
@@ -297,6 +368,22 @@ void Simulator_pi::ShowPreferencesDialog(wxWindow* parent)
 		{		
 			m_pDialog->m_bUseAis = m_bCopyUseAis;
 			m_pDialog->m_bUseGSV = m_bCopyUseGSV;
+			m_pDialog->m_bUseGGA = m_bCopyUseGGA;
+			m_pDialog->m_bUseGLL = m_bCopyUseGLL;
+			m_pDialog->m_bUseHDT = m_bCopyUseHDT;
+			m_pDialog->m_bUseHDM = m_bCopyUseHDM;
+			m_pDialog->m_bUseVTG = m_bCopyUseVTG;
+			m_pDialog->m_bUseRMC = m_bCopyUseRMC;
+			m_pDialog->m_bUseVHW = m_bCopyUseVHW;
+			m_pDialog->m_bUseRSA = m_bCopyUseRSA;
+			m_pDialog->m_bUseMWVA = m_bCopyUseMWVA;
+			m_pDialog->m_bUseMWVT = m_bCopyUseMWVT;
+			m_pDialog->m_bUseDBT = m_bCopyUseDBT;
+			m_pDialog->m_bUseVDR = m_bCopyUseVDR;
+			m_pDialog->m_bUseXDRPR = m_bCopyUseXDRPR;
+			m_pDialog->m_bUseXDRAW = m_bCopyUseXDRAW;
+			m_pDialog->m_bUseXDRMB = m_bCopyUseXDRMB;
+
 			m_pDialog->m_bUseFile = m_bCopyUseFile;
 			m_pDialog->m_tMMSI = m_tCopyMMSI;
 		}
@@ -365,6 +452,22 @@ bool Simulator_pi::LoadConfig(void)
 			pConf->Read ( _T( "ShowSimulatorIcon" ), &m_bSimulatorShowIcon, 1 );
 			pConf->Read(_T("SimulatorUseAis"), &m_bCopyUseAis, 0);
 			pConf->Read(_T("SimulatorUseGSV"), &m_bCopyUseGSV, 0);
+			pConf->Read(_T("SimulatorUseGGA"), &m_bCopyUseGGA, 0);
+			pConf->Read(_T("SimulatorUseGLL"), &m_bCopyUseGLL, 0);
+			pConf->Read(_T("SimulatorUseHDT"), &m_bCopyUseHDT, 0);
+			pConf->Read(_T("SimulatorUseHDM"), &m_bCopyUseHDM, 0);
+			pConf->Read(_T("SimulatorUseVTG"), &m_bCopyUseVTG, 0);
+			pConf->Read(_T("SimulatorUseRMC"), &m_bCopyUseRMC, 0);
+			pConf->Read(_T("SimulatorUseVHW"), &m_bCopyUseVHW, 0);
+			pConf->Read(_T("SimulatorUseRSA"), &m_bCopyUseRSA, 0);
+    		pConf->Read(_T("SimulatorUseMWVA"), &m_bCopyUseMWVA, 0);
+    		pConf->Read(_T("SimulatorUseMWVT"), &m_bCopyUseMWVT, 0);
+    		pConf->Read(_T("SimulatorUseDBT"), &m_bCopyUseDBT, 0);
+    		pConf->Read(_T("SimulatorUseVDR"), &m_bCopyUseVDR, 0);
+    		pConf->Read(_T("SimulatorUseXDRPR"), &m_bCopyUseXDRPR, 0);
+    		pConf->Read(_T("SimulatorUseXDRAW"), &m_bCopyUseXDRAW, 0);
+    		pConf->Read(_T("SimulatorUseXDRMB"), &m_bCopyUseXDRMB, 0);
+
 			pConf->Read(_T("SimulatorUseFile"), &m_bCopyUseFile, 0);
 			m_tCopyMMSI = pConf->Read(_T("SimulatorMMSI"), _T("12345"));
 
@@ -397,6 +500,22 @@ bool Simulator_pi::SaveConfig(void)
 			pConf->Write ( _T ( "ShowSimulatorIcon" ), m_bSimulatorShowIcon );
 			pConf->Write(_T("SimulatorUseAis"), m_bCopyUseAis);
 			pConf->Write(_T("SimulatorUseGSV"), m_bCopyUseGSV);
+			pConf->Write(_T("SimulatorUseGGA"), m_bCopyUseGGA);
+			pConf->Write(_T("SimulatorUseGLL"), m_bCopyUseGLL);
+			pConf->Write(_T("SimulatorUseHDT"), m_bCopyUseHDT);
+			pConf->Write(_T("SimulatorUseHDM"), m_bCopyUseHDM);
+			pConf->Write(_T("SimulatorUseVTG"), m_bCopyUseVTG);
+			pConf->Write(_T("SimulatorUseRMC"), m_bCopyUseRMC);
+			pConf->Write(_T("SimulatorUseVHW"), m_bCopyUseVHW);
+			pConf->Write(_T("SimulatorUseRSA"), m_bCopyUseRSA);
+			pConf->Write(_T("SimulatorUseMWVA"), m_bCopyUseMWVA);
+			pConf->Write(_T("SimulatorUseMWVT"), m_bCopyUseMWVT);
+			pConf->Write(_T("SimulatorUseDBT"), m_bCopyUseDBT);
+			pConf->Write(_T("SimulatorUseVDR"), m_bCopyUseVDR);
+			pConf->Write(_T("SimulatorUseXDRPR"), m_bCopyUseXDRPR);
+			pConf->Write(_T("SimulatorUseXDRAW"), m_bCopyUseXDRAW);
+			pConf->Write(_T("SimulatorUseXDRMB"), m_bCopyUseXDRMB);
+
 			pConf->Write(_T("SimulatorUseFile"), m_bCopyUseFile);
 			pConf->Write(_T("SimulatorMMSI"), m_tCopyMMSI);
 

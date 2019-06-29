@@ -26,7 +26,6 @@
 #include <wx/spinctrl.h>
 #include <wx/statline.h>
 #include <wx/slider.h>
-#include <wx/gauge.h>
 #include <wx/panel.h>
 #include <wx/checkbox.h>
 #include <wx/datectrl.h>
@@ -45,6 +44,7 @@
 #include <wx/valtext.h>
 #include <wx/combobox.h>
 #include <wx/listbox.h>
+#include <wx/gauge.h>
 #include <wx/listctrl.h>
 #include <wx/splitter.h>
 #include <wx/grid.h>
@@ -393,8 +393,6 @@ class SimulatorBase : public wxFrame
 		wxPanel* m_panelHelm;
 		wxSlider* m_SliderSpeed;
 		wxSlider* m_SliderSpStarb;
-		wxGauge* m_gaugeRudderPort;
-		wxGauge* m_gaugeRudderStbd;
 		wxPanel* m_panelGPS;
 		wxSpinCtrl* m_spPrn1;
 		wxSpinCtrl* m_spPrn2;
@@ -417,20 +415,6 @@ class SimulatorBase : public wxFrame
 		wxSpinCtrl* m_spAZ4;
 		wxSpinCtrl* m_spELE4;
 		wxSpinCtrl* m_spSNR4;
-		wxCheckBox* m_bUseGGA;
-		wxCheckBox* m_bUseGLL;
-		wxCheckBox* m_bUseGSV;
-		wxCheckBox* m_bUseVTG;
-		wxCheckBox* m_bUseHDT;
-		wxCheckBox* m_bUseHDM;
-		wxCheckBox* m_cbIIMWV;
-		wxCheckBox* m_cbGPRMC;
-		wxCheckBox* m_cbTWS211;
-		wxCheckBox* m_cbAWA211;
-		wxCheckBox* m_cbGPSAntP;
-		wxCheckBox* m_cbGPSAntS;
-		wxCheckBox* m_cbSpare1211;
-		wxCheckBox* m_cbSpare12111;
 		wxPanel* m_panelAIS;
 		wxTextCtrl* m_textCtrlAISMMSI;
 		wxTextCtrl* m_textCtrlAISMO;
@@ -530,7 +514,7 @@ class SimulatorBase : public wxFrame
 		wxStaticText* m_stGPSLongD31;
 		wxTimer m_timer;
 
-		SimulatorBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Vessel Data Message Simulator"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 901,703 ), long style = wxCAPTION|wxCLOSE_BOX|wxDEFAULT_FRAME_STYLE|wxFRAME_FLOAT_ON_PARENT|wxFRAME_NO_TASKBAR|wxRESIZE_BORDER|wxSYSTEM_MENU|wxTAB_TRAVERSAL );
+		SimulatorBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Vessel Data Message Simulator"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 798,647 ), long style = wxCAPTION|wxCLOSE_BOX|wxDEFAULT_FRAME_STYLE|wxFRAME_FLOAT_ON_PARENT|wxFRAME_NO_TASKBAR|wxRESIZE_BORDER|wxSYSTEM_MENU|wxTAB_TRAVERSAL );
 
 		~SimulatorBase();
 
@@ -553,12 +537,67 @@ class SimulatorPreferences : public wxDialog
 
 
 	public:
-		wxCheckBox* m_cbTransmitAis;
-		wxCheckBox* m_cbAisToFile;
-		wxCheckBox* m_bUseGSV;
 		wxTextCtrl* m_textCtrlMMSI;
+		wxCheckBox* m_cbTransmitAis;
+		wxCheckBox* m_bUseGSV;
+		wxCheckBox* m_bUseGLL;
+		wxCheckBox* m_bUseHDT;
+		wxCheckBox* m_bUseHDM;
+		wxCheckBox* m_bUseRMC;
+		wxCheckBox* m_bUseVTG;
+		wxCheckBox* m_bUseVHW;
+		wxCheckBox* m_bUseRSA;
+		wxCheckBox* m_bUseMWVT;
+		wxCheckBox* m_bUseMWVA;
+		wxCheckBox* m_bUseDBT;
+		wxCheckBox* m_bUseVDR;
+		wxCheckBox* m_bUseGGA;
+		wxCheckBox* m_bUseXDRPR;
+		wxCheckBox* m_cbUseMWVA;
+		wxCheckBox* m_cbUseMWVT;
+		wxCheckBox* m_cbUseMWD;
+		wxCheckBox* m_cbSpare1211;
+		wxCheckBox* m_cbSpare12111;
+		wxCheckBox* m_cbXDRBAR;
+		wxCheckBox* m_cbDetect61;
+		wxCheckBox* m_cbXDRATemp;
+		wxCheckBox* m_cbOptimize62;
+		wxCheckBox* m_cbXDRWTemp;
+		wxCheckBox* m_cbOptimize112;
+		wxCheckBox* m_cbXDRVPitch;
+		wxCheckBox* m_cbOptimize113;
+		wxCheckBox* m_cbXDRVRoll;
+		wxCheckBox* m_cbOptimize121;
+		wxCheckBox* m_cbXDRVHeel;
+		wxCheckBox* m_cbOptimize131;
+		wxCheckBox* m_cbXDREngT1;
+		wxCheckBox* m_cbOptimize141;
+		wxCheckBox* m_cbXDREngT2;
+		wxCheckBox* m_cbOptimize181;
+		wxCheckBox* m_cbTWS1;
+		wxCheckBox* m_cbOptimize151;
+		wxCheckBox* m_cbAWA1;
+		wxCheckBox* m_cbOptimize191;
+		wxCheckBox* m_cbAWS1;
+		wxCheckBox* m_cbOptimize161;
+		wxCheckBox* m_cbSpare3;
+		wxCheckBox* m_cbOptimize171;
+		wxCheckBox* m_cbSpare11;
+		wxCheckBox* m_cbOptimize1101;
+		wxCheckBox* m_cbSpare21;
+		wxCheckBox* m_cbOptimize1111;
+		wxCheckBox* m_cbTWS211;
+		wxCheckBox* m_cbAWA211;
+		wxCheckBox* m_cbGPSAntP;
+		wxCheckBox* m_cbGPSAntS;
+		wxCheckBox* m_bUseXDRAW;
+		wxCheckBox* m_bUseXDRMB;
+		wxCheckBox* m_cbXDRVLW;
+		wxCheckBox* m_cbXDRVWR;
+		wxCheckBox* m_cbXDRVWT;
+		wxCheckBox* m_cbAisToFile;
 
-		SimulatorPreferences( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 497,254 ), long style = wxCAPTION|wxRESIZE_BORDER );
+		SimulatorPreferences( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 941,737 ), long style = wxCAPTION|wxRESIZE_BORDER );
 		~SimulatorPreferences();
 
 };

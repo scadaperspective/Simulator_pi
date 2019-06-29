@@ -286,12 +286,12 @@ void Dlg::Notify(){
                 initRudder -= 0; // Debug 
 		myDir += initRudder;
                 double myPortRudder = (myRudder); //  Grab #  for Port Angle 
-		m_gaugeRudderPort->SetValue(myPortRudder);
+//		m_gaugeRudderPort->SetValue(myPortRudder);
 		m_textCtrlRudderPort->SetValue(wxString::Format(_T("%.2f"), myRudder) + _T(" P")); // Port Angle Display 
 // AIS ROT Display		
                 m_textCtrlAISROT->SetValue(wxString::Format(_T("%.2f"), myRudder) + _T(" P")); // AIS ROT/min Display
                 
-                m_gaugeRudderStbd->SetValue(0);
+//                m_gaugeRudderStbd->SetValue(0);
 		m_textCtrlRudderStbd->SetValue(_T(""));
 	}
 	else if (myRudder >= 0){
@@ -299,7 +299,7 @@ void Dlg::Notify(){
 		initRudder -= 0; // Debug  
 		myDir += initRudder;
 	        double myStbdRudder = (myRudder); // Grab # for Stbd Angle	
-                m_gaugeRudderStbd->SetValue(myStbdRudder);
+//                m_gaugeRudderStbd->SetValue(myStbdRudder);  // removed rudder indicator until widget is developed
 		
               if (myRudder == 0){
 // Catch Rudder Midship	      
@@ -314,7 +314,7 @@ void Dlg::Notify(){
 		
                 m_textCtrlAISROT->SetValue(wxString::Format(_T("%.2f"), myRudder) + _T(" S")); // AIS ROT/min Display
                 }
-		m_gaugeRudderPort->SetValue(0);
+//		m_gaugeRudderPort->SetValue(0); // removed rudder indicator until widget is developed
 		m_textCtrlRudderPort->SetValue(_T(""));
 
 	}
@@ -339,7 +339,7 @@ void Dlg::Notify(){
 
 	}
 
-	wxString mystring = wxString::Format(wxT("%03.2f"), myDir); // This Heading has 2 decimal places ?
+	wxString mystring = wxString::Format(wxT("%03.2f"), myDir); // This Heading has been set up with 2 decimal places
 	m_stHeading->SetLabel(mystring);
 
 	if (m_bUsingWind){
@@ -381,11 +381,11 @@ void Dlg::Notify(){
 		MWVA = createMWVASentence(initSpd, myDir, wdir, wspd); // Wind speed and angle Grib Data Setpoint
 		MWVT = createMWVTSentence(initSpd, myDir, wdir, wspd);
 	    VDR = createVDRSentence(initCurSet, initCurDrift, initmagVar, initDriftMag); // Current Set and Drift
-//		MWD = createMWDSentence(wdir, wspd); // Wind direction and speed
+//		MWD = createMWDSentence(wdir, wspd); // Wind direction and speed isn't this an obsolete message type ????
 
-		PushNMEABuffer(MWVA + _T("\n"));
-		PushNMEABuffer(MWVT + _T("\n"));
-//	    PushNMEABuffer(MWD + _T("\n"));
+	    if (m_bUseMWVA)PushNMEABuffer(MWVA + _T("\n"));
+	    if (m_bUseMWVT)PushNMEABuffer(MWVT + _T("\n"));
+//	    if (m_bUseMWD)PushNMEABuffer(MWD + _T("\n"));
 		
 	}
 
@@ -415,21 +415,21 @@ void Dlg::Notify(){
     if (m_bUseGSV)PushNMEABuffer(GSV3 + _T("\n"));
     if (m_bUseGSV)PushNMEABuffer(GSV4 + _T("\n"));
 
-	PushNMEABuffer(GLL + _T("\n"));
+    if (m_bUseGLL)PushNMEABuffer(GLL + _T("\n"));
 
-	PushNMEABuffer(HDT + _T("\n"));
-	PushNMEABuffer(HDM + _T("\n"));
+    if (m_bUseHDT)PushNMEABuffer(HDT + _T("\n"));
+    if (m_bUseHDM)PushNMEABuffer(HDM + _T("\n"));
 
-	PushNMEABuffer(VTG + _T("\n"));
-	PushNMEABuffer(VHW + _T("\n"));
-	PushNMEABuffer(RMC + _T("\n"));
-    PushNMEABuffer(RSA + _T("\n"));
+    if (m_bUseVTG)PushNMEABuffer(VTG + _T("\n"));
+	if (m_bUseVHW)PushNMEABuffer(VHW + _T("\n"));
+	if (m_bUseRMC)PushNMEABuffer(RMC + _T("\n"));
+	if (m_bUseRSA)PushNMEABuffer(RSA + _T("\n"));
 
-    PushNMEABuffer(XDRPR + _T("\n"));
-    PushNMEABuffer(XDRAW + _T("\n"));
-    PushNMEABuffer(XDRMB + _T("\n"));
-    PushNMEABuffer(DBT + _T("\n"));
-    PushNMEABuffer(VDR + _T("\n"));
+	if (m_bUseXDRPR)PushNMEABuffer(XDRPR + _T("\n"));
+	if (m_bUseXDRAW)PushNMEABuffer(XDRAW + _T("\n"));
+	if (m_bUseXDRMB)PushNMEABuffer(XDRMB + _T("\n"));
+    if (m_bUseDBT)PushNMEABuffer(DBT + _T("\n"));
+    if (m_bUseVDR)PushNMEABuffer(VDR + _T("\n"));
 
 	if (m_bUseAis) PushNMEABuffer(myNMEAais + _T("\n"));
 

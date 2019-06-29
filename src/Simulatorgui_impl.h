@@ -160,6 +160,23 @@ public:
 
 	bool m_bUseAis;
 	bool m_bUseGSV;
+    bool m_bUseGGA;
+    bool m_bUseGLL;
+    bool m_bUseMWVA;
+    bool m_bUseMWVT;
+    bool m_bUseHDT;
+    bool m_bUseHDM;
+    bool m_bUseVTG;
+    bool m_bUseVHW;
+    bool m_bUseRMC;
+    bool m_bUseRSA;
+    bool m_bUseXDRPR;
+    bool m_bUseXDRAW;
+    bool m_bUseXDRMB;
+    bool m_bUseDBT;
+    bool m_bUseVDR;
+
+
 	bool m_bUseFile;
 
 	wxString m_tMMSI;

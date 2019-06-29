@@ -199,6 +199,22 @@ private:
 
 	  bool m_bCopyUseAis;
 	  bool m_bCopyUseGSV;
+	  bool m_bCopyUseGLL;
+	  bool m_bCopyUseGGA;
+	  bool m_bCopyUseHDT;
+	  bool m_bCopyUseHDM;
+	  bool m_bCopyUseVTG;
+	  bool m_bCopyUseRMC;
+	  bool m_bCopyUseVHW;
+	  bool m_bCopyUseRSA;
+	  bool m_bCopyUseMWVA;
+	  bool m_bCopyUseMWVT;
+	  bool m_bCopyUseDBT;
+	  bool m_bCopyUseVDR;
+	  bool m_bCopyUseXDRPR;
+	  bool m_bCopyUseXDRAW;
+	  bool m_bCopyUseXDRMB;
+
 	  bool m_bCopyUseFile;
 	  wxString m_tCopyMMSI;
 
