@@ -185,7 +185,7 @@ int Simulator_pi::Init(void)
            );
 }
 
-bool Simulator_pi::DeInit(void)
+/*bool Simulator_pi::DeInit(void)
 {
       //    Record the dialog position
       if (NULL != m_pDialog)
@@ -215,7 +215,7 @@ bool Simulator_pi::DeInit(void)
 
     return true;
 }
-
+*/
 int Simulator_pi::GetAPIVersionMajor()
 {
       return MY_API_VERSION_MAJOR;
