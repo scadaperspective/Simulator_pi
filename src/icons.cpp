@@ -13,6 +13,7 @@ wxBitmap *_img_SimulatorIcon;
 #include "ocpn_plugin.h"
 wxString _svg_simulator;
 wxString _svg_simulator_toggled;
+wxString _svg_simulator_rollover;
 #endif
 
 void initialize_images(void)
@@ -32,6 +33,8 @@ void initialize_images(void)
     _svg_simulator = fn.GetFullPath();
     fn.SetFullName(_T("Simulator_pi_toggled.svg"));
     _svg_simulator_toggled = fn.GetFullPath();
+    fn.SetFullName(_T("Simulator_pi_rollover.svg"));
+    _svg_simulator_rollover = fn.GetFullPath();
 #endif
 
 	return;
