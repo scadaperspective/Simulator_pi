@@ -419,7 +419,7 @@ class SimulatorBase : public wxFrame
 		wxSpinCtrl* m_spSNR4;
 		wxCheckBox* m_bUseGGA;
 		wxCheckBox* m_bUseGLL;
-		wxCheckBox* m_bUseGSV1;
+		wxCheckBox* m_bUseGSV;
 		wxCheckBox* m_bUseVTG;
 		wxCheckBox* m_bUseHDT;
 		wxCheckBox* m_bUseHDM;

@@ -1398,11 +1398,11 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer23211->Add( m_bUseGLL, 0, wxALL, 2 );
 
-	m_bUseGSV1 = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GSV On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_bUseGSV1->SetValue(true);
-	m_bUseGSV1->SetToolTip( _("$GPGSV Satellites in view") );
+	m_bUseGSV = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GSV On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_bUseGSV->SetValue(true);
+	m_bUseGSV->SetToolTip( _("$GPGSV Satellites in view") );
 
-	fgSizer23211->Add( m_bUseGSV1, 0, wxALL, 2 );
+	fgSizer23211->Add( m_bUseGSV, 0, wxALL, 2 );
 
 	m_bUseVTG = new wxCheckBox( sbSizer53311->GetStaticBox(), wxID_ANY, _("GPVTG On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_bUseVTG->SetValue(true);
@@ -3755,7 +3755,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	m_buttonMid->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnMidships ), NULL, this );
 	m_bUseGGA->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseGLL->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_bUseGSV1->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseGSV->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseVTG->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseHDT->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseHDM->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
@@ -3885,7 +3885,7 @@ SimulatorBase::~SimulatorBase()
 	m_buttonMid->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( SimulatorBase::OnMidships ), NULL, this );
 	m_bUseGGA->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseGLL->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
-	m_bUseGSV1->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
+	m_bUseGSV->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseVTG->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseHDT->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
 	m_bUseHDM->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( SimulatorBase::OnUpdate ), NULL, this );
