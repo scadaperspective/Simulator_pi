@@ -8,4 +8,4 @@ $ cat ./.git/info/exclude
 *#
 .#*
 build/
-
+.DS

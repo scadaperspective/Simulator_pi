@@ -170,7 +170,7 @@ int Simulator_pi::Init(void)
       //    This PlugIn needs a toolbar icon, so request its insertion
 	if(m_bSimulatorShowIcon) {
 #ifdef SIMULATOR_USE_SVG
-        m_leftclick_tool_id = InsertPlugInToolSVG(_T( "Simulator" ), _svg_simulator, _svg_simulator, _svg_simulator_toggled,
+        m_leftclick_tool_id = InsertPlugInToolSVG(_T( "Simulator" ), _svg_simulator, _svg_simulator_rollover, _svg_simulator_toggled,
             wxITEM_CHECK, _("Simulator"), _T( "" ), NULL, Simulator_TOOL_POSITION, 0, this);
 #else
 		m_leftclick_tool_id = InsertPlugInTool(_T(""), _img_SimulatorIcon, _img_SimulatorIcon, wxITEM_CHECK,
