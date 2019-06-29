@@ -5,7 +5,7 @@
 * Author:  Ron Southworth April 2019 Mike Rossiter
 *
 ***************************************************************************
-*   Copyright (C) Ron Southworth 1985 - April 2019 Mike Rossiter                                   *
+*   Copyright (C) Ron Southworth 1985 - April 2019 Mike Rossiter          *
 *   $EMAIL$                                                               *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
