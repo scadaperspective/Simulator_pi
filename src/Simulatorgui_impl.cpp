@@ -409,7 +409,7 @@ void Dlg::Notify(){
 	GSV2 = createGSVSentence2(initsatinV);
 	GSV3 = createGSVSentence3(initsatinV);
 	GSV4 = createGSVSentence4(initsatinV);
-
+    GGA = createGGASentence(mdt, initLat, initLon, initsatinV);
 	GLL = createGLLSentence(mdt, initLat, initLon, initSpd, myDir); // Geographic Position La/Lo HDG
 
 	HDT = createHDTSentence(myDir); // Basic True Heading message
@@ -430,17 +430,14 @@ void Dlg::Notify(){
     if (m_bUseGSV)PushNMEABuffer(GSV2 + _T("\n"));
     if (m_bUseGSV)PushNMEABuffer(GSV3 + _T("\n"));
     if (m_bUseGSV)PushNMEABuffer(GSV4 + _T("\n"));
-
+    if (m_bUseGGA)PushNMEABuffer(GGA + _T("\n"));
     if (m_bUseGLL)PushNMEABuffer(GLL + _T("\n"));
-
     if (m_bUseHDT)PushNMEABuffer(HDT + _T("\n"));
     if (m_bUseHDM)PushNMEABuffer(HDM + _T("\n"));
-
     if (m_bUseVTG)PushNMEABuffer(VTG + _T("\n"));
 	if (m_bUseVHW)PushNMEABuffer(VHW + _T("\n"));
 	if (m_bUseRMC)PushNMEABuffer(RMC + _T("\n"));
 	if (m_bUseRSA)PushNMEABuffer(RSA + _T("\n"));
-
 	if (m_bUseXDRPR)PushNMEABuffer(XDRPR + _T("\n"));
 	if (m_bUseXDRAW)PushNMEABuffer(XDRAW + _T("\n"));
 	if (m_bUseXDRMB)PushNMEABuffer(XDRMB + _T("\n"));
@@ -545,8 +542,6 @@ void Dlg::SetInterval(int interval){
 	   *
        */
 }
-
-//wxString Dlg::createGSVSentence(double satNum1, double satNum2, double satNum3, double satNum4, double satInView ){
 
 	wxString Dlg::createGSVSentence(double prn1, double prn2, double prn3, double prn4, double satinV, double az1, double az2, double az3, double az4, double el1, double el2, double el3, double el4, double snr1, double snr2, double snr3, double snr4){
              /**
@@ -654,7 +649,7 @@ void Dlg::SetInterval(int interval){
 //        nSpd = wxString::Format(_T("%3.1f"), windspeed);
 //        nDir = wxString::Format(_T("%3.1f"), winddirection);
 
-        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4;
+        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC + pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4;
         nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
         return nFinal;
 
@@ -819,6 +814,87 @@ wxString Dlg::createGSVSentence2(double satinV){
         nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + nC + nC + nC;
         nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
         return nFinal;
+
+}
+	wxString Dlg::createGGASentence(wxDateTime myDateTime, double myLat, double myLon, double satinV){
+
+    /**
+     * Time to Simulate a $GPGGA sentence.
+     * This is essential fix data, provides 3D location and accuracy of the data.
+     *
+     * $GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47
+     *
+	 *  Where:
+	 *	GPGGA          Global Positioning System Fix Data
+	 *	123519       Fix taken at 12:35:19 UTC
+	 *	4807.038,N   Latitude 48 deg 07.038' N
+	 *	01131.000,E  Longitude 11 deg 31.000' E
+	 *	1               Fix quality: 0 = invalid
+     *                  1 = GPS fix (SPS)
+     *                  2 = DGPS fix
+     *                  3 = PPS fix
+	 *         		    4 = Real Time Kinematic
+	 *        		    5 = Float RTK
+     *                  6 = estimated (dead reckoning) (2.3 feature)
+	 *        		    7 = Manual input mode
+	 *                  8 = Simulation mode
+     *    12           Number of satellites being tracked
+     *    1.5          Horizontal dilution of position
+     *    545.4,M      Altitude, Meters, above mean sea level
+     *     46.9,M      Height of geoid (mean sea level) above WGS84 ellipsoid
+     *
+     *   (empty field) time in seconds since last DGPS update
+     *   (empty field) DGPS station ID number
+     *    *47          the checksum data
+     *
+     *
+     *
+     */
+	wxString nGGA;
+	wxString nTime;
+	wxString nlat;
+	wxString nlon;
+	wxString nNS;
+	wxString nEW;
+
+	wxString nQuality;
+	nQuality = _T("1");
+
+	wxString satInV;
+	satInV = _T("12");
+	satInV = wxString::Format(_T("%1.0f"), satinV);
+
+	wxString nHDOP;
+	wxString nAltMSL;
+    wxString nHgtGMSL;
+    wxString nDGPS;
+
+	wxString nForCheckSum;
+	wxString nFinal;
+
+	wxString nC = _T(",");
+	wxString nA = _T("A");
+
+	nGGA = _T("GPGGA,"); // Global Positioning System Fix Data
+    nDGPS = _T(",");
+
+    nHDOP = _T("1.5");
+//    nHDOP = wxString::Format(_T("%1.1f"), nHDOP);
+    nAltMSL = _T("0.0"); // At Mean Sea Level
+//    nAltMSL = wxString::Format(_T("%1.1f"), nAltMSL);
+    nHgtGMSL = _T("1.5");
+//    nHgtGMSL = wxString::Format(_T("%1.1f"), nHgtHGMSL);
+
+	wxString ndlr = _T("$");
+	wxString nast = _T("*");
+
+	nTime = DateTimeToTimeString(myDateTime);
+	nNS = LatitudeToString(myLat);
+	nEW = LongitudeToString(myLon);
+
+	nForCheckSum = nGGA + nTime + nC + nNS + nEW + nQuality + nC + satInV + nC + nHDOP + nC + nAltMSL + nC + nHgtGMSL + nC + nDGPS;
+	nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+	return nFinal;
 
 }
 
@@ -1493,10 +1569,6 @@ wxString Dlg::createMWDSentence(double wind direction, double wind speed){
 					nMagFlag = _T(",");
 
 		}
-
-//   nMagFlag = wxString::Format(_T(",,"));
-//   nMagFlag = wxString::Format(_T(",E,"));
-//   nMagFlag = wxString::Format(_T(",W,"));
 
 	nForCheckSum = nRMC + nTime + nC + nA + nC + nNS + nEW + nSpd + nC + nDir + nC + nDate + nC + nMagVar + nC + nMagFlag + nA ;
 	nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);

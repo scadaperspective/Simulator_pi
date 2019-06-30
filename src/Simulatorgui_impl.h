@@ -87,11 +87,11 @@ public:
 	Dlg(wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Simulator"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = SIMULATOR_DLG_STYLE);
 	Simulator_pi *plugin;
 
-//	wxString createGSVSentence(double satNum1, double satNum2, double satNum3, double satNum4, double satNumInView);
 	wxString createGSVSentence(double prn1, double prn2, double prn3, double prn4, double satinV, double az1, double az2, double az3, double az4, double el1, double el2, double el3, double el4, double snr1, double snr2, double snr3, double snr4);
 	wxString createGSVSentence2(double satinV);
 	wxString createGSVSentence3(double satinV);
 	wxString createGSVSentence4(double satinV);
+	wxString createGGASentence(wxDateTime myDateTime, double myLat, double myLon, double satinV);
 	wxString createVHWSentence(double stw, double hdg, double myDirMag, double vKmhr );
 	wxString createMWVTSentence(double spd, double hdg, double winddirection, double windspeed);
 	wxString createMWVASentence(double spd, double hdg, double winddirection, double windspeed);
@@ -188,7 +188,7 @@ protected:
 
 private:
 	void Notify();
-	wxString GSV, GSV2, GSV3, GSV4, VHW, MWVT, MWVA, GLL, VTG, HDT, HDM, RMC, RSA, VDR, XDRPR, XDRAW, XDRMB, DBT; // removed MWD atm
+	wxString GSV, GSV2, GSV3, GSV4, GGA, VHW, MWVT, MWVA, GLL, VTG, HDT, HDM, RMC, RSA, VDR, XDRPR, XDRAW, XDRMB, DBT; // removed MWD atm
 	double initDir, initSpd, initSpdKmhr, initDriftMag, initRudder, initair, initwater, initdepth, initbarometer, myDir, myDirMag, magVar, vKmhr , myRudder, curset, curdrift, driftMag, pitch, heel;
 
 	wxDateTime dt;
