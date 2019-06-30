@@ -1592,7 +1592,7 @@ wxString Dlg::createMWDSentence(double wind direction, double wind speed){
 	wxString nForCheckSum;
 	wxString nFinal;
 
-	wxString nVTG = _T("IIVTG,"); // IIVTG Track Made Good and Ground Speed
+	wxString nVTG = _T("GPVTG,"); // GPVTG Track Made Good and Ground Speed
 
 	wxString nC = _T(",");
 	wxString nA = _T("A,");
