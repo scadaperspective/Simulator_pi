@@ -345,7 +345,7 @@ void Dlg::Notify(){
 	initmagVar = m_spS_HDG->GetValue(); // Static Value comes from here
 	magVar = (initmagVar);
 
-	myDirMag = myDir + magVar ; // Compass Mag Var lookup or routine selection into here
+	myDirMag = myDir - magVar ; // Compass Mag Var lookup or routine selection into here
 
 	if (myDirMag < 0){
 		myDirMag += 360;
@@ -1105,7 +1105,6 @@ driftMag = curset + magVar; // Calculate Current Mag direction applying mag vari
 		nForCheckSum = nHDM + nDirMag + nC + nM;
 
 		nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
-		//wxMessageBox(nFinal);
 		return nFinal;
 
 }
@@ -1560,10 +1559,10 @@ wxString Dlg::createMWDSentence(double wind direction, double wind speed){
 	nDate = DateTimeToDateString(myDateTime);
 
 	if (magVar < 0){
-			nMagFlag = _T("E,");
+			nMagFlag = _T("W,");
 		}
 		if (magVar > 0){
-			nMagFlag = _T("W,");
+			nMagFlag = _T("E,");
 
 		}
 		if (magVar == 0){

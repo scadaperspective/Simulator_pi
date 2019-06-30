@@ -2737,7 +2737,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer489->Add( m_staticTHDM, 0, wxALL, 2 );
 
 	m_spS_HDM = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 359.9, 0.000000, 0.1 );
-	m_spS_HDM->SetDigits( 1 );
+	m_spS_HDM->SetDigits( 3 );
 	m_spS_HDM->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_spS_HDM->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spS_HDM->SetToolTip( _("To adjust HDM 0-360ºMag") );
@@ -2757,8 +2757,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer489->Add( m_staticTHDG, 0, wxALL, 2 );
 
-	m_spS_HDG = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, -25, 25, 10.600000, 0.1 );
-	m_spS_HDG->SetDigits( 3 );
+	m_spS_HDG = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, -25, 25, 10.749583, 0.1 );
+	m_spS_HDG->SetDigits( 6 );
 	m_spS_HDG->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_spS_HDG->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
 	m_spS_HDG->SetToolTip( _("To adjust HDG ± E/W Mag Varº") );
@@ -3053,7 +3053,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer48111->Add( m_spS_AirT1, 0, wxALL, 2 );
 
-	m_staticText13431121 = new wxStaticText( sbSizer454->GetStaticBox(), wxID_ANY, _("Temp ºC"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText13431121 = new wxStaticText( sbSizer454->GetStaticBox(), wxID_ANY, _("Temp C"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText13431121->Wrap( -1 );
 	fgSizer48111->Add( m_staticText13431121, 0, wxALL, 2 );
 
@@ -3069,7 +3069,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer48111->Add( m_spS_WaterT1, 0, wxALL, 2 );
 
-	m_staticText134311211 = new wxStaticText( sbSizer454->GetStaticBox(), wxID_ANY, _("Temp ºC"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText134311211 = new wxStaticText( sbSizer454->GetStaticBox(), wxID_ANY, _("Temp C"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText134311211->Wrap( -1 );
 	fgSizer48111->Add( m_staticText134311211, 0, wxALL, 2 );
 
@@ -3133,7 +3133,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer48111->Add( m_spPitch, 0, wxALL, 2 );
 
-	m_staticText43421 = new wxStaticText( sbSizer454->GetStaticBox(), wxID_ANY, _("º"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText43421 = new wxStaticText( sbSizer454->GetStaticBox(), wxID_ANY, _("Deg"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText43421->Wrap( -1 );
 	fgSizer48111->Add( m_staticText43421, 0, wxALL, 2 );
 
@@ -3149,7 +3149,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer48111->Add( m_spHeel, 0, wxALL, 2 );
 
-	m_staticText434212 = new wxStaticText( sbSizer454->GetStaticBox(), wxID_ANY, _("º"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText434212 = new wxStaticText( sbSizer454->GetStaticBox(), wxID_ANY, _("Deg"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText434212->Wrap( -1 );
 	fgSizer48111->Add( m_staticText434212, 0, wxALL, 2 );
 
