@@ -874,6 +874,7 @@ wxString Dlg::createGSVSentence2(double satinV){
 
 	wxString nC = _T(",");
 	wxString nA = _T("A");
+	wxString nU = _T("M");
 
 	nGGA = _T("GPGGA,"); // Global Positioning System Fix Data
     nDGPS = _T(",");
@@ -892,7 +893,7 @@ wxString Dlg::createGSVSentence2(double satinV){
 	nNS = LatitudeToString(myLat);
 	nEW = LongitudeToString(myLon);
 
-	nForCheckSum = nGGA + nTime + nC + nNS + nEW + nQuality + nC + satInV + nC + nHDOP + nC + nAltMSL + nC + nHgtGMSL + nC + nDGPS;
+	nForCheckSum = nGGA + nTime + nC + nNS + nEW + nQuality + nC + satInV + nC + nHDOP + nC + nAltMSL + nC + nU + nC + nHgtGMSL + nC +nU + nC + nDGPS;
 	nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
 	return nFinal;
 
