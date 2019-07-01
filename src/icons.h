@@ -14,6 +14,7 @@ extern wxBitmap *_img_SimulatorIcon;
 #ifdef SIMULATOR_USE_SVG
 extern wxString _svg_simulator;
 extern wxString _svg_simulator_toggled;
+extern wxString _svg_simulator_rollover;
 #endif
 
 #endif /* ICONS_H */
