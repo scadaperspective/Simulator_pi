@@ -1013,7 +1013,7 @@ wxString Dlg::createGSVSentence2(double satinV){
  * * delimiter Checksum cr lf
  *
  */
-driftMag = curset + magVar; // Calculate Current Mag direction applying mag variation
+driftMag = curset - magVar; // Calculate Current Mag direction applying mag variation
 	    	wxString nVDR;
 	    	wxString nSet;
 	    	wxString nRelTrue;
@@ -1319,7 +1319,7 @@ driftMag = curset + magVar; // Calculate Current Mag direction applying mag vari
 		}
 	}
 	double twaMag;
-	twaMag = twa + magVar;
+	twaMag = twa - magVar;
 	if (twaMag > 360){
 			twaMag -= 360;
 			if (twaMag > 360){
