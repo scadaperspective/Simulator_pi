@@ -21,3 +21,6 @@ ocpninclude/WX/.DS_Store
 ocpnsrc/.DS_Store
 po/.DS_Store
 src/.DS_Store
+src/nmea0183/.DS_Store
+src/wx/.DS_Store
+Src/wxJSON/.DS_Store
