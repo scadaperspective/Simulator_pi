@@ -7,7 +7,6 @@ $ cat ./.git/info/exclude
 *~
 *#
 .#*
-build/
 .DS_Store
 /bin/.DS_Store
 build/
