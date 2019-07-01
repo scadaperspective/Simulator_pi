@@ -1159,7 +1159,7 @@ driftMag = curset - magVar; // Calculate Current Mag direction applying mag vari
 		*
 		* and finish with a checksum of course
 		*
-		* Sensors are Temperature measurement instruments -38º to +55º
+		* Sensors are Temperature measurement instruments -38.00º to +55.00º
 		*
 		*
 		*/
@@ -1178,8 +1178,8 @@ driftMag = curset - magVar; // Calculate Current Mag direction applying mag vari
 		wxString ndlr = _T("$");
 		wxString nast = _T("*");
 
-		nAir = wxString::Format(_T("%3.1f"), air);
-		nWater = wxString::Format(_T("%3.1f"), water);
+		nAir = wxString::Format(_T("%3.2f"), air);
+		nWater = wxString::Format(_T("%3.2f"), water);
 
 		nForCheckSum = nRSA + nA + nWater + nType + nIDWater + nC + nA + nAir + nType +nIDAir;
 		nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);

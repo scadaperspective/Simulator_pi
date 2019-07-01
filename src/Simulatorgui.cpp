@@ -3047,8 +3047,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer48111->Add( m_staticTDBT, 0, wxALL, 2 );
 
-	m_spS_AirT1 = new wxSpinCtrlDouble( sbSizer454->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -38, 55, 24.4, 0.1 );
-	m_spS_AirT1->SetDigits( 1 );
+	m_spS_AirT1 = new wxSpinCtrlDouble( sbSizer454->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -38, 55, 24.4, 0.01 );
+	m_spS_AirT1->SetDigits( 2 );
 	m_spS_AirT1->SetToolTip( _("Set Air Temp") );
 
 	fgSizer48111->Add( m_spS_AirT1, 0, wxALL, 2 );
@@ -3063,8 +3063,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer48111->Add( m_staticTDBT2, 0, wxALL, 2 );
 
-	m_spS_WaterT1 = new wxSpinCtrlDouble( sbSizer454->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -38, 55, 18.1, 0.1 );
-	m_spS_WaterT1->SetDigits( 1 );
+	m_spS_WaterT1 = new wxSpinCtrlDouble( sbSizer454->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -38, 55, 18.1, 0.01 );
+	m_spS_WaterT1->SetDigits( 2 );
 	m_spS_WaterT1->SetToolTip( _("Set Water Temp") );
 
 	fgSizer48111->Add( m_spS_WaterT1, 0, wxALL, 2 );
@@ -3111,8 +3111,8 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer48111->Add( m_staticTDPT1, 0, wxALL, 2 );
 
-	m_spBarometer = new wxSpinCtrlDouble( sbSizer454->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 660, 1200, 1024, 0.1 );
-	m_spBarometer->SetDigits( 1 );
+	m_spBarometer = new wxSpinCtrlDouble( sbSizer454->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 660, 1200, 1024, 0.01 );
+	m_spBarometer->SetDigits( 2 );
 	m_spBarometer->SetToolTip( _("Set Water Depth, usually it is really the depth Below Transducer + Fixed Distance from Transduce to waterline") );
 
 	fgSizer48111->Add( m_spBarometer, 0, wxALL, 2 );
