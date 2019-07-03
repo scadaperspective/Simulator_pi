@@ -111,7 +111,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer221111->Add( m_stSpeed, 0, wxALL, 1 );
 
-	m_staticText8111111 = new wxStaticText( sbLongS->GetStaticBox(), wxID_ANY, _(" Kts "), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT );
+	m_staticText8111111 = new wxStaticText( sbLongS->GetStaticBox(), wxID_ANY, _("  Kts "), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT );
 	m_staticText8111111->Wrap( -1 );
 	m_staticText8111111->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
 	m_staticText8111111->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
@@ -1050,7 +1050,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer108131->Add( m_spPrn1, 0, wxALL, 2 );
 
-	m_staticText1341511 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText1341511 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("PRN 1"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1341511->Wrap( -1 );
 	fgSizer108131->Add( m_staticText1341511, 0, wxALL, 5 );
 
@@ -1068,7 +1068,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer108131->Add( m_spPrn2, 0, wxALL, 2 );
 
-	m_staticText1341512 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText1341512 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("PRN 2"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1341512->Wrap( -1 );
 	fgSizer108131->Add( m_staticText1341512, 0, wxALL, 5 );
 
@@ -1083,7 +1083,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer108131->Add( m_spPrn3, 0, wxALL, 2 );
 
-	m_staticText134151 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText134151 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("PRN 3"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText134151->Wrap( -1 );
 	fgSizer108131->Add( m_staticText134151, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 
@@ -1098,7 +1098,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer108131->Add( m_spPrn4, 0, wxALL, 2 );
 
-	m_staticText13451 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText13451 = new wxStaticText( sbSizer63->GetStaticBox(), wxID_ANY, _("PRN 4"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText13451->Wrap( -1 );
 	fgSizer108131->Add( m_staticText13451, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 

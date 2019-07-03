@@ -518,7 +518,7 @@ class SimulatorBase : public wxFrame
 		wxStaticText* m_stGPSLongD31;
 		wxTimer m_timer;
 
-		SimulatorBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Vessel Data Message Simulator"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 772,638 ), long style = wxCAPTION|wxCLOSE_BOX|wxDEFAULT_FRAME_STYLE|wxFRAME_NO_TASKBAR|wxRESIZE_BORDER|wxSTAY_ON_TOP|wxTAB_TRAVERSAL );
+		SimulatorBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Vessel Data Message Simulator"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 772,638 ), long style = wxCAPTION|wxRESIZE_BORDER|wxSTAY_ON_TOP|wxTAB_TRAVERSAL );
 
 		~SimulatorBase();
 
@@ -607,7 +607,7 @@ class SimulatorPreferences : public wxDialog
 		wxCheckBox* m_bUseXDRMB;
 		wxCheckBox* m_bUseDBT;
 
-		SimulatorPreferences( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 941,676 ), long style = wxCAPTION|wxRESIZE_BORDER|wxSTAY_ON_TOP|wxSYSTEM_MENU );
+		SimulatorPreferences( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Preferences"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 941,676 ), long style = wxCAPTION|wxSTAY_ON_TOP|wxSYSTEM_MENU );
 		~SimulatorPreferences();
 
 };
