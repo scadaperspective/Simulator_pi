@@ -2928,7 +2928,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	sbSizer453 = new wxStaticBoxSizer( new wxStaticBox( m_panelTest, wxID_ANY, _("Menu Item Not Impl yet Selector") ), wxVERTICAL );
 
 	wxFlexGridSizer* fgSizer4811;
-	fgSizer4811 = new wxFlexGridSizer( 0, 3, 0, 0 );
+	fgSizer4811 = new wxFlexGridSizer( 12, 1, 0, 0 );
 	fgSizer4811->SetFlexibleDirection( wxBOTH );
 	fgSizer4811->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
@@ -2936,7 +2936,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	sbSizer453->Add( fgSizer4811, 1, wxEXPAND, 2 );
 
 	wxFlexGridSizer* fgSizer4823;
-	fgSizer4823 = new wxFlexGridSizer( 0, 2, 0, 0 );
+	fgSizer4823 = new wxFlexGridSizer( 0, 1, 0, 0 );
 	fgSizer4823->SetFlexibleDirection( wxBOTH );
 	fgSizer4823->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
@@ -3063,7 +3063,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer48111->Add( m_staticTDBT2, 0, wxALL, 2 );
 
-	m_spS_WaterT1 = new wxSpinCtrlDouble( sbSizer454->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -38, 55, 18.1, 0.01 );
+	m_spS_WaterT1 = new wxSpinCtrlDouble( sbSizer454->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT|wxSP_ARROW_KEYS, -38, 55, 18.1, 0.01 );
 	m_spS_WaterT1->SetDigits( 2 );
 	m_spS_WaterT1->SetToolTip( _("Set Water Temp") );
 
@@ -3095,13 +3095,13 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer48111->Add( m_staticTDPT, 0, wxALL, 2 );
 
-	m_spDPT = new wxSpinCtrlDouble( sbSizer454->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 90, 3, 0.1 );
+	m_spDPT = new wxSpinCtrlDouble( sbSizer454->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT|wxSP_ARROW_KEYS|wxSP_WRAP, 0, 90, 0.3, 0.1 );
 	m_spDPT->SetDigits( 1 );
 	m_spDPT->SetToolTip( _("Set Water Depth, usually it is really the depth Below Transducer + Fixed Distance from Transduce to waterline") );
 
 	fgSizer48111->Add( m_spDPT, 0, wxALL, 2 );
 
-	m_staticText431111 = new wxStaticText( sbSizer454->GetStaticBox(), wxID_ANY, _("m (SI)"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticText431111 = new wxStaticText( sbSizer454->GetStaticBox(), wxID_ANY, _("ft"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText431111->Wrap( -1 );
 	fgSizer48111->Add( m_staticText431111, 0, wxALL, 2 );
 
@@ -3143,7 +3143,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer48111->Add( m_staticTDPT111, 0, wxALL, 2 );
 
-	m_spHeel = new wxSpinCtrlDouble( sbSizer454->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, -180, 180, 0, 0.1 );
+	m_spHeel = new wxSpinCtrlDouble( sbSizer454->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT|wxSP_ARROW_KEYS|wxSP_WRAP, -180, 180, 0, 0.1 );
 	m_spHeel->SetDigits( 1 );
 	m_spHeel->SetToolTip( _("Set Pitch + is nose up ") );
 
@@ -3170,6 +3170,17 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 
 	fgSizer491->Add( sbSizer454, 1, wxEXPAND, 2 );
+
+	m_sdbSizer511 = new wxStdDialogButtonSizer();
+	m_sdbSizer511OK = new wxButton( m_panelTest, wxID_OK );
+	m_sdbSizer511->AddButton( m_sdbSizer511OK );
+	m_sdbSizer511Apply = new wxButton( m_panelTest, wxID_APPLY );
+	m_sdbSizer511->AddButton( m_sdbSizer511Apply );
+	m_sdbSizer511Cancel = new wxButton( m_panelTest, wxID_CANCEL );
+	m_sdbSizer511->AddButton( m_sdbSizer511Cancel );
+	m_sdbSizer511->Realize();
+
+	fgSizer491->Add( m_sdbSizer511, 1, wxEXPAND, 5 );
 
 
 	m_panelTest->SetSizer( fgSizer491 );
@@ -4213,7 +4224,7 @@ SimulatorPreferences::SimulatorPreferences( wxWindow* parent, wxWindowID id, con
 
 	m_bUseXDRPR = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("IIXDR Pitch + Heel On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_bUseXDRPR->SetValue(true);
-	m_bUseXDRPR->SetToolTip( _("Pitch and Heel Message") );
+	m_bUseXDRPR->SetToolTip( _("Pitch and Heel (Roll) Message") );
 
 	fgSizer6611->Add( m_bUseXDRPR, 0, wxALL, 2 );
 
@@ -4237,13 +4248,13 @@ SimulatorPreferences::SimulatorPreferences( wxWindow* parent, wxWindowID id, con
 
 	m_bUseXDRMB = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("IIXDR Barometer On/Off"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_bUseXDRMB->SetValue(true);
-	m_bUseXDRMB->SetToolTip( _("$IIXDR Barometer") );
+	m_bUseXDRMB->SetToolTip( _("$IIXDR Barometer message") );
 
 	fgSizer6611->Add( m_bUseXDRMB, 0, wxALL, 2 );
 
 	m_bUseDBT = new wxCheckBox( sbSizer6111->GetStaticBox(), wxID_ANY, _("DBT  (Sounding) On/Off"), wxDefaultPosition, wxDefaultSize, wxCHK_2STATE );
 	m_bUseDBT->SetValue(true);
-	m_bUseDBT->SetToolTip( _("Depth Sounding below transducer value") );
+	m_bUseDBT->SetToolTip( _("Depth Below Transducer") );
 
 	fgSizer6611->Add( m_bUseDBT, 0, wxALL, 2 );
 
@@ -4280,6 +4291,8 @@ SimulatorPreferences::SimulatorPreferences( wxWindow* parent, wxWindowID id, con
 	m_sdbSizer = new wxStdDialogButtonSizer();
 	m_sdbSizerOK = new wxButton( sbSizer50->GetStaticBox(), wxID_OK );
 	m_sdbSizer->AddButton( m_sdbSizerOK );
+	m_sdbSizerApply = new wxButton( sbSizer50->GetStaticBox(), wxID_APPLY );
+	m_sdbSizer->AddButton( m_sdbSizerApply );
 	m_sdbSizerCancel = new wxButton( sbSizer50->GetStaticBox(), wxID_CANCEL );
 	m_sdbSizer->AddButton( m_sdbSizerCancel );
 	m_sdbSizer->Realize();

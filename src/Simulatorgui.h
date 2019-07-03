@@ -477,6 +477,10 @@ class SimulatorBase : public wxFrame
 		wxPanel* m_panelTest;
 		wxCheckBox* m_cbSSTW;
 		wxCheckBox* m_cbSCOG;
+		wxStdDialogButtonSizer* m_sdbSizer511;
+		wxButton* m_sdbSizer511OK;
+		wxButton* m_sdbSizer511Apply;
+		wxButton* m_sdbSizer511Cancel;
 		wxPanel* m_panelConfigure;
 		wxCheckBox* m_cbHDT511;
 		wxCheckBox* m_cbCOG511;
@@ -514,7 +518,7 @@ class SimulatorBase : public wxFrame
 		wxStaticText* m_stGPSLongD31;
 		wxTimer m_timer;
 
-		SimulatorBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Vessel Data Message Simulator"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 884,647 ), long style = wxCAPTION|wxCLOSE_BOX|wxDEFAULT_FRAME_STYLE|wxFRAME_NO_TASKBAR|wxRESIZE_BORDER|wxSTAY_ON_TOP|wxSYSTEM_MENU|wxTAB_TRAVERSAL );
+		SimulatorBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Vessel Data Message Simulator"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 772,638 ), long style = wxCAPTION|wxCLOSE_BOX|wxDEFAULT_FRAME_STYLE|wxFRAME_NO_TASKBAR|wxRESIZE_BORDER|wxSTAY_ON_TOP|wxTAB_TRAVERSAL );
 
 		~SimulatorBase();
 
@@ -530,6 +534,7 @@ class SimulatorPreferences : public wxDialog
 	protected:
 		wxStdDialogButtonSizer* m_sdbSizer;
 		wxButton* m_sdbSizerOK;
+		wxButton* m_sdbSizerApply;
 		wxButton* m_sdbSizerCancel;
 
 		// Virtual event handlers, overide them in your derived class
