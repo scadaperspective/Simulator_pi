@@ -279,8 +279,6 @@ class SimulatorBase : public wxFrame
 		wxSpinCtrlDouble* m_spS_AWS;
 		wxStaticText* m_staticText4133111;
 		wxCheckBox* m_cbSHDT;
-		wxCheckBox* m_cbSpare;
-		wxCheckBox* m_cbSpare2;
 		wxCheckBox* m_cbSHDM;
 		wxCheckBox* m_cbSHDG;
 		wxCheckBox* m_cbSSOG;
@@ -290,6 +288,8 @@ class SimulatorBase : public wxFrame
 		wxCheckBox* m_cbSTWS;
 		wxCheckBox* m_cbSAWA;
 		wxCheckBox* m_cbSAWS;
+		wxCheckBox* m_cbSPITCH1;
+		wxCheckBox* m_cbSHeel1;
 		wxStaticText* m_staticTDBT;
 		wxSpinCtrlDouble* m_spS_AirT1;
 		wxStaticText* m_staticText13431121;
@@ -443,15 +443,15 @@ class SimulatorBase : public wxFrame
 		wxCheckBox* m_cbOptimize112;
 		wxCheckBox* m_cbXDRVPitch;
 		wxCheckBox* m_cbOptimize113;
-		wxCheckBox* m_cbXDRVRoll;
-		wxCheckBox* m_cbOptimize121;
 		wxCheckBox* m_cbXDRVHeel;
-		wxCheckBox* m_cbOptimize131;
+		wxCheckBox* m_cbOptimize121;
 		wxCheckBox* m_cbXDREngT1;
-		wxCheckBox* m_cbOptimize141;
+		wxCheckBox* m_cbOptimize131;
 		wxCheckBox* m_cbXDREngT2;
-		wxCheckBox* m_cbOptimize181;
+		wxCheckBox* m_cbOptimize141;
 		wxCheckBox* m_cbTWS1;
+		wxCheckBox* m_cbOptimize181;
+		wxCheckBox* m_cbXDRVRoll;
 		wxCheckBox* m_cbOptimize151;
 		wxCheckBox* m_cbAWA1;
 		wxCheckBox* m_cbOptimize191;
@@ -472,7 +472,7 @@ class SimulatorBase : public wxFrame
 		wxCheckBox* m_cbXDRVTG;
 		wxCheckBox* m_cbXDRVWR;
 		wxCheckBox* m_cbXDRVWT;
-		wxCheckBox* m_cbXDRXDR;
+		wxCheckBox* m_bXDRONOFF;
 		wxPanel* m_panelAP;
 		wxPanel* m_panelTest;
 		wxCheckBox* m_cbSSTW;
