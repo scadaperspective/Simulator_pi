@@ -111,7 +111,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer221111->Add( m_stSpeed, 0, wxALL, 1 );
 
-	m_staticText8111111 = new wxStaticText( sbLongS->GetStaticBox(), wxID_ANY, _("  Kts "), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT );
+	m_staticText8111111 = new wxStaticText( sbLongS->GetStaticBox(), wxID_ANY, _("Kts "), wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT );
 	m_staticText8111111->Wrap( -1 );
 	m_staticText8111111->SetFont( wxFont( 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Arial") ) );
 	m_staticText8111111->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
@@ -1232,7 +1232,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 	fgSizer2881->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
 
 	wxStaticBoxSizer* sbSizer632;
-	sbSizer632 = new wxStaticBoxSizer( new wxStaticBox( m_panelGPS, wxID_ANY, _("GPS Azmuth, Elevation and SNR") ), wxVERTICAL );
+	sbSizer632 = new wxStaticBoxSizer( new wxStaticBox( m_panelGPS, wxID_ANY, _("\"Minimum Accurate Fix 4 GPS\" Azmuth, Elevation and SNR") ), wxVERTICAL );
 
 	wxFlexGridSizer* fgSizer1081312;
 	fgSizer1081312 = new wxFlexGridSizer( 0, 4, 0, 0 );
@@ -2694,7 +2694,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer489->Add( m_staticTextSTW, 0, wxALL, 2 );
 
-	m_spS_STW = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -50, 250, 0.000000, 0.1 );
+	m_spS_STW = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, -50, 250, 0.000000, 0.1 );
 	m_spS_STW->SetDigits( 1 );
 	m_spS_STW->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_spS_STW->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
@@ -2778,7 +2778,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer489->Add( m_staticTextSOG, 0, wxALL, 2 );
 
-	m_spS_SOG = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -50, 250, 0.000000, 0.1 );
+	m_spS_SOG = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, -50, 250, 0.000000, 0.1 );
 	m_spS_SOG->SetDigits( 1 );
 	m_spS_SOG->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_spS_SOG->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
@@ -2820,7 +2820,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer489->Add( m_staticTextDrift, 0, wxALL, 2 );
 
-	m_spCurDrift = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 38, 0.500000, 0.1 );
+	m_spCurDrift = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 38, 0.500000, 0.1 );
 	m_spCurDrift->SetDigits( 2 );
 	m_spCurDrift->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_spCurDrift->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
@@ -2862,7 +2862,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer489->Add( m_staticText4133, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
 
-	m_spS_TWS = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, 0, 230, 0.000000, 0.1 );
+	m_spS_TWS = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, 0, 230, 0.000000, 0.1 );
 	m_spS_TWS->SetDigits( 2 );
 	m_spS_TWS->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_spS_TWS->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );
@@ -2904,7 +2904,7 @@ SimulatorBase::SimulatorBase( wxWindow* parent, wxWindowID id, const wxString& t
 
 	fgSizer489->Add( m_staticText41341111, 0, wxALL, 2 );
 
-	m_spS_AWS = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS, -230, 230, 0.000000, 0.1 );
+	m_spS_AWS = new wxSpinCtrlDouble( sbSizer452->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxSP_ARROW_KEYS|wxSP_WRAP, -230, 230, 0.000000, 0.1 );
 	m_spS_AWS->SetDigits( 2 );
 	m_spS_AWS->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNTEXT ) );
 	m_spS_AWS->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ) );

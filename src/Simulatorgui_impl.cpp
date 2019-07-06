@@ -2,7 +2,7 @@
 *
 * Project:  OpenCPN
 * Purpose:  Simulator Plugin
-* Author:   Ron Southworth April 2019 Mike Rossiter and many others
+* Author:   Ron Southworth  Mike Rossiter April 2019 and many others
 *
 ***************************************************************************
 *   Copyright (C) 1985-2019 Ron Southworth Mike Rossiter and many others  *
@@ -158,12 +158,10 @@ void Dlg::OnStart(wxCommandEvent& event) {
 
         m_textCtrlAISROT->SetValue(_T("0"));
 	
-        initSpd = 0; // 5 knots
+        initSpd = 0; // Replace value here to give it a start speed other than zero
 	wxString myHeading = m_stHeading->GetLabel();
 	myHeading.ToDouble(&initDir);
 	myDir = initDir;
-
-
 
 	dt = dt.Now();
 	GLL = createGLLSentence(dt, initLat, initLon, initSpd / 7200, initDir);
@@ -283,7 +281,7 @@ void Dlg::OnStandby(wxCommandEvent& event){
 
 void Dlg::OnClose(wxCloseEvent& event)
 {
-//	if (m_Timer->IsRunning()) m_Timer->Stop();
+//	if (m_Timer->IsRunning()) m_Timer->Stop(); //
 	plugin->OnSimulatorDialogClose();
 
 
@@ -342,10 +340,10 @@ void Dlg::Notify(){
 		myDir -= 360;
 	}
 
-	initmagVar = m_spS_HDG->GetValue(); // Static Value comes from here
+	initmagVar = m_spS_HDG->GetValue(); // Static Mag Var Value comes from here
 	magVar = (initmagVar);
 
-	myDirMag = myDir - magVar ; // Compass Mag Var lookup or routine selection into here
+	myDirMag = myDir - magVar ; // A perfect Mag Compass. Reading =  Heading -  Mag Var. Selectable Mag Var from WMM PLUGIN
 
 	if (myDirMag < 0){
 		myDirMag += 360;
@@ -366,15 +364,15 @@ void Dlg::Notify(){
 		}
 	}
 
-    initSpdKmhr = initSpd * 1.852;
+    initSpdKmhr = initSpd * 1.852; // convert initSpd from knots to km/hr
 
-    initDriftMag = initCurSet + magVar;
+    initSetMag = initCurSet + magVar; //
 
-    	if (initDriftMag < 0){
-    		initDriftMag += 360;
+    	if (initSetMag < 0){
+    		initSetMag += 360;
     	}
-    	else if (initDriftMag > 360){
-    			initDriftMag -= 360;
+    	else if (initSetMag > 360){
+    			initSetMag -= 360;
     }
 
 	m_stSpeed->SetLabel(wxString::Format(_T("%03.2f"), initSpd)); // Messaging is Warming Up
@@ -396,7 +394,7 @@ void Dlg::Notify(){
 	if (m_bGrib && m_bUsingWind){
 		MWVA = createMWVASentence(initSpd, myDir, wdir, wspd); // Wind speed and angle Grib Data Setpoint
 		MWVT = createMWVTSentence(initSpd, myDir, wdir, wspd);
-	    VDR = createVDRSentence(initCurSet, initCurDrift, initmagVar, initDriftMag); // Current Set and Drift
+	    VDR = createVDRSentence(initCurSet, initCurDrift, initmagVar, initSetMag); // Current Set and Drift
 //		MWD = createMWDSentence(wdir, wspd); // Wind direction and speed isn't this an obsolete message type ????
 
 	    if (m_bUseMWVA)PushNMEABuffer(MWVA + _T("\n"));
@@ -424,7 +422,7 @@ void Dlg::Notify(){
     XDRAW = createXDRAWSentence(initAir, initWater);
     XDRMB = createXDRMBSentence(initBarometer);
     DBT = createDBTSentence(initDepth, initMeters, initFathoms);
-    VDR = createVDRSentence(initCurSet, initCurDrift, initmagVar, initDriftMag); // Current Set and Drift
+    VDR = createVDRSentence(initCurSet, initCurDrift, initmagVar, initSetMag); // Current Set and Drift
 
     if (m_bUseGSV)PushNMEABuffer(GSV + _T("\n"));
     if (m_bUseGSV)PushNMEABuffer(GSV2 + _T("\n"));
@@ -997,7 +995,7 @@ wxString Dlg::createGSVSentence2(double satinV){
 				return nFinal;
 
 }
-	wxString Dlg::createVDRSentence(double curset, double curdrift, double magVar, double driftMag){
+	wxString Dlg::createVDRSentence(double curset, double curdrift, double magVar, double setMag){
 
 /**
  *
@@ -1013,12 +1011,12 @@ wxString Dlg::createGSVSentence2(double satinV){
  * * delimiter Checksum cr lf
  *
  */
-driftMag = curset - magVar; // Calculate Current Mag direction applying mag variation
+setMag = curset - magVar; // Calculate Current Mag direction applying mag variation
 	    	wxString nVDR;
 	    	wxString nSet;
 	    	wxString nRelTrue;
 	    	wxString nDrift;
-	    	wxString nDriftMag;
+	    	wxString nSetMag;
 	    	wxString nRelUnits;
 	    	wxString nForCheckSum;
 	    	wxString nFinal;
@@ -1035,10 +1033,10 @@ driftMag = curset - magVar; // Calculate Current Mag direction applying mag vari
 	    	wxString nast = _T("*");
 	    	nSet = wxString::Format(_T("%3.1f"), curset); // True heading of surface current direction
 	    	nDrift = wxString::Format(_T("%3.1f"), curdrift); // Speed of surface current in Knots
-	    	nDriftMag = wxString::Format(_T("%3.1f"), driftMag); // Degrees Magnetic Heading surface current
+	    	nSetMag = wxString::Format(_T("%3.1f"), setMag); // Degrees Magnetic Heading surface current
 
 
-	    	nForCheckSum = nVDR + nC + nSet + nC + nRelTrue + nC + nDriftMag + nC + nUnitsMag + nC + nDrift + nC + nUnits;
+	    	nForCheckSum = nVDR + nC + nSet + nC + nRelTrue + nC + nSetMag + nC + nUnitsMag + nC + nDrift + nC + nUnits;
 	    	nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
 	    	return nFinal;
 

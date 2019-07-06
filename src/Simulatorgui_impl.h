@@ -102,7 +102,7 @@ public:
     wxString createRSASentence(double myRudder);
 	wxString createHDTSentence(double myDir);
 	wxString createHDMSentence(double myDirMag);
-	wxString createVDRSentence(double curset, double curdrift, double magVar, double driftMag);
+	wxString createVDRSentence(double curset, double curdrift, double magVar, double setMag);
 	wxString createXDRPRSentence(double pitch, double heel);
 	wxString createXDRAWSentence(double air, double water);
 	wxString createXDRMBSentence(double barometer);
@@ -189,7 +189,7 @@ protected:
 private:
 	void Notify();
 	wxString GSV, GSV2, GSV3, GSV4, GGA, VHW, MWVT, MWVA, GLL, VTG, HDT, HDM, RMC, RSA, VDR, XDRPR, XDRAW, XDRMB, DBT; // removed MWD atm
-	double initDir, initSpd, initSpdKmhr, initDriftMag, initRudder, initair, initwater, initdepth, initbarometer, myDir, myDirMag, magVar, vKmhr , myRudder, curset, curdrift, driftMag, pitch, heel;
+	double initDir, initSpd, initSpdKmhr, initSetMag, initRudder, initair, initwater, initdepth, initbarometer, myDir, myDirMag, magVar, vKmhr , myRudder, curset, curdrift, setMag, pitch, heel;
 
 	wxDateTime dt;
 	void SetInterval(int interval);
