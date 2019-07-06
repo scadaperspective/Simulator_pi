@@ -391,15 +391,20 @@ void Dlg::Notify(){
 
 	double wspd, wdir;
 	bool m_bGrib = GetGribSpdDir(dt, initLat, initLon, wspd, wdir);
+//	if (m_bGrib){
+		MWVT = createMWVTSentence(initSpd, myDir, wdir, wspd); // Wind speed and angle Grib Data Setpoint
+//	}
+
 	if (m_bGrib && m_bUsingWind){
-		MWVA = createMWVASentence(initSpd, myDir, wdir, wspd); // Wind speed and angle Grib Data Setpoint
-		MWVT = createMWVTSentence(initSpd, myDir, wdir, wspd);
-	    VDR = createVDRSentence(initCurSet, initCurDrift, initmagVar, initSetMag); // Current Set and Drift
+		MWVA = createMWVASentence(initSpd, myDir, wdir, wspd);
+
+//	    VDR = createVDRSentence(initCurSet, initCurDrift, initmagVar, initSetMag); // Current Set and Drift
 //		MWD = createMWDSentence(wdir, wspd); // Wind direction and speed isn't this an obsolete message type ????
 
-	    if (m_bUseMWVA)PushNMEABuffer(MWVA + _T("\n"));
-	    if (m_bUseMWVT)PushNMEABuffer(MWVT + _T("\n"));
-//	    if (m_bUseMWD)PushNMEABuffer(MWD + _T("\n"));
+	    if (m_bUseMWVT)PushNMEABuffer(MWVT);
+	    if (m_bUseMWVA)PushNMEABuffer(MWVA);
+
+//	    if (m_bUseMWD)PushNMEABuffer(MWD); //  + _T("\r\n")
 		
 	}
 
@@ -424,25 +429,31 @@ void Dlg::Notify(){
     DBT = createDBTSentence(initDepth, initMeters, initFathoms);
     VDR = createVDRSentence(initCurSet, initCurDrift, initmagVar, initSetMag); // Current Set and Drift
 
-    if (m_bUseGSV)PushNMEABuffer(GSV + _T("\n"));
-    if (m_bUseGSV)PushNMEABuffer(GSV2 + _T("\n"));
-    if (m_bUseGSV)PushNMEABuffer(GSV3 + _T("\n"));
-    if (m_bUseGSV)PushNMEABuffer(GSV4 + _T("\n"));
-    if (m_bUseGGA)PushNMEABuffer(GGA + _T("\n"));
-    if (m_bUseGLL)PushNMEABuffer(GLL + _T("\n"));
-    if (m_bUseHDT)PushNMEABuffer(HDT + _T("\n"));
-    if (m_bUseHDM)PushNMEABuffer(HDM + _T("\n"));
-    if (m_bUseVTG)PushNMEABuffer(VTG + _T("\n"));
-	if (m_bUseVHW)PushNMEABuffer(VHW + _T("\n"));
-	if (m_bUseRMC)PushNMEABuffer(RMC + _T("\n"));
-	if (m_bUseRSA)PushNMEABuffer(RSA + _T("\n"));
-	if (m_bUseXDRPR)PushNMEABuffer(XDRPR + _T("\n"));
-	if (m_bUseXDRAW)PushNMEABuffer(XDRAW + _T("\n"));
-	if (m_bUseXDRMB)PushNMEABuffer(XDRMB + _T("\n"));
-    if (m_bUseDBT)PushNMEABuffer(DBT + _T("\n"));
-    if (m_bUseVDR)PushNMEABuffer(VDR + _T("\n"));
+    MWVT = createMWVTSentence(initSpd, myDir, wdir, wspd); // Wind speed and angle Grib Data Setpoint
+	MWVA = createMWVASentence(initSpd, myDir, wdir, wspd);
 
-	if (m_bUseAis) PushNMEABuffer(myNMEAais + _T("\n"));
+    if (m_bUseMWVT)PushNMEABuffer(MWVT);
+    if (m_bUseMWVA)PushNMEABuffer(MWVA);
+
+    if (m_bUseGSV)PushNMEABuffer(GSV);
+    if (m_bUseGSV)PushNMEABuffer(GSV2);
+    if (m_bUseGSV)PushNMEABuffer(GSV3);
+    if (m_bUseGSV)PushNMEABuffer(GSV4);
+    if (m_bUseGGA)PushNMEABuffer(GGA);
+    if (m_bUseGLL)PushNMEABuffer(GLL);
+    if (m_bUseHDT)PushNMEABuffer(HDT);
+    if (m_bUseHDM)PushNMEABuffer(HDM);
+    if (m_bUseVTG)PushNMEABuffer(VTG);
+	if (m_bUseVHW)PushNMEABuffer(VHW);
+	if (m_bUseRMC)PushNMEABuffer(RMC);
+	if (m_bUseRSA)PushNMEABuffer(RSA);
+	if (m_bUseXDRPR)PushNMEABuffer(XDRPR);
+	if (m_bUseXDRAW)PushNMEABuffer(XDRAW);
+	if (m_bUseXDRMB)PushNMEABuffer(XDRMB);
+    if (m_bUseDBT)PushNMEABuffer(DBT);
+    if (m_bUseVDR)PushNMEABuffer(VDR);
+
+	if (m_bUseAis) PushNMEABuffer(myNMEAais + _T("\r\n"));
 
 	initLat = stepLat;
 	initLon = stepLon;
@@ -1626,8 +1637,9 @@ wxString Dlg::makeCheckSum(wxString mySentence){
 	for (XOR = 0, i = 0; i < iLen; i++)
 		XOR ^= (unsigned char)Buff[i];
 	stringstream tmpss;
-	tmpss << hex << (int)XOR << endl;
-	wxString mystr = tmpss.str();
+	tmpss << hex << (int)XOR << "\r\n";
+
+	wxString mystr = tmpss.str(); // where is the OA coming from
 	return mystr;
 }
 
