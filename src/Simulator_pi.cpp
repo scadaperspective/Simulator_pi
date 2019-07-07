@@ -119,29 +119,29 @@ Simulator_pi::~Simulator_pi(void)
 
 		 if (pConf) {
 
-			 pConf->SetPath(_T("/Settings/Simulator_pi")); // Might have been a bug in settings here 
+			 pConf->SetPath(wxT("/Settings/Simulator_pi")); // Might have been a bug in settings here
 
-			 pConf->Write(_T("simulatorUseAis"), m_bCopyUseAis);
-			 pConf->Write(_T("simulatorUseGSV"), m_bCopyUseGSV);
-			 pConf->Write(_T("simulatorUseGGA"), m_bCopyUseGGA);
-			 pConf->Write(_T("simulatorUseGLL"), m_bCopyUseGLL);
-			 pConf->Write(_T("simulatorUseHDT"), m_bCopyUseHDT);
-			 pConf->Write(_T("simulatorUseHDM"), m_bCopyUseHDM);
-			 pConf->Write(_T("simulatorUseVTG"), m_bCopyUseVTG);
-			 pConf->Write(_T("simulatorUseRMC"), m_bCopyUseRMC);
-			 pConf->Write(_T("simulatorUseVHW"), m_bCopyUseVHW);
-			 pConf->Write(_T("simulatorUseRSA"), m_bCopyUseRSA);
-			 pConf->Write(_T("simulatorUseMWVA"), m_bCopyUseMWVA);
-			 pConf->Write(_T("simulatorUseMWVT"), m_bCopyUseMWVT);
-			 pConf->Write(_T("simulatorUseDBT"), m_bCopyUseDBT);
-			 pConf->Write(_T("simulatorUseVDR"), m_bCopyUseVDR);
-			 pConf->Write(_T("simulatorUseXDRPR"), m_bCopyUseXDRPR);
-			 pConf->Write(_T("simulatorUseXDRAW"), m_bCopyUseXDRAW);
-			 pConf->Write(_T("simulatorUseXDRMB"), m_bCopyUseXDRMB);
+			 pConf->Write(wxT("simulatorUseAis"), m_bCopyUseAis);
+			 pConf->Write(wxT("simulatorUseGSV"), m_bCopyUseGSV);
+			 pConf->Write(wxT("simulatorUseGGA"), m_bCopyUseGGA);
+			 pConf->Write(wxT("simulatorUseGLL"), m_bCopyUseGLL);
+			 pConf->Write(wxT("simulatorUseHDT"), m_bCopyUseHDT);
+			 pConf->Write(wxT("simulatorUseHDM"), m_bCopyUseHDM);
+			 pConf->Write(wxT("simulatorUseVTG"), m_bCopyUseVTG);
+			 pConf->Write(wxT("simulatorUseRMC"), m_bCopyUseRMC);
+			 pConf->Write(wxT("simulatorUseVHW"), m_bCopyUseVHW);
+			 pConf->Write(wxT("simulatorUseRSA"), m_bCopyUseRSA);
+			 pConf->Write(wxT("simulatorUseMWVA"), m_bCopyUseMWVA);
+			 pConf->Write(wxT("simulatorUseMWVT"), m_bCopyUseMWVT);
+			 pConf->Write(wxT("simulatorUseDBT"), m_bCopyUseDBT);
+			 pConf->Write(wxT("simulatorUseVDR"), m_bCopyUseVDR);
+			 pConf->Write(wxT("simulatorUseXDRPR"), m_bCopyUseXDRPR);
+			 pConf->Write(wxT("simulatorUseXDRAW"), m_bCopyUseXDRAW);
+			 pConf->Write(wxT("simulatorUseXDRMB"), m_bCopyUseXDRMB);
 
-			 pConf->Write(_T("simulatorUseFile"), m_bCopyUseFile);
-			 pConf->Write(_T("simulatorMMSI"), m_tCopyMMSI);
-//			 pConf->Write(_T("simulatorUseGSV"), m_bCopyUseGSV);
+			 pConf->Write(wxT("simulatorUseFile"), m_bCopyUseFile);
+			 pConf->Write(wxT("simulatorMMSI"), m_tCopyMMSI);
+//			 pConf->Write(wxT("simulatorUseGSV"), m_bCopyUseGSV);
 		 }
 	 }
      
@@ -149,7 +149,7 @@ Simulator_pi::~Simulator_pi(void)
 
 int Simulator_pi::Init(void)
 {
-      AddLocaleCatalog( _T("opencpn-Simulator_pi") );
+      AddLocaleCatalog( wxT("opencpn-Simulator_pi") );
 
       // Set some default private member parameters
       m_hr_dialog_x = 40;
@@ -170,11 +170,11 @@ int Simulator_pi::Init(void)
       //    This PlugIn needs a toolbar icon, so request its insertion
 	if(m_bSimulatorShowIcon) {
 #ifdef SIMULATOR_USE_SVG
-        m_leftclick_tool_id = InsertPlugInToolSVG(_T( "Simulator" ), _svg_simulator, _svg_simulator_rollover, _svg_simulator_toggled,
-            wxITEM_CHECK, _("Simulator"), _T( "" ), NULL, Simulator_TOOL_POSITION, 0, this);
+        m_leftclick_tool_id = InsertPlugInToolSVG(wxT( "Simulator" ), _svg_simulator, _svg_simulator_rollover, _svg_simulator_toggled,
+            wxITEM_CHECK, _("Simulator"), wxT( "" ), NULL, Simulator_TOOL_POSITION, 0, this);
 #else
-		m_leftclick_tool_id = InsertPlugInTool(_T(""), _img_SimulatorIcon, _img_SimulatorIcon, wxITEM_CHECK,
-            _("Simulator"), _T(""), NULL,
+		m_leftclick_tool_id = InsertPlugInTool(wxT(""), _img_SimulatorIcon, _img_SimulatorIcon, wxITEM_CHECK,
+            _("Simulator"), wxT(""), NULL,
              Simulator_TOOL_POSITION, 0, this);
 #endif
     }
@@ -448,36 +448,36 @@ bool Simulator_pi::LoadConfig(void)
 
       if(pConf)
       {
-            pConf->SetPath ( _T( "/Settings/Simulator_pi" ) );
-			pConf->Read ( _T( "ShowSimulatorIcon" ), &m_bSimulatorShowIcon, 1 );
-			pConf->Read(_T("SimulatorUseAis"), &m_bCopyUseAis, 0);
-			pConf->Read(_T("SimulatorUseGSV"), &m_bCopyUseGSV, 0);
-			pConf->Read(_T("SimulatorUseGGA"), &m_bCopyUseGGA, 0);
-			pConf->Read(_T("SimulatorUseGLL"), &m_bCopyUseGLL, 0);
-			pConf->Read(_T("SimulatorUseHDT"), &m_bCopyUseHDT, 0);
-			pConf->Read(_T("SimulatorUseHDM"), &m_bCopyUseHDM, 0);
-			pConf->Read(_T("SimulatorUseVTG"), &m_bCopyUseVTG, 0);
-			pConf->Read(_T("SimulatorUseRMC"), &m_bCopyUseRMC, 0);
-			pConf->Read(_T("SimulatorUseVHW"), &m_bCopyUseVHW, 0);
-			pConf->Read(_T("SimulatorUseRSA"), &m_bCopyUseRSA, 0);
-    		pConf->Read(_T("SimulatorUseMWVA"), &m_bCopyUseMWVA, 0);
-    		pConf->Read(_T("SimulatorUseMWVT"), &m_bCopyUseMWVT, 0);
-    		pConf->Read(_T("SimulatorUseDBT"), &m_bCopyUseDBT, 0);
-    		pConf->Read(_T("SimulatorUseVDR"), &m_bCopyUseVDR, 0);
-    		pConf->Read(_T("SimulatorUseXDRPR"), &m_bCopyUseXDRPR, 0);
-    		pConf->Read(_T("SimulatorUseXDRAW"), &m_bCopyUseXDRAW, 0);
-    		pConf->Read(_T("SimulatorUseXDRMB"), &m_bCopyUseXDRMB, 0);
+            pConf->SetPath (wxT("/Settings/Simulator_pi"));
+			pConf->Read (wxT("ShowSimulatorIcon"), &m_bSimulatorShowIcon, 1);
+			pConf->Read(wxT("SimulatorUseAis"), &m_bCopyUseAis, 0);
+			pConf->Read(wxT("SimulatorUseGSV"), &m_bCopyUseGSV, 0);
+			pConf->Read(wxT("SimulatorUseGGA"), &m_bCopyUseGGA, 0);
+			pConf->Read(wxT("SimulatorUseGLL"), &m_bCopyUseGLL, 0);
+			pConf->Read(wxT("SimulatorUseHDT"), &m_bCopyUseHDT, 0);
+			pConf->Read(wxT("SimulatorUseHDM"), &m_bCopyUseHDM, 0);
+			pConf->Read(wxT("SimulatorUseVTG"), &m_bCopyUseVTG, 0);
+			pConf->Read(wxT("SimulatorUseRMC"), &m_bCopyUseRMC, 0);
+			pConf->Read(wxT("SimulatorUseVHW"), &m_bCopyUseVHW, 0);
+			pConf->Read(wxT("SimulatorUseRSA"), &m_bCopyUseRSA, 0);
+    		pConf->Read(wxT("SimulatorUseMWVA"), &m_bCopyUseMWVA, 0);
+    		pConf->Read(wxT("SimulatorUseMWVT"), &m_bCopyUseMWVT, 0);
+    		pConf->Read(wxT("SimulatorUseDBT"), &m_bCopyUseDBT, 0);
+    		pConf->Read(wxT("SimulatorUseVDR"), &m_bCopyUseVDR, 0);
+    		pConf->Read(wxT("SimulatorUseXDRPR"), &m_bCopyUseXDRPR, 0);
+    		pConf->Read(wxT("SimulatorUseXDRAW"), &m_bCopyUseXDRAW, 0);
+    		pConf->Read(wxT("SimulatorUseXDRMB"), &m_bCopyUseXDRMB, 0);
 
-			pConf->Read(_T("SimulatorUseFile"), &m_bCopyUseFile, 0);
-			m_tCopyMMSI = pConf->Read(_T("SimulatorMMSI"), _T("12345"));
+			pConf->Read(wxT("SimulatorUseFile"), &m_bCopyUseFile, 0);
+			m_tCopyMMSI = pConf->Read(wxT("SimulatorMMSI"), wxT("12345"));
 
-            m_hr_dialog_x =  pConf->Read ( _T ( "DialogPosX" ), 40L );
-            m_hr_dialog_y =  pConf->Read ( _T ( "DialogPosY" ), 140L);
-			m_hr_dialog_sx = pConf->Read ( _T ( "DialogSizeX"), 330L);
+            m_hr_dialog_x =  pConf->Read (wxT("DialogPosX"), 40L );
+            m_hr_dialog_y =  pConf->Read (wxT("DialogPosY"), 140L);
+			m_hr_dialog_sx = pConf->Read (wxT("DialogSizeX"), 330L);
 #ifdef __WXOSX__
-			m_hr_dialog_sy = pConf->Read ( _T ( "DialogSizeY"), 250L);
+			m_hr_dialog_sy = pConf->Read (wxT("DialogSizeY"), 250L);
 #else
-            m_hr_dialog_sy = pConf->Read ( _T ( "DialogSizeY"), 300L);
+            m_hr_dialog_sy = pConf->Read (wxT("DialogSizeY"), 300L);
 #endif
             if((m_hr_dialog_x < 0) || (m_hr_dialog_x > m_display_width))
                   m_hr_dialog_x = 40;
@@ -496,33 +496,33 @@ bool Simulator_pi::SaveConfig(void)
 
       if(pConf)
       {
-            pConf->SetPath ( _T ( "/Settings/Simulator_pi" ) );
-			pConf->Write ( _T ( "ShowSimulatorIcon" ), m_bSimulatorShowIcon );
-			pConf->Write(_T("SimulatorUseAis"), m_bCopyUseAis);
-			pConf->Write(_T("SimulatorUseGSV"), m_bCopyUseGSV);
-			pConf->Write(_T("SimulatorUseGGA"), m_bCopyUseGGA);
-			pConf->Write(_T("SimulatorUseGLL"), m_bCopyUseGLL);
-			pConf->Write(_T("SimulatorUseHDT"), m_bCopyUseHDT);
-			pConf->Write(_T("SimulatorUseHDM"), m_bCopyUseHDM);
-			pConf->Write(_T("SimulatorUseVTG"), m_bCopyUseVTG);
-			pConf->Write(_T("SimulatorUseRMC"), m_bCopyUseRMC);
-			pConf->Write(_T("SimulatorUseVHW"), m_bCopyUseVHW);
-			pConf->Write(_T("SimulatorUseRSA"), m_bCopyUseRSA);
-			pConf->Write(_T("SimulatorUseMWVA"), m_bCopyUseMWVA);
-			pConf->Write(_T("SimulatorUseMWVT"), m_bCopyUseMWVT);
-			pConf->Write(_T("SimulatorUseDBT"), m_bCopyUseDBT);
-			pConf->Write(_T("SimulatorUseVDR"), m_bCopyUseVDR);
-			pConf->Write(_T("SimulatorUseXDRPR"), m_bCopyUseXDRPR);
-			pConf->Write(_T("SimulatorUseXDRAW"), m_bCopyUseXDRAW);
-			pConf->Write(_T("SimulatorUseXDRMB"), m_bCopyUseXDRMB);
+            pConf->SetPath(wxT("/Settings/Simulator_pi"));
+			pConf->Write(wxT("ShowSimulatorIcon"), m_bSimulatorShowIcon);
+			pConf->Write(wxT("SimulatorUseAis"), m_bCopyUseAis);
+			pConf->Write(wxT("SimulatorUseGSV"), m_bCopyUseGSV);
+			pConf->Write(wxT("SimulatorUseGGA"), m_bCopyUseGGA);
+			pConf->Write(wxT("SimulatorUseGLL"), m_bCopyUseGLL);
+			pConf->Write(wxT("SimulatorUseHDT"), m_bCopyUseHDT);
+			pConf->Write(wxT("SimulatorUseHDM"), m_bCopyUseHDM);
+			pConf->Write(wxT("SimulatorUseVTG"), m_bCopyUseVTG);
+			pConf->Write(wxT("SimulatorUseRMC"), m_bCopyUseRMC);
+			pConf->Write(wxT("SimulatorUseVHW"), m_bCopyUseVHW);
+			pConf->Write(wxT("SimulatorUseRSA"), m_bCopyUseRSA);
+			pConf->Write(wxT("SimulatorUseMWVA"), m_bCopyUseMWVA);
+			pConf->Write(wxT("SimulatorUseMWVT"), m_bCopyUseMWVT);
+			pConf->Write(wxT("SimulatorUseDBT"), m_bCopyUseDBT);
+			pConf->Write(wxT("SimulatorUseVDR"), m_bCopyUseVDR);
+			pConf->Write(wxT("SimulatorUseXDRPR"), m_bCopyUseXDRPR);
+			pConf->Write(wxT("SimulatorUseXDRAW"), m_bCopyUseXDRAW);
+			pConf->Write(wxT("SimulatorUseXDRMB"), m_bCopyUseXDRMB);
 
-			pConf->Write(_T("SimulatorUseFile"), m_bCopyUseFile);
-			pConf->Write(_T("SimulatorMMSI"), m_tCopyMMSI);
+			pConf->Write(wxT("SimulatorUseFile"), m_bCopyUseFile);
+			pConf->Write(wxT("SimulatorMMSI"), m_tCopyMMSI);
 
-            pConf->Write ( _T ( "DialogPosX" ),   m_hr_dialog_x );
-            pConf->Write ( _T ( "DialogPosY" ),   m_hr_dialog_y );
-			pConf->Write ( _T ( "DialogSizeX"),   m_hr_dialog_sx);
-			pConf->Write ( _T ( "DialogSizeY"),   m_hr_dialog_sy);
+            pConf->Write(wxT("DialogPosX"), m_hr_dialog_x);
+            pConf->Write(wxT("DialogPosY"), m_hr_dialog_y);
+			pConf->Write(wxT("DialogSizeX"), m_hr_dialog_sx);
+			pConf->Write(wxT("DialogSizeY"), m_hr_dialog_sy);
             
             return true;
       }
@@ -563,7 +563,7 @@ void Simulator_pi::SetCursorLatLon(double lat, double lon)
 
 void Simulator_pi::SetPluginMessage(wxString &message_id, wxString &message_body)
 {
-	if (message_id == _T("GRIB_TIMELINE"))
+	if (message_id == wxT("GRIB_TIMELINE"))
 	{
 		wxJSONReader r;
 		wxJSONValue v;
@@ -571,18 +571,18 @@ void Simulator_pi::SetPluginMessage(wxString &message_id, wxString &message_body
 
 		wxDateTime time;
 		time.Set
-			(v[_T("Day")].AsInt(), (wxDateTime::Month)v[_T("Month")].AsInt(), v[_T("Year")].AsInt(),
-			v[_T("Hour")].AsInt(), v[_T("Minute")].AsInt(), v[_T("Second")].AsInt());
+			(v[wxT("Day")].AsInt(), (wxDateTime::Month)v[wxT("Month")].AsInt(), v[wxT("Year")].AsInt(),
+			v[wxT("Hour")].AsInt(), v[wxT("Minute")].AsInt(), v[wxT("Second")].AsInt());
 
 		wxString dt;
-		dt = time.Format(_T("%Y-%m-%d  %H:%M "));
+		dt = time.Format(wxT("%Y-%m-%d  %H:%M "));
 
 		if (m_pDialog){
 			m_pDialog->m_GribTimelineTime = time.ToUTC();
 			//m_pDialog->m_textCtrl1->SetValue(dt);
 		}
 	}
-	if (message_id == _T("GRIB_TIMELINE_RECORD"))
+	if (message_id == wxT("GRIB_TIMELINE_RECORD"))
 	{
 		wxJSONReader r;
 		wxJSONValue v;
@@ -592,8 +592,8 @@ void Simulator_pi::SetPluginMessage(wxString &message_id, wxString &message_body
 		if (!shown_warnings) {
 			shown_warnings = true;
 
-			int grib_version_major = v[_T("GribVersionMajor")].AsInt();
-			int grib_version_minor = v[_T("GribVersionMinor")].AsInt();
+			int grib_version_major = v[wxT("GribVersionMajor")].AsInt();
+			int grib_version_minor = v[wxT("GribVersionMinor")].AsInt();
 
 			int grib_version = 1000 * grib_version_major + grib_version_minor;
 			int grib_min = 1000 * GRIB_MIN_MAJOR + GRIB_MIN_MINOR;
@@ -602,14 +602,14 @@ void Simulator_pi::SetPluginMessage(wxString &message_id, wxString &message_body
 			if (grib_version < grib_min || grib_version > grib_max) {
 				wxMessageDialog mdlg(m_parent_window,
 					_("Grib plugin version not supported.")
-					+ _T("\n\n") +
+					+ wxT("\n\n") +
 					wxString::Format(_("Use versions %d.%d to %d.%d"), GRIB_MIN_MAJOR, GRIB_MIN_MINOR, GRIB_MAX_MAJOR, GRIB_MAX_MINOR),
 					_("Weather Routing"), wxOK | wxICON_WARNING);
 				mdlg.ShowModal();
 			}
 		}
 
-		wxString sptr = v[_T("TimelineSetPtr")].AsString();
+		wxString sptr = v[wxT("TimelineSetPtr")].AsString();
 
 		wxCharBuffer bptr = sptr.To8BitData();
 		const char* ptr = bptr.data();
@@ -624,7 +624,7 @@ void Simulator_pi::SetPluginMessage(wxString &message_id, wxString &message_body
 		m_tr_spd = spd;
 		m_tr_dir = dir;
 
-		//wxMessageBox(wxString::Format(_T("%5.2f"), spd));
+		//wxMessageBox(wxString::Format(wxT("%5.2f"), spd));
 	}
 }
 

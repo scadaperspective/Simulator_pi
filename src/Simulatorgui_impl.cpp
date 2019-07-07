@@ -1633,7 +1633,7 @@ wxString Dlg::createMWDSentence(double wind direction, double wind speed){
 }
 
 
-/* The checksum routine has a \n before \r\n problem
+/* The checksum routine
  *
  *
      * This is the NMEA0183 sentence checksum calculator for c++
@@ -1655,28 +1655,10 @@ wxString Dlg::createMWDSentence(double wind direction, double wind speed){
 
     return (wxString::Format(wxT("%2X"), mystr));
 
-
-/*	wxString s(mySentence);
-	wxCharBuffer buffer = s.ToUTF8();
-	char *Buff = buffer.data();	// data() returns const char *
-	unsigned long iLen = strlen(Buff);
-	for (XOR = 0, i = 0; i < iLen; i++)
-		XOR ^= (unsigned char)Buff[i];
-	std::stringstream tmpss;
-	tmpss << hex << (int)XOR << endl; // endl  '\n'
-    wxString mystr;
-	mystr = tmpss.str(); //
-    return mystr;
-//	return(wxString::Format(wxT"%2X", mystr));
-
-*/
-
 }
-
 
 double StringToLatitude(wxString mLat) {
 
-	//495054
 	double returnLat;
 	wxString mBitLat = mLat(0, 2);
 	double degLat;

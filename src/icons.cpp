@@ -26,14 +26,14 @@ void initialize_images(void)
 #ifdef SIMULATOR_USE_SVG
     wxFileName fn;
     fn.SetPath(*GetpSharedDataLocation());
-    fn.AppendDir(_T("plugins"));
-    fn.AppendDir(_T("Simulator_pi"));
-    fn.AppendDir(_T("data"));
-    fn.SetFullName(_T("Simulator_pi.svg"));
+    fn.AppendDir(wxT("plugins"));
+    fn.AppendDir(wxT("Simulator_pi"));
+    fn.AppendDir(wxT("data"));
+    fn.SetFullName(wxT("Simulator_pi.svg"));
     _svg_simulator = fn.GetFullPath();
-    fn.SetFullName(_T("Simulator_pi_toggled.svg"));
+    fn.SetFullName(wxT("Simulator_pi_toggled.svg"));
     _svg_simulator_toggled = fn.GetFullPath();
-    fn.SetFullName(_T("Simulator_pi_rollover.svg"));
+    fn.SetFullName(wxT("Simulator_pi_rollover.svg"));
     _svg_simulator_rollover = fn.GetFullPath();
 #endif
 

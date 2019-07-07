@@ -2,10 +2,13 @@
 *
 * Project:  OpenCPN
 * Purpose:  Simulator Plugin
-* Author:   Mike Rossiter. AIS encoding ported from AISConverter Python code by @transmitterdan
+* Author:   Mike Rossiter.
+* AIS encoding ported from AISConverter Python code by @transmitterdan
+*
+* Simulator plugin code by Ron Southworth
 *
 ***************************************************************************
-*   Copyright (C) 2019 by Mike Rossiter                                   *
+*   Copyright (C) 2019 by Ron Southworth and Mike Rossiter                                   *
 *   $EMAIL$                                                               *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -166,7 +169,19 @@ static const std::vector<std::pair<uint8_t, char>> SIXBIT_ASCII_TABLE = {
 		free(intChars);
 		return capsule;
 	}
-// The AIS Checksum Routine
+/*	* The checksum routine
+	 *
+	 *
+	     * This is the same code as used by the NMEA0183 sentence checksum calculator for c++
+	     *
+	     * What needs to be done for creating a checksum for each sentence is to :.....
+	     * XOR every byte starting from the second character (i.e. the one after the "$")
+	     * Take the second byte, XOR it with third, then XOR the result with fourth and so
+	     * on until the sentence is done. Return a two-digit hex value of the final XOR checksum
+	     * and append it to the end of the sentence (after the special char * cksum then  <CR> & <LF>)
+	     *
+	*/
+
 
 
 	 wxString AisMaker::makeCheckSum(wxString mySentence){
@@ -177,7 +192,8 @@ static const std::vector<std::pair<uint8_t, char>> SIXBIT_ASCII_TABLE = {
 
 	    return (wxString::Format(wxT("%2X"), mystr));
 
-/*
+/* The method below is producing a line feed at the end of the checksum
+ *
 	wxString AisMaker::makeCheckSum(wxString mySentence){
 		int i;
 		unsigned char XOR;
