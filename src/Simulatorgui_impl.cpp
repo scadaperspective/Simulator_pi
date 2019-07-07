@@ -64,28 +64,28 @@ Dlg::Dlg(wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& 
 	wxFileConfig *pConf = GetOCPNConfigObject(); // Reading Configuration Settings
 
 	if (pConf) {
-		pConf->SetPath(_T("/Settings/Simulator_pi"));
+		pConf->SetPath(wxT("/Settings/Simulator_pi"));
 
-		pConf->Read(_T("simulatorUseAis"), &m_bUseAis, 0);
-		pConf->Read(_T("simulatorUseGSV"), &m_bUseGSV, 0);
-		pConf->Read(_T("SimulatorUseGGA"), &m_bUseGGA, 0);
-		pConf->Read(_T("SimulatorUseGLL"), &m_bUseGLL, 0);
-		pConf->Read(_T("SimulatorUseHDT"), &m_bUseHDT, 0);
-		pConf->Read(_T("SimulatorUseHDM"), &m_bUseHDM, 0);
-		pConf->Read(_T("SimulatorUseVTG"), &m_bUseVTG, 0);
-		pConf->Read(_T("SimulatorUseRMC"), &m_bUseRMC, 0);
-		pConf->Read(_T("SimulatorUseVHW"), &m_bUseVHW, 0);
-		pConf->Read(_T("SimulatorUseRSA"), &m_bUseRSA, 0);
-		pConf->Read(_T("SimulatorUseMWVA"), &m_bUseMWVA, 0);
-		pConf->Read(_T("SimulatorUseMWVT"), &m_bUseMWVT, 0);
-		pConf->Read(_T("SimulatorUseDBT"), &m_bUseDBT, 0);
-		pConf->Read(_T("SimulatorUseVDR"), &m_bUseVDR, 0);
-		pConf->Read(_T("SimulatorUseXDRPR"), &m_bUseXDRPR, 0);
-		pConf->Read(_T("SimulatorUseXDRAW"), &m_bUseXDRAW, 0);
-		pConf->Read(_T("SimulatorUseXDRMB"), &m_bUseXDRMB, 0);
+		pConf->Read(wxT("simulatorUseAis"), &m_bUseAis, 0);
+		pConf->Read(wxT("simulatorUseGSV"), &m_bUseGSV, 0);
+		pConf->Read(wxT("SimulatorUseGGA"), &m_bUseGGA, 0);
+		pConf->Read(wxT("SimulatorUseGLL"), &m_bUseGLL, 0);
+		pConf->Read(wxT("SimulatorUseHDT"), &m_bUseHDT, 0);
+		pConf->Read(wxT("SimulatorUseHDM"), &m_bUseHDM, 0);
+		pConf->Read(wxT("SimulatorUseVTG"), &m_bUseVTG, 0);
+		pConf->Read(wxT("SimulatorUseRMC"), &m_bUseRMC, 0);
+		pConf->Read(wxT("SimulatorUseVHW"), &m_bUseVHW, 0);
+		pConf->Read(wxT("SimulatorUseRSA"), &m_bUseRSA, 0);
+		pConf->Read(wxT("SimulatorUseMWVA"), &m_bUseMWVA, 0);
+		pConf->Read(wxT("SimulatorUseMWVT"), &m_bUseMWVT, 0);
+		pConf->Read(wxT("SimulatorUseDBT"), &m_bUseDBT, 0);
+		pConf->Read(wxT("SimulatorUseVDR"), &m_bUseVDR, 0);
+		pConf->Read(wxT("SimulatorUseXDRPR"), &m_bUseXDRPR, 0);
+		pConf->Read(wxT("SimulatorUseXDRAW"), &m_bUseXDRAW, 0);
+		pConf->Read(wxT("SimulatorUseXDRMB"), &m_bUseXDRMB, 0);
 
-		pConf->Read(_T("simulatorUseFile"), &m_bUseFile, 0);
-		pConf->Read(_T("simulatorMMSI"), &m_tMMSI, "000012345");
+		pConf->Read(wxT("simulatorUseFile"), &m_bUseFile, 0);
+		pConf->Read(wxT("simulatorMMSI"), &m_tMMSI, "000012345");
 
 	}
 }
@@ -133,9 +133,9 @@ void Dlg::OnStart(wxCommandEvent& event) {
 		wxString caption = wxT("Choose a file");
 		wxString wildcard = wxT("Text files (*.txt)|*.txt|All files (*.*)|*.*");
 
-		wxString s = _T("/");
-		wxString defaultDir = *GetpSharedDataLocation() + _T("plugins")
-			+ s + _T("Simulator_pi") + s + _T("data") + s;
+		wxString s = wxT("/");
+		wxString defaultDir = *GetpSharedDataLocation() + wxT("plugins")
+			+ s + wxT("Simulator_pi") + s + wxT("data") + s;
 
 		wxString defaultFilename = wxEmptyString;
 		wxFileDialog filedlg(this->m_parent, caption, defaultDir, defaultFilename, wildcard, wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
@@ -153,10 +153,10 @@ void Dlg::OnStart(wxCommandEvent& event) {
 		}
 	}
 
-	m_textCtrlRudderStbd->SetValue(_T(""));
-	m_textCtrlRudderPort->SetValue(_T(""));
+	m_textCtrlRudderStbd->SetValue(wxT(""));
+	m_textCtrlRudderPort->SetValue(wxT(""));
 
-        m_textCtrlAISROT->SetValue(_T("0"));
+        m_textCtrlAISROT->SetValue(wxT("0"));
 	
         initSpd = 0; // Replace value here to give it a start speed other than zero
 	wxString myHeading = m_stHeading->GetLabel();
@@ -185,10 +185,10 @@ void Dlg::OnStop(wxCommandEvent& event) {
 	
         m_SliderSpeed->SetValue(0);
 	m_SliderRudder->SetValue(0); // Rudder Center Position
-	m_textCtrlRudderStbd->SetValue(_T(""));
-	m_textCtrlRudderPort->SetValue(_T(""));
+	m_textCtrlRudderStbd->SetValue(wxT(""));
+	m_textCtrlRudderPort->SetValue(wxT(""));
 
-        m_textCtrlAISROT->SetValue(_T("0"));
+        m_textCtrlAISROT->SetValue(wxT("0"));
 
 	m_interval = m_Timer->GetInterval();
 	m_bUseSetTime = false;
@@ -207,7 +207,7 @@ void Dlg::OnStop(wxCommandEvent& event) {
 		nmeafile->Close();
 	}
 	initSpd = 0.0;
-	m_stSpeed->SetLabel(wxString::Format(_T("%3.1f"), initSpd));
+	m_stSpeed->SetLabel(wxString::Format(wxT("%3.1f"), initSpd));
         m_bSimulatorHasStarted = false;
 
         Refresh(); // Debug
@@ -301,12 +301,12 @@ void Dlg::Notify(){
 		myDir += initRudder;
                 double myPortRudder = (myRudder); //  Grab #  for Port Angle 
 //		m_gaugeRudderPort->SetValue(myPortRudder);
-		m_textCtrlRudderPort->SetValue(wxString::Format(_T("%.2f"), myRudder) + _T(" P")); // Port Angle Display 
+		m_textCtrlRudderPort->SetValue(wxString::Format(wxT("%.2f"), myRudder) + wxT(" P")); // Port Angle Display
 // AIS ROT Display		
-                m_textCtrlAISROT->SetValue(wxString::Format(_T("%.2f"), myRudder) + _T(" P")); // AIS ROT/min Display
+                m_textCtrlAISROT->SetValue(wxString::Format(wxT("%.2f"), myRudder) + wxT(" P")); // AIS ROT/min Display
                 
 //                m_gaugeRudderStbd->SetValue(0);
-		m_textCtrlRudderStbd->SetValue(_T(""));
+		m_textCtrlRudderStbd->SetValue(wxT(""));
 	}
 	else if (myRudder >= 0){
 // Rudder Turning Vessel to Stbd  if not no turn  Midships
@@ -318,18 +318,18 @@ void Dlg::Notify(){
               if (myRudder == 0){
 // Catch Rudder Midship	      
  
-        	m_textCtrlRudderStbd->SetValue(_T(""));
+        	m_textCtrlRudderStbd->SetValue(wxT(""));
 
 // AIS ROT Display
-                m_textCtrlAISROT->SetValue(_T("0"));
+                m_textCtrlAISROT->SetValue(wxT("0"));
 		}
 		else {
-		m_textCtrlRudderStbd->SetValue(wxString::Format(_T("%.2f"), myRudder) + _T(" S")); // Starboard Angle Display
+		m_textCtrlRudderStbd->SetValue(wxString::Format(wxT("%.2f"), myRudder) + wxT(" S")); // Starboard Angle Display
 		
-                m_textCtrlAISROT->SetValue(wxString::Format(_T("%.2f"), myRudder) + _T(" S")); // AIS ROT/min Display
+                m_textCtrlAISROT->SetValue(wxString::Format(wxT("%.2f"), myRudder) + wxT(" S")); // AIS ROT/min Display
                 }
 //		m_gaugeRudderPort->SetValue(0); // removed rudder indicator until widget is developed
-		m_textCtrlRudderPort->SetValue(_T(""));
+		m_textCtrlRudderPort->SetValue(wxT(""));
 
 	}
 
@@ -375,13 +375,13 @@ void Dlg::Notify(){
     			initSetMag -= 360;
     }
 
-	m_stSpeed->SetLabel(wxString::Format(_T("%03.2f"), initSpd)); // Messaging is Warming Up
+	m_stSpeed->SetLabel(wxString::Format(wxT("%03.2f"), initSpd)); // Messaging is Warming Up
 
 
 	SetNextStep(initLat, initLon, myDir, initSpd / 7200, stepLat, stepLon);
-	wxString timeStamp = wxString::Format(_T("%i"), wxGetUTCTime());
+	wxString timeStamp = wxString::Format(wxT("%i"), wxGetUTCTime());
 
-	wxString myNMEAais = myAIS->nmeaEncode(_T("18"), m_iMMSI, _T("5"), initSpd, initLat, initLon, myDir, myDir, _T("B"), timeStamp);
+	wxString myNMEAais = myAIS->nmeaEncode(wxT("18"), m_iMMSI, wxT("5"), initSpd, initLat, initLon, myDir, myDir, wxT("B"), timeStamp);
 
 	if (m_bUseFile)	nmeafile->AddLine(myNMEAais);
 
@@ -404,7 +404,7 @@ void Dlg::Notify(){
 	    if (m_bUseMWVT)PushNMEABuffer(MWVT);
 	    if (m_bUseMWVA)PushNMEABuffer(MWVA);
 
-//	    if (m_bUseMWD)PushNMEABuffer(MWD); //  + _T("\r\n")
+//	    if (m_bUseMWD)PushNMEABuffer(MWD); // + wxT("\r\n")
 		
 	}
 
@@ -453,7 +453,7 @@ void Dlg::Notify(){
     if (m_bUseDBT)PushNMEABuffer(DBT);
     if (m_bUseVDR)PushNMEABuffer(VDR);
 
-	if (m_bUseAis) PushNMEABuffer(myNMEAais + _T("\r\n"));
+	if (m_bUseAis) PushNMEABuffer(myNMEAais+ wxT("\r\n")); // + wxT("\r\n")
 
 	initLat = stepLat;
 	initLon = stepLon;
@@ -597,69 +597,69 @@ void Dlg::SetInterval(int interval){
              */
 
         wxString nGSV;
-        nGSV = _T("GPGSV");
+        nGSV = wxT("GPGSV");
 
-        wxString nsF = _T("4");
-        wxString nsL= _T("1");
+        wxString nsF = wxT("4");
+        wxString nsL= wxT("1");
 
-        wxString satInV = _T("12");
-        satInV = wxString::Format(_T("%1.0f"), satinV);
-
-
-        wxString nC = _T(",");
+        wxString satInV = wxT("12");
+        satInV = wxString::Format(wxT("%1.0f"), satinV);
 
 
-        wxString pRn1 = _T("01");
-        wxString pRn2 = _T("02");
-        wxString pRn3 = _T("12");
-        wxString pRn4 = _T("14");
+        wxString nC = wxT(",");
 
-        pRn1 = wxString::Format(_T("%1.0f"), prn1);
-        pRn2 = wxString::Format(_T("%1.0f"), prn2);
-        pRn3 = wxString::Format(_T("%1.0f"), prn3);
-        pRn4 = wxString::Format(_T("%1.0f"), prn4);
+
+        wxString pRn1 = wxT("01");
+        wxString pRn2 = wxT("02");
+        wxString pRn3 = wxT("12");
+        wxString pRn4 = wxT("14");
+
+        pRn1 = wxString::Format(wxT("%1.0f"), prn1);
+        pRn2 = wxString::Format(wxT("%1.0f"), prn2);
+        pRn3 = wxString::Format(wxT("%1.0f"), prn3);
+        pRn4 = wxString::Format(wxT("%1.0f"), prn4);
 
         wxString eL1 =_T("40");
-        wxString eL2 = _T("17");
-        wxString eL3 = _T("07");
-        wxString eL4 = _T("22");
+        wxString eL2 = wxT("17");
+        wxString eL3 = wxT("07");
+        wxString eL4 = wxT("22");
 
-        eL1 = wxString::Format(_T("%1.0f"), el1);
-        eL2 = wxString::Format(_T("%1.0f"), el2);
-        eL3 = wxString::Format(_T("%1.0f"), el3);
-        eL4 = wxString::Format(_T("%1.0f"), el4);
+        eL1 = wxString::Format(wxT("%1.0f"), el1);
+        eL2 = wxString::Format(wxT("%1.0f"), el2);
+        eL3 = wxString::Format(wxT("%1.0f"), el3);
+        eL4 = wxString::Format(wxT("%1.0f"), el4);
 
         wxString aZ1 =_T("083");
-        wxString aZ2 = _T("308");
-        wxString aZ3 = _T("344");
-        wxString aZ4 = _T("228");
+        wxString aZ2 = wxT("308");
+        wxString aZ3 = wxT("344");
+        wxString aZ4 = wxT("228");
 
-        aZ1 = wxString::Format(_T("%1.0f"), az1);
-        aZ2 = wxString::Format(_T("%1.0f"), az2);
-        aZ3 = wxString::Format(_T("%1.0f"), az3);
-        aZ4 = wxString::Format(_T("%1.0f"), az4);
+        aZ1 = wxString::Format(wxT("%1.0f"), az1);
+        aZ2 = wxString::Format(wxT("%1.0f"), az2);
+        aZ3 = wxString::Format(wxT("%1.0f"), az3);
+        aZ4 = wxString::Format(wxT("%1.0f"), az4);
 
-        wxString snR1 = _T("46");
-        wxString snR2 = _T("41");
-        wxString snR3 = _T("39");
-        wxString snR4 = _T("45");
+        wxString snR1 = wxT("46");
+        wxString snR2 = wxT("41");
+        wxString snR3 = wxT("39");
+        wxString snR4 = wxT("45");
 
-        snR1 = wxString::Format(_T("%1.0f"), snr1);
-        snR2 = wxString::Format(_T("%1.0f"), snr2);
-        snR3 = wxString::Format(_T("%1.0f"), snr3);
-        snR4 = wxString::Format(_T("%1.0f"), snr4);
+        snR1 = wxString::Format(wxT("%1.0f"), snr1);
+        snR2 = wxString::Format(wxT("%1.0f"), snr2);
+        snR3 = wxString::Format(wxT("%1.0f"), snr3);
+        snR4 = wxString::Format(wxT("%1.0f"), snr4);
 
         wxString nForCheckSum; // Grab the strings that need to be XOR'd
         wxString nFinal;       // Complete GPGSV Message String for sending routine
 
-        wxString ndlr = _T("$");
-        wxString nast = _T("*");
+        wxString ndlr = wxT("$");
+        wxString nast = wxT("*");
 
-//        nSpd = wxString::Format(_T("%3.1f"), windspeed);
-//        nDir = wxString::Format(_T("%3.1f"), winddirection);
+//        nSpd = wxString::Format(wxT("%3.1f"), windspeed);
+//        nDir = wxString::Format(wxT("%3.1f"), winddirection);
 
-        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC + pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4;
-        nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC + pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4 + nast;
+        nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
         return nFinal;
 
 
@@ -674,49 +674,49 @@ wxString Dlg::createGSVSentence2(double satinV){
              */
 
         wxString nGSV;
-        nGSV = _T("GPGSV");
-       // nGSV = _T("GPGSV");
+        nGSV = wxT("GPGSV");
+       // nGSV = wxT("GPGSV");
 
-        wxString nsF = _T("4");
-        wxString nsL= _T("2");
+        wxString nsF = wxT("4");
+        wxString nsL= wxT("2");
 
         wxString satInV;
-        satInV = _T("12");
-        satInV = wxString::Format(_T("%1.0f"), satinV);
+        satInV = wxT("12");
+        satInV = wxString::Format(wxT("%1.0f"), satinV);
 
-        wxString nC = _T(",");
+        wxString nC = wxT(",");
 
         wxString pRn1 =_T("01");
-        wxString pRn2 = _T("05");
-        wxString pRn3 = _T("07");
-        wxString pRn4 = _T("15");
+        wxString pRn2 = wxT("05");
+        wxString pRn3 = wxT("07");
+        wxString pRn4 = wxT("15");
 
         wxString eL1 =_T("24");
-        wxString eL2 = _T("27");
-        wxString eL3 = _T("62");
-        wxString eL4 = _T("44");
+        wxString eL2 = wxT("27");
+        wxString eL3 = wxT("62");
+        wxString eL4 = wxT("44");
 
         wxString aZ1 =_T("169");
-        wxString aZ2 = _T("228");
-        wxString aZ3 = _T("256");
-        wxString aZ4 = _T("146");
+        wxString aZ2 = wxT("228");
+        wxString aZ3 = wxT("256");
+        wxString aZ4 = wxT("146");
 
-        wxString snR1 = _T("00");
-        wxString snR2 = _T("39");
-        wxString snR3 = _T("40");
-        wxString snR4 = _T("00");
+        wxString snR1 = wxT("00");
+        wxString snR2 = wxT("39");
+        wxString snR3 = wxT("40");
+        wxString snR4 = wxT("00");
 
         wxString nForCheckSum; // Grab the strings that need to be XOR'd
         wxString nFinal;       // Complete GPGSV Message String for sending routine
 
-        wxString ndlr = _T("$");
-        wxString nast = _T("*");
+        wxString ndlr = wxT("$");
+        wxString nast = wxT("*");
 
-//        nSpd = wxString::Format(_T("%3.1f"), windspeed);
-//        nDir = wxString::Format(_T("%3.1f"), winddirection);
+//        nSpd = wxString::Format(wxT("%3.1f"), windspeed);
+//        nDir = wxString::Format(wxT("%3.1f"), winddirection);
 
-        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4;
-        nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4 + nast;
+        nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
         return nFinal;
 
 
@@ -728,48 +728,48 @@ wxString Dlg::createGSVSentence2(double satinV){
              */
 
         wxString nGSV;
-        nGSV = _T("GPGSV");
+        nGSV = wxT("GPGSV");
 
-        wxString nsF = _T("4");
-        wxString nsL= _T("3");
+        wxString nsF = wxT("4");
+        wxString nsL= wxT("3");
 
         wxString satInV;
-        satInV = _T("12");
-        satInV = wxString::Format(_T("%1.0f"), satinV);
+        satInV = wxT("12");
+        satInV = wxString::Format(wxT("%1.0f"), satinV);
 
-        wxString nC = _T(",");
+        wxString nC = wxT(",");
 
         wxString pRn1 =_T("14");
-        wxString pRn2 = _T("16");
-        wxString pRn3 = _T("18");
-        wxString pRn4 = _T("19");
+        wxString pRn2 = wxT("16");
+        wxString pRn3 = wxT("18");
+        wxString pRn4 = wxT("19");
 
         wxString eL1 =_T("25");
-        wxString eL2 = _T("57");
-        wxString eL3 = _T("67");
-        wxString eL4 = _T("40");
+        wxString eL2 = wxT("57");
+        wxString eL3 = wxT("67");
+        wxString eL4 = wxT("40");
 
         wxString aZ1 =_T("170");
-        wxString aZ2 = _T("208");
-        wxString aZ3 = _T("296");
-        wxString aZ4 = _T("246");
+        wxString aZ2 = wxT("208");
+        wxString aZ3 = wxT("296");
+        wxString aZ4 = wxT("246");
 
-        wxString snR1 = _T("00");
-        wxString snR2 = _T("39");
-        wxString snR3 = _T("40");
-        wxString snR4 = _T("00");
+        wxString snR1 = wxT("00");
+        wxString snR2 = wxT("39");
+        wxString snR3 = wxT("40");
+        wxString snR4 = wxT("00");
 
         wxString nForCheckSum; // Grab the strings that need to be XOR'd
         wxString nFinal;       // Complete GPGSV Message String for sending routine
 
-        wxString ndlr = _T("$");
-        wxString nast = _T("*");
+        wxString ndlr = wxT("$");
+        wxString nast = wxT("*");
 
-//        nSpd = wxString::Format(_T("%3.1f"), windspeed);
-//        nDir = wxString::Format(_T("%3.1f"), winddirection);
+//        nSpd = wxString::Format(wxT("%3.1f"), windspeed);
+//        nDir = wxString::Format(wxT("%3.1f"), winddirection);
 
-        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4;
-        nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + pRn4 + nC + eL4 + nC + aZ4 + nC + snR4 + nast;
+        nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
         return nFinal;
 
 
@@ -781,47 +781,47 @@ wxString Dlg::createGSVSentence2(double satinV){
              */
 
         wxString nGSV;
-        nGSV = _T("GPGSV");
-       // nGSV = _T("GPGSV");
+        nGSV = wxT("GPGSV");
+       // nGSV = wxT("GPGSV");
 
-        wxString nsF = _T("4");
-        wxString nsL= _T("4");
+        wxString nsF = wxT("4");
+        wxString nsL= wxT("4");
 
         wxString satInV;
-        satInV = _T("12");
-        satInV = wxString::Format(_T("%1.0f"), satinV);
+        satInV = wxT("12");
+        satInV = wxString::Format(wxT("%1.0f"), satinV);
 
-        wxString nC = _T(",");
+        wxString nC = wxT(",");
 
         wxString pRn1 =_T("22");
-        wxString pRn2 = _T("24");
-        wxString pRn3 = _T("27");
-        wxString pRn4 = _T("30");
+        wxString pRn2 = wxT("24");
+        wxString pRn3 = wxT("27");
+        wxString pRn4 = wxT("30");
 
         wxString eL1 =_T("42");
-        wxString eL2 = _T("14");
-        wxString eL3 = _T("05");
-        wxString eL4 = _T("01");
+        wxString eL2 = wxT("14");
+        wxString eL3 = wxT("05");
+        wxString eL4 = wxT("01");
 
         wxString aZ1 =_T("60");
-        wxString aZ2 = _T("311");
-        wxString aZ3 = _T("244");
-        wxString aZ4 = _T("02");
+        wxString aZ2 = wxT("311");
+        wxString aZ3 = wxT("244");
+        wxString aZ4 = wxT("02");
 
-        wxString snR1 = _T("60");
-        wxString snR2 = _T("43");
-        wxString snR3 = _T("85");
-        wxString snR4 = _T("00");
+        wxString snR1 = wxT("60");
+        wxString snR2 = wxT("43");
+        wxString snR3 = wxT("85");
+        wxString snR4 = wxT("00");
 
         wxString nForCheckSum; // Grab the strings that need to be XOR'd
         wxString nFinal;       // Complete GPGSV Message String for sending routine
 
-        wxString ndlr = _T("$");
-        wxString nast = _T("*");
+        wxString ndlr = wxT("$");
+        wxString nast = wxT("*");
 
 
-        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + nC + nC + nC;
-        nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+        nForCheckSum = nGSV + nC + nsF+ nC + nsL + nC + satInV + nC +  pRn1 + nC + eL1 + nC + aZ1 + nC + snR1 + nC + pRn2 + nC + eL2 + nC + aZ2 + nC+ snR2+ nC + pRn3 + nC + eL3 + nC + aZ3 + nC + snR3 + nC + nC + nC + nC + nast;
+        nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
         return nFinal;
 
 }
@@ -867,11 +867,11 @@ wxString Dlg::createGSVSentence2(double satinV){
 	wxString nEW;
 
 	wxString nQuality;
-	nQuality = _T("1");
+	nQuality = wxT("1");
 
 	wxString satInV;
-	satInV = _T("12");
-	satInV = wxString::Format(_T("%1.0f"), satinV);
+	satInV = wxT("12");
+	satInV = wxString::Format(wxT("%1.0f"), satinV);
 
 	wxString nHDOP;
 	wxString nAltMSL;
@@ -881,29 +881,29 @@ wxString Dlg::createGSVSentence2(double satinV){
 	wxString nForCheckSum;
 	wxString nFinal;
 
-	wxString nC = _T(",");
-	wxString nA = _T("A");
-	wxString nU = _T("M");
+	wxString nC = wxT(",");
+	wxString nA = wxT("A");
+	wxString nU = wxT("M");
 
-	nGGA = _T("GPGGA,"); // Global Positioning System Fix Data
-    nDGPS = _T(",");
+	nGGA = wxT("GPGGA,"); // Global Positioning System Fix Data
+    nDGPS = wxT(",");
 
-    nHDOP = _T("1.5");
-//    nHDOP = wxString::Format(_T("%1.1f"), nHDOP);
-    nAltMSL = _T("0.0"); // At Mean Sea Level
-//    nAltMSL = wxString::Format(_T("%1.1f"), nAltMSL);
-    nHgtGMSL = _T("1.5");
-//    nHgtGMSL = wxString::Format(_T("%1.1f"), nHgtHGMSL);
+    nHDOP = wxT("1.5");
+//    nHDOP = wxString::Format(wxT("%1.1f"), nHDOP);
+    nAltMSL = wxT("0.0"); // At Mean Sea Level
+//    nAltMSL = wxString::Format(wxT("%1.1f"), nAltMSL);
+    nHgtGMSL = wxT("1.5");
+//    nHgtGMSL = wxString::Format(wxT("%1.1f"), nHgtHGMSL);
 
-	wxString ndlr = _T("$");
-	wxString nast = _T("*");
+	wxString ndlr = wxT("$");
+	wxString nast = wxT("*");
 
 	nTime = DateTimeToTimeString(myDateTime);
 	nNS = LatitudeToString(myLat);
 	nEW = LongitudeToString(myLon);
 
-	nForCheckSum = nGGA + nTime + nC + nNS + nEW + nQuality + nC + satInV + nC + nHDOP + nC + nAltMSL + nC + nU + nC + nHgtGMSL + nC +nU + nC + nDGPS;
-	nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+	nForCheckSum = nGGA + nTime + nC + nNS + nEW + nQuality + nC + satInV + nC + nHDOP + nC + nAltMSL + nC + nU + nC + nHgtGMSL + nC +nU + nC + nDGPS + nast;
+	nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 	return nFinal;
 
 }
@@ -938,24 +938,24 @@ wxString Dlg::createGSVSentence2(double satinV){
 		wxString nUnits;
 		wxString nUnitsMag;
 		wxString nUnitsKmhr;
-		wxString nC = _T(",");
-		wxString nA = _T("A");
-		nUnits = _T("N");
-		nUnits = _T("N");
-		nVHW = _T("GPVHW");
-		nRelTrue = _T("T");
-		nUnitsMag = _T("M");
-		nUnitsKmhr = _T("K");
-		wxString ndlr = _T("$");
-		wxString nast = _T("*");
-		nSpd = wxString::Format(_T("%3.1f"), stw); // Speed Through Water
-		nDir = wxString::Format(_T("%3.1f"), hdg); // True Heading
-		nSpdKmhr = wxString::Format(_T("%3.1f"), vKmhr);
-		nDirMag = wxString::Format(_T("%3.1f"), myDirMag); // Degrees Magnetic Heading
+		wxString nC = wxT(",");
+		wxString nA = wxT("A");
+		nUnits = wxT("N");
+		nUnits = wxT("N");
+		nVHW = wxT("GPVHW");
+		nRelTrue = wxT("T");
+		nUnitsMag = wxT("M");
+		nUnitsKmhr = wxT("K");
+		wxString ndlr = wxT("$");
+		wxString nast = wxT("*");
+		nSpd = wxString::Format(wxT("%3.1f"), stw); // Speed Through Water
+		nDir = wxString::Format(wxT("%3.1f"), hdg); // True Heading
+		nSpdKmhr = wxString::Format(wxT("%3.1f"), vKmhr);
+		nDirMag = wxString::Format(wxT("%3.1f"), myDirMag); // Degrees Magnetic Heading
 
 
-		nForCheckSum = nVHW + nC + nDir + nC + nRelTrue + nC + nDirMag + nC + nUnitsMag + nC + nSpd + nC + nUnits + nC + nSpdKmhr + nC + nUnitsKmhr;
-		nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+		nForCheckSum = nVHW + nC + nDir + nC + nRelTrue + nC + nDirMag + nC + nUnitsMag + nC + nSpd + nC + nUnits + nC + nSpdKmhr + nC + nUnitsKmhr + nast;
+		nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 		return nFinal;
 
 }
@@ -981,7 +981,7 @@ wxString Dlg::createGSVSentence2(double satinV){
 		             */
 		meters = depth * 0.3408; // depth input is feet convert to meters
 	   fathoms = depth * 0.166667; // depth is in feet convert to fathoms
-		        wxString nDBT = _T("IIDBT,");
+		        wxString nDBT = wxT("IIDBT,");
 				wxString nDepth;
 				wxString nMeters;
 				wxString nFathoms;
@@ -989,20 +989,20 @@ wxString Dlg::createGSVSentence2(double satinV){
 				wxString nForCheckSum;
 				wxString nFinal;
 
-				wxString nC = _T(",");
-				wxString nuFeet = _T("f,");
-				wxString nuMeters = _T("M,");
-				wxString nuFathoms = _T("F");
+				wxString nC = wxT(",");
+				wxString nuFeet = wxT("f,");
+				wxString nuMeters = wxT("M,");
+				wxString nuFathoms = wxT("F");
 
-				wxString ndlr = _T("$");
-				wxString nast = _T("*");
+				wxString ndlr = wxT("$");
+				wxString nast = wxT("*");
 
-				nDepth = wxString::Format(_T("%3.1f"), depth);
-				nMeters = wxString::Format(_T("%3.1f"), meters);
-				nFathoms = wxString::Format(_T("%3.1f"), fathoms);
+				nDepth = wxString::Format(wxT("%3.1f"), depth);
+				nMeters = wxString::Format(wxT("%3.1f"), meters);
+				nFathoms = wxString::Format(wxT("%3.1f"), fathoms);
 
-				nForCheckSum = nDBT + nDepth + nC + nuFeet + nMeters + nC + nuMeters + nFathoms + nC + nuFathoms;
-				nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+				nForCheckSum = nDBT + nDepth + nC + nuFeet + nMeters + nC + nuMeters + nFathoms + nC + nuFathoms + nast;
+				nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 				return nFinal;
 
 }
@@ -1034,21 +1034,21 @@ setMag = curset - magVar; // Calculate Current Mag direction applying mag variat
 	    	wxString nUnits;
 	    	wxString nUnitsMag;
 	    	wxString nUnitsKmhr;
-	    	wxString nC = _T(",");
-	    	wxString nA = _T("A");
-	    	nUnits = _T("N");
-	    	nVDR = _T("GPVDR");
-	    	nRelTrue = _T("T");
-	    	nUnitsMag = _T("M");
-	    	wxString ndlr = _T("$");
-	    	wxString nast = _T("*");
-	    	nSet = wxString::Format(_T("%3.1f"), curset); // True heading of surface current direction
-	    	nDrift = wxString::Format(_T("%3.1f"), curdrift); // Speed of surface current in Knots
-	    	nSetMag = wxString::Format(_T("%3.1f"), setMag); // Degrees Magnetic Heading surface current
+	    	wxString nC = wxT(",");
+	    	wxString nA = wxT("A");
+	    	nUnits = wxT("N");
+	    	nVDR = wxT("GPVDR");
+	    	nRelTrue = wxT("T");
+	    	nUnitsMag = wxT("M");
+	    	wxString ndlr = wxT("$");
+	    	wxString nast = wxT("*");
+	    	nSet = wxString::Format(wxT("%3.1f"), curset); // True heading of surface current direction
+	    	nDrift = wxString::Format(wxT("%3.1f"), curdrift); // Speed of surface current in Knots
+	    	nSetMag = wxString::Format(wxT("%3.1f"), setMag); // Degrees Magnetic Heading surface current
 
 
-	    	nForCheckSum = nVDR + nC + nSet + nC + nRelTrue + nC + nSetMag + nC + nUnitsMag + nC + nDrift + nC + nUnits;
-	    	nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+	    	nForCheckSum = nVDR + nC + nSet + nC + nRelTrue + nC + nSetMag + nC + nUnitsMag + nC + nDrift + nC + nUnits + nast;
+	    	nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 	    	return nFinal;
 
 }
@@ -1065,23 +1065,23 @@ setMag = curset - magVar; // Calculate Current Mag direction applying mag variat
 		wxString nValid;
 		wxString nForCheckSum;
 		wxString nFinal;
-		wxString nC = _T(",");
-		wxString nA = _T("A");
-		wxString nT = _T("T");
-		wxString nM = _T("M,");
-		wxString nN = _T("N,");
-		wxString nK = _T("K,");
+		wxString nC = wxT(",");
+		wxString nA = wxT("A");
+		wxString nT = wxT("T");
+		wxString nM = wxT("M,");
+		wxString nN = wxT("N,");
+		wxString nK = wxT("K,");
 
-		wxString nHDT = _T("HEHDT,");
-		nValid = _T("A,A");
-		wxString ndlr = _T("$");
-		wxString nast = _T("*");
+		wxString nHDT = wxT("HEHDT,");
+		nValid = wxT("A,A");
+		wxString ndlr = wxT("$");
+		wxString nast = wxT("*");
 
-		nDir = wxString::Format(_T("%3.1f"), myDir);
+		nDir = wxString::Format(wxT("%3.1f"), myDir);
 
-		nForCheckSum = nHDT + nDir + nC + nT;
+		nForCheckSum = nHDT + nDir + nC + nT + nast;
 
-		nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+		nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 		//wxMessageBox(nFinal);
 		return nFinal;
 
@@ -1097,23 +1097,23 @@ setMag = curset - magVar; // Calculate Current Mag direction applying mag variat
 		wxString nValid;
 		wxString nForCheckSum;
 		wxString nFinal;
-		wxString nC = _T(",");
-		wxString nA = _T("A");
-		wxString nT = _T("T");
-		wxString nM = _T("M");
-		wxString nN = _T("N,");
-		wxString nK = _T("K,");
+		wxString nC = wxT(",");
+		wxString nA = wxT("A");
+		wxString nT = wxT("T");
+		wxString nM = wxT("M");
+		wxString nN = wxT("N,");
+		wxString nK = wxT("K,");
 
-		wxString nHDM = _T("HCHDM,");
-		nValid = _T("A,A");
-		wxString ndlr = _T("$");
-		wxString nast = _T("*");
+		wxString nHDM = wxT("HCHDM,");
+		nValid = wxT("A,A");
+		wxString ndlr = wxT("$");
+		wxString nast = wxT("*");
 
-		nDirMag = wxString::Format(_T("%3.1f"), myDirMag);
+		nDirMag = wxString::Format(wxT("%3.1f"), myDirMag);
 
-		nForCheckSum = nHDM + nDirMag + nC + nM;
+		nForCheckSum = nHDM + nDirMag + nC + nM + nast;
 
-		nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+		nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 		return nFinal;
 
 }
@@ -1138,21 +1138,21 @@ setMag = curset - magVar; // Calculate Current Mag direction applying mag variat
 		wxString nValid;
 		wxString nForCheckSum;
 		wxString nFinal;
-		wxString nC = _T(",");
-		wxString nA = _T("A,");
-		wxString nType = _T(",D,");
-		wxString nRSA = _T("IIXDR,");
-		wxString nIDPitch = _T("PTCH");
-		wxString nIDHeel = _T("ROLL");
-		nValid = _T("A");
-		wxString ndlr = _T("$");
-		wxString nast = _T("*");
+		wxString nC = wxT(",");
+		wxString nA = wxT("A,");
+		wxString nType = wxT(",D,");
+		wxString nRSA = wxT("IIXDR,");
+		wxString nIDPitch = wxT("PTCH");
+		wxString nIDHeel = wxT("ROLL");
+		nValid = wxT("A");
+		wxString ndlr = wxT("$");
+		wxString nast = wxT("*");
 
-		nPitch = wxString::Format(_T("%3.1f"), pitch);
-		nHeel = wxString::Format(_T("%3.1f"), heel);
+		nPitch = wxString::Format(wxT("%3.1f"), pitch);
+		nHeel = wxString::Format(wxT("%3.1f"), heel);
 
-		nForCheckSum = nRSA + nA + nPitch + nType + nIDPitch + nC + nA + nHeel + nType + nIDHeel;
-		nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+		nForCheckSum = nRSA + nA + nPitch + nType + nIDPitch + nC + nA + nHeel + nType + nIDHeel + nast;
+		nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 		return nFinal;
 
 }
@@ -1177,23 +1177,32 @@ setMag = curset - magVar; // Calculate Current Mag direction applying mag variat
 		wxString nValid;
 		wxString nForCheckSum;
 		wxString nFinal;
-		wxString nC = _T(",");
-		wxString nA = _T("C,");
-		wxString nType = _T(",C,");
-		wxString nRSA = _T("IIXDR,");
-		wxString nIDAir = _T("ENV_OUTAIR_T");
-		wxString nIDWater = _T("ENV_WATER_T");
+		wxString nC = wxT(",");
+		wxString nA = wxT("C,");
+		wxString nType = wxT(",C,");
+		wxString nRSA = wxT("IIXDR,");
+		wxString nIDAir = wxT("ENV_OUTAIR_T");
+		wxString nIDWater = wxT("ENV_WATER_T");
 
-		wxString ndlr = _T("$");
-		wxString nast = _T("*");
+		wxString ndlr = wxT("$");
+		wxString nast = wxT("*");
 
-		nAir = wxString::Format(_T("%3.2f"), air);
-		nWater = wxString::Format(_T("%3.2f"), water);
+		nAir = wxString::Format(wxT("%3.2f"), air);
+		nWater = wxString::Format(wxT("%3.2f"), water);
 
-		nForCheckSum = nRSA + nA + nWater + nType + nIDWater + nC + nA + nAir + nType +nIDAir;
-		nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+		nForCheckSum = nRSA + nA + nWater + nType + nIDWater + nC + nA + nAir + nType +nIDAir + nast;
+		nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 		return nFinal;
 
+		/*
+		nForCheckSum = nRSA + nA + nWater + nType + nIDWater + nast;
+		nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
+		return nFinal;
+
+		nForCheckSum = nRSA + nA + nAir + nType +nIDAir + nast;
+		nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
+		return nFinal;
+        */
 }
 
 
@@ -1207,18 +1216,18 @@ setMag = curset - magVar; // Calculate Current Mag direction applying mag variat
 			wxString nValid;
 			wxString nForCheckSum;
 			wxString nFinal;
-			wxString nC = _T(",");
-			wxString nA = _T("A");
-			wxString nRSA = _T("TIRSA,");
-			nValid = _T("A");
-			wxString ndlr = _T("$");
-			wxString nast = _T("*");
+			wxString nC = wxT(",");
+			wxString nA = wxT("A");
+			wxString nRSA = wxT("TIRSA,");
+			nValid = wxT("A");
+			wxString ndlr = wxT("$");
+			wxString nast = wxT("*");
 
-			nStbd = wxString::Format(_T("%3.1f"), myRudder);
-			nPort = wxString::Format(_T("%3.1f"), myRudder);
+			nStbd = wxString::Format(wxT("%3.1f"), myRudder);
+			nPort = wxString::Format(wxT("%3.1f"), myRudder);
 
-			nForCheckSum = nRSA + nStbd + nC + nValid  + nC + nPort + nC + nValid;
-			nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+			nForCheckSum = nRSA + nStbd + nC + nValid  + nC + nPort + nC + nValid + nast;
+			nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 			return nFinal;
 
 
@@ -1263,10 +1272,10 @@ setMag = curset - magVar; // Calculate Current Mag direction applying mag variat
 	wxString leftright = wxEmptyString;
 
 	if (twa <= 180){
-		leftright = _T("R");
+		leftright = wxT("R");
 	}
 	if (twa > 180){
-		leftright = _T("L");
+		leftright = wxT("L");
 		twa = 360 - twa;
 	}
 
@@ -1286,7 +1295,7 @@ setMag = curset - magVar; // Calculate Current Mag direction applying mag variat
 	awa = twa - charlie;
 	awa = awa * 180 / M_PI; // back to degrees
 
-	if (leftright == _T("L")) {
+	if (leftright == wxT("L")) {
 		awa = 360 - awa;
 	}
 
@@ -1299,21 +1308,21 @@ setMag = curset - magVar; // Calculate Current Mag direction applying mag variat
 	wxString nFinal;
 	wxString nUnits;
 
-	wxString nC = _T(",");
-	wxString nA = _T("A");
+	wxString nC = wxT(",");
+	wxString nA = wxT("A");
 
-	nUnits = _T("N,");
-	nMWV = _T("IIMWV,"); // Wind Speed and Angle
-	nRelTrue = _T("R,"); // Relative or Applied Wind Angle
-	nValid = _T("A");
-	wxString ndlr = _T("$");
-	wxString nast = _T("*");
+	nUnits = wxT("N,");
+	nMWV = wxT("IIMWV,"); // Wind Speed and Angle
+	nRelTrue = wxT("R,"); // Relative or Applied Wind Angle
+	nValid = wxT("A");
+	wxString ndlr = wxT("$");
+	wxString nast = wxT("*");
 
-    nDirA = wxString::Format(_T("%3.1f"), awa); //Applied Wind Angle Value
-	nSpdA = wxString::Format(_T("%3.1f"), aws); // Applied Wind Speed Value
+    nDirA = wxString::Format(wxT("%3.1f"), awa); //Applied Wind Angle Value
+	nSpdA = wxString::Format(wxT("%3.1f"), aws); // Applied Wind Speed Value
 
-	nForCheckSum = nMWV + nDirA + nC + nRelTrue + nSpdA + nC + nUnits + nValid;
-	nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+	nForCheckSum = nMWV + nDirA + nC + nRelTrue + nSpdA + nC + nUnits + nValid + nast;
+	nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 	return nFinal;
 
 }
@@ -1364,24 +1373,24 @@ setMag = curset - magVar; // Calculate Current Mag direction applying mag variat
 	wxString nFinal;
 	wxString nUnits;
 
-	wxString nC = _T(",");
-	wxString nA = _T("A");
+	wxString nC = wxT(",");
+	wxString nA = wxT("A");
 
-	nUnits = _T("N,");
-	nMWV = _T("IIMWV,");
-	nMWD = _T("IIMWV,"); // Wind Instrument Wind Speed and Direction (true)
-	nTrue = _T("T,");
-	nValid = _T("A");
+	nUnits = wxT("N,");
+	nMWV = wxT("IIMWV,");
+	nMWD = wxT("IIMWV,"); // Wind Instrument Wind Speed and Direction (true)
+	nTrue = wxT("T,");
+	nValid = wxT("A");
 
-	wxString ndlr = _T("$");
-	wxString nast = _T("*");
+	wxString ndlr = wxT("$");
+	wxString nast = wxT("*");
 
-	nDir = wxString::Format(_T("%3.1f"), twa); // True Wind Angle
-	nSpd = wxString::Format(_T("%3.1f"), tws); // True Wind Speed
+	nDir = wxString::Format(wxT("%3.1f"), twa); // True Wind Angle
+	nSpd = wxString::Format(wxT("%3.1f"), tws); // True Wind Speed
 
 
-	nForCheckSum = nMWV + nDir + nC + nTrue + nSpd + nC + nUnits + nValid;
-	nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+	nForCheckSum = nMWV + nDir + nC + nTrue + nSpd + nC + nUnits + nValid + nast;
+	nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 	return nFinal;
 
 }
@@ -1393,25 +1402,25 @@ setMag = curset - magVar; // Calculate Current Mag direction applying mag variat
 
 barometer = barometer / 1000; // convert to milli-bar
 
-	        wxString nXDRMB = _T("IIXDR,");
+	        wxString nXDRMB = wxT("IIXDR,");
 			wxString nBarometer;
 
 			wxString nForCheckSum;
 			wxString nFinal;
 
-			wxString nC = _T(",");
-			wxString nType = _T("P,");
-			wxString nuLable = _T("Barometer");
-			wxString nUnits = _T("B,");
+			wxString nC = wxT(",");
+			wxString nType = wxT("P,");
+			wxString nuLable = wxT("Barometer");
+			wxString nUnits = wxT("B,");
 
-			wxString ndlr = _T("$");
-			wxString nast = _T("*");
+			wxString ndlr = wxT("$");
+			wxString nast = wxT("*");
 
-			nBarometer = wxString::Format(_T("%1.5f"), barometer);
+			nBarometer = wxString::Format(wxT("%1.5f"), barometer);
 
 
-			nForCheckSum = nXDRMB + nType + nBarometer + nC + nUnits + nuLable;
-			nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+			nForCheckSum = nXDRMB + nType + nBarometer + nC + nUnits + nuLable + nast;
+			nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 			return nFinal;
 }
 /* This is depreciated message type
@@ -1457,21 +1466,21 @@ wxString Dlg::createMWDSentence(double wind direction, double wind speed){
 	wxString nForCheckSum;
 	wxString nFinal;
 	wxString nUnits;
-	wxString nC = _T(",");
-	wxString nA = _T("A");
-	nUnits = _T("N");
-	nMWV = _T("WIMWV");
-	nMWD = _T("WIMWD");
-	nRelTrue = _T("T");
-	nValid = _T("A,A");
-	wxString ndlr = _T("$");
-	wxString nast = _T("*");
+	wxString nC = wxT(",");
+	wxString nA = wxT("A");
+	nUnits = wxT("N");
+	nMWV = wxT("WIMWV");
+	nMWD = wxT("WIMWD");
+	nRelTrue = wxT("T");
+	nValid = wxT("A,A");
+	wxString ndlr = wxT("$");
+	wxString nast = wxT("*");
 
-	nSpd = wxString::Format(_T("%3.1f"), windspeed);
-	nDir = wxString::Format(_T("%3.1f"), winddirection);
+	nSpd = wxString::Format(wxT("%3.1f"), windspeed);
+	nDir = wxString::Format(wxT("%3.1f"), winddirection);
 
-	nForCheckSum = nMWD + nC + nDir + nC + nRelTrue + nC  + nC + nC + nSpd + nC + nUnits + nC + nC ;
-	nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+	nForCheckSum = nMWD + nC + nDir + nC + nRelTrue + nC  + nC + nC + nSpd + nC + nUnits + nC + nC + nast;
+	nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 	return nFinal;
 
 }
@@ -1495,24 +1504,24 @@ wxString Dlg::createMWDSentence(double wind direction, double wind speed){
 	wxString nForCheckSum;
 	wxString nFinal;
 
-	wxString nC = _T(",");
-	wxString nA = _T("A,");
+	wxString nC = wxT(",");
+	wxString nA = wxT("A,");
 
-	nGLL = _T("GPGLL,"); // GPGLL Geo Pos Lat Log
-	nValid = _T("A,A");
+	nGLL = wxT("GPGLL,"); // GPGLL Geo Pos Lat Log
+	nValid = wxT("A,A");
 
-	wxString ndlr = _T("$");
-	wxString nast = _T("*");
+	wxString ndlr = wxT("$");
+	wxString nast = wxT("*");
 
 	nTime = DateTimeToTimeString(myDateTime);
 	nNS = LatitudeToString(myLat);
 	nEW = LongitudeToString(myLon);
-	nSpd = wxString::Format(_T("%3.1f"), mySpd);
-	nDir = wxString::Format(_T("%3.1f"), myDir);
+	nSpd = wxString::Format(wxT("%3.1f"), mySpd);
+	nDir = wxString::Format(wxT("%3.1f"), myDir);
 	nDate = DateTimeToDateString(myDateTime);
 
-	nForCheckSum = nGLL + nNS + nEW + nTime + _T(",A");
-	nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+	nForCheckSum = nGLL + nNS + nEW + nTime + wxT(",A") + nast;
+	nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 	return nFinal;
 }
 
@@ -1549,38 +1558,38 @@ wxString Dlg::createMWDSentence(double wind direction, double wind speed){
 	wxString nForCheckSum;
 	wxString nFinal;
 
-	wxString nC = _T(",");
-	wxString nA = _T("A");
+	wxString nC = wxT(",");
+	wxString nA = wxT("A");
 
-	nRMC = _T("GPRMC,"); // Minimum Specific GPS/Transit Data C
+	nRMC = wxT("GPRMC,"); // Minimum Specific GPS/Transit Data C
 
-	wxString ndlr = _T("$");
-	wxString nast = _T("*");
+	wxString ndlr = wxT("$");
+	wxString nast = wxT("*");
 
 	nTime = DateTimeToTimeString(myDateTime);
 	nNS = LatitudeToString(myLat);
 	nEW = LongitudeToString(myLon);
 
-	nSpd = wxString::Format(_T("%3.1f"), mySpd); // SOG need to change code labels to make it clearer for those that follow
-	nDir = wxString::Format(_T("%3.1f"), myDir);
-	nMagVar = wxString::Format(_T("%3.1f"), magVar);
+	nSpd = wxString::Format(wxT("%3.1f"), mySpd); // SOG need to change code labels to make it clearer for those that follow
+	nDir = wxString::Format(wxT("%3.1f"), myDir);
+	nMagVar = wxString::Format(wxT("%3.1f"), magVar);
 
 	nDate = DateTimeToDateString(myDateTime);
 
 	if (magVar < 0){
-			nMagFlag = _T("W,");
+			nMagFlag = wxT("W,");
 		}
 		if (magVar > 0){
-			nMagFlag = _T("E,");
+			nMagFlag = wxT("E,");
 
 		}
 		if (magVar == 0){
-					nMagFlag = _T(",");
+					nMagFlag = wxT(",");
 
 		}
 
-	nForCheckSum = nRMC + nTime + nC + nA + nC + nNS + nEW + nSpd + nC + nDir + nC + nDate + nC + nMagVar + nC + nMagFlag + nA ;
-	nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+	nForCheckSum = nRMC + nTime + nC + nA + nC + nNS + nEW + nSpd + nC + nDir + nC + nDate + nC + nMagVar + nC + nMagFlag + nA  + nast;
+	nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 	return nFinal;
 }
 
@@ -1600,48 +1609,70 @@ wxString Dlg::createMWDSentence(double wind direction, double wind speed){
 	wxString nForCheckSum;
 	wxString nFinal;
 
-	wxString nVTG = _T("GPVTG,"); // GPVTG Track Made Good and Ground Speed
+	wxString nVTG = wxT("GPVTG,"); // GPVTG Track Made Good and Ground Speed
 
-	wxString nC = _T(",");
-	wxString nA = _T("A,");
-	wxString nT = _T("T,");
-	wxString nM = _T("M,");
-	wxString nN = _T("N,");
-	wxString nK = _T("K");
+	wxString nC = wxT(",");
+	wxString nA = wxT("A,");
+	wxString nT = wxT("T,");
+	wxString nM = wxT("M,");
+	wxString nN = wxT("N,");
+	wxString nK = wxT("K");
 
-	wxString ndlr = _T("$");
-	wxString nast = _T("*");
-    nValid = _T("A,A");
+	wxString ndlr = wxT("$");
+	wxString nast = wxT("*");
+    nValid = wxT("A,A");
 
-	nSpd = wxString::Format(_T("%3.1f"), mySpd);
-	nSpdKmhr = wxString::Format(_T("%3.1f"), vKmhr);
-	nDir = wxString::Format(_T("%3.1f"), myDir);
-	nDirMag = wxString::Format(_T("%3.1f"), myDirMag);
+	nSpd = wxString::Format(wxT("%3.1f"), mySpd);
+	nSpdKmhr = wxString::Format(wxT("%3.1f"), vKmhr);
+	nDir = wxString::Format(wxT("%3.1f"), myDir);
+	nDirMag = wxString::Format(wxT("%3.1f"), myDirMag);
 
-	nForCheckSum = nVTG + nDir + nC + nT + nDirMag + nC + nM + nSpd + nC + nN + nSpdKmhr + nC + nK;
-	nFinal = ndlr + nForCheckSum + nast + makeCheckSum(nForCheckSum);
+	nForCheckSum = nVTG + nDir + nC + nT + nDirMag + nC + nM + nSpd + nC + nN + nSpdKmhr + nC + nK + nast;
+	nFinal = ndlr + nForCheckSum + makeCheckSum(nForCheckSum) + wxT("\r\n");
 	return nFinal;
 }
 
 
-// The checksum routine
+/* The checksum routine has a \n before \r\n problem
+ *
+ *
+     * This is the NMEA0183 sentence checksum calculator for c++
+     *
+     * What needs to be done for creating a checksum for each sentence is to :.....
+     * XOR every byte starting from the second character (i.e. the one after the "$")
+     * Take the second byte, XOR it with third, then XOR the result with fourth and so
+     * on until the sentence is done. Return a two-digit hex value of the final XOR checksum
+     * and append it to the end of the sentence (after the special char * cksum then  <CR> & <LF>)
+     *
+*/
 
-wxString Dlg::makeCheckSum(wxString mySentence){
-	int i;
-	unsigned char XOR;
 
-	wxString s(mySentence);
+ wxString Dlg::makeCheckSum(wxString mySentence){
+
+	unsigned char mystr = 0;
+    for (wxString::const_iterator i = mySentence.begin() +0; i != mySentence.end() && *i != '*'; ++i) // +1
+    	mystr ^= static_cast<unsigned char> (*i);
+
+    return (wxString::Format(wxT("%2X"), mystr));
+
+
+/*	wxString s(mySentence);
 	wxCharBuffer buffer = s.ToUTF8();
 	char *Buff = buffer.data();	// data() returns const char *
 	unsigned long iLen = strlen(Buff);
 	for (XOR = 0, i = 0; i < iLen; i++)
 		XOR ^= (unsigned char)Buff[i];
-	stringstream tmpss;
-	tmpss << hex << (int)XOR << "\r\n";
+	std::stringstream tmpss;
+	tmpss << hex << (int)XOR << endl; // endl  '\n'
+    wxString mystr;
+	mystr = tmpss.str(); //
+    return mystr;
+//	return(wxString::Format(wxT"%2X", mystr));
 
-	wxString mystr = tmpss.str(); // where is the OA coming from
-	return mystr;
+*/
+
 }
+
 
 double StringToLatitude(wxString mLat) {
 
@@ -1661,11 +1692,11 @@ double StringToLatitude(wxString mLat) {
 
 wxString Dlg::LatitudeToString(double mLat) {
 
-	wxString singlezero = _T("0");
+	wxString singlezero = wxT("0");
 	wxString mDegLat;
 
 	int degLat = std::abs(mLat);
-	wxString finalDegLat = wxString::Format(_T("%i"), degLat);
+	wxString finalDegLat = wxString::Format(wxT("%i"), degLat);
 
 	int myL = finalDegLat.length();
 	switch (myL){
@@ -1683,23 +1714,23 @@ wxString Dlg::LatitudeToString(double mLat) {
 	double decLat = minLat * 60;
 
 	wxString returnLat;
-	//wxMessageBox(returnLat, _T("returnLat"));
+	//wxMessageBox(returnLat, wxT("returnLat"));
 
 	if (mLat >= 0){
 		if (decLat < 10){
-			returnLat = mDegLat + _T("0") + wxString::Format(_T("%.6f"), decLat) + _T(",N,");
+			returnLat = mDegLat + wxT("0") + wxString::Format(wxT("%.6f"), decLat) + wxT(",N,");
 		}
 		else {
-			returnLat = mDegLat + wxString::Format(_T("%.6f"), decLat) + _T(",N,");
+			returnLat = mDegLat + wxString::Format(wxT("%.6f"), decLat) + wxT(",N,");
 		}
 
 	}
 	else if (mLat < 0) {
 		if (decLat < 10){
-			returnLat = mDegLat + _T("0") + wxString::Format(_T("%.6f"), decLat) + _T(",S,");
+			returnLat = mDegLat + wxT("0") + wxString::Format(wxT("%.6f"), decLat) + wxT(",S,");
 		}
 		else {
-			returnLat = mDegLat + wxString::Format(_T("%.6f"), decLat) + _T(",S,");
+			returnLat = mDegLat + wxString::Format(wxT("%.6f"), decLat) + wxT(",S,");
 		}
 	}
 
@@ -1766,13 +1797,13 @@ wxString Dlg::LongitudeToString(double mLon) {
 	wxString mDegLon;
 	double decValue;
 	wxString returnLon;
-	wxString doublezero = _T("00");
-	wxString singlezero = _T("0");
+	wxString doublezero = wxT("00");
+	wxString singlezero = wxT("0");
 
 	int degLon = fabs(mLon);
-	wxString inLon = wxString::Format(_T("%i"), degLon);
+	wxString inLon = wxString::Format(wxT("%i"), degLon);
 
-	//wxMessageBox(returnLon, _T("inLon"));
+	//wxMessageBox(returnLon, wxT("inLon"));
 
 	int myL = inLon.length();
 	switch (myL){
@@ -1794,30 +1825,30 @@ wxString Dlg::LongitudeToString(double mLon) {
 
 	if (mLon >= 0){
 		if (decLon < 10){
-			returnLon = mDegLon + _T("0") + wxString::Format(_T("%.6f"), decLon) + _T(",E,");
+			returnLon = mDegLon + wxT("0") + wxString::Format(wxT("%.6f"), decLon) + wxT(",E,");
 		}
 		else {
-			returnLon = mDegLon + wxString::Format(_T("%.6f"), decLon) + _T(",E,");
+			returnLon = mDegLon + wxString::Format(wxT("%.6f"), decLon) + wxT(",E,");
 		}
 
 	}
 	else  {
 		if (decLon < 10){
-			returnLon = mDegLon + _T("0") + wxString::Format(_T("%.6f"), decLon) + _T(",W,");
+			returnLon = mDegLon + wxT("0") + wxString::Format(wxT("%.6f"), decLon) + wxT(",W,");
 		}
 		else {
-			returnLon = mDegLon + wxString::Format(_T("%.6f"), decLon) + _T(",W,");
+			returnLon = mDegLon + wxString::Format(wxT("%.6f"), decLon) + wxT(",W,");
 		}
 	}
-	//wxMessageBox(returnLon, _T("returnLon"));
+	//wxMessageBox(returnLon, wxT("returnLon"));
 	return returnLon;
 }
 
 wxString Dlg::DateTimeToTimeString(wxDateTime myDT) {
 	wxString sHours, sMinutes, sSecs;
-	sHours = myDT.Format(_T("%H"));
-	sMinutes = myDT.Format(_T("%M"));
-	sSecs = myDT.Format(_T("%S"));
+	sHours = myDT.Format(wxT("%H"));
+	sMinutes = myDT.Format(wxT("%M"));
+	sSecs = myDT.Format(wxT("%S"));
 	wxString dtss = sHours + sMinutes + sSecs;
 	return dtss;
 }
@@ -1825,9 +1856,9 @@ wxString Dlg::DateTimeToTimeString(wxDateTime myDT) {
 wxString Dlg::DateTimeToDateString(wxDateTime myDate) {
 
 	wxString sDay, sMonth, sYear;
-	sDay = myDate.Format(_T("%d"));
-	sMonth = myDate.Format(_T("%m"));
-	sYear = myDate.Format(_T("%y"));
+	sDay = myDate.Format(wxT("%d"));
+	sMonth = myDate.Format(wxT("%m"));
+	sYear = myDate.Format(wxT("%y"));
 	wxString date = sDay + sMonth + sYear;
 	return date;
 }
@@ -1860,7 +1891,7 @@ void Dlg::RequestGrib(wxDateTime time){
 	wxString out;
 	w.Write(v, out);
 
-	SendPluginMessage(wxString(_T("GRIB_TIMELINE_RECORD_REQUEST")), out);
+	SendPluginMessage(wxString(wxT("GRIB_TIMELINE_RECORD_REQUEST")), out);
 
 	Lock();
 	m_bNeedsGrib = false;
@@ -1904,11 +1935,11 @@ void Dlg::OnWind(wxCommandEvent& event){
 		double myPolarSpeed = GetPolarSpeed(initLat, initLon, initDir);
 		if (myPolarSpeed == -1){
 			if (m_bInvalidPolarsFile){
-				wxMessageBox(_T("Invalid Boat Polars file"));
+				wxMessageBox(wxT("Invalid Boat Polars file"));
 			}
 
 			if (m_bInvalidGribFile){
-				wxMessageBox(_T("Grib data is not available for the present date/time or location"));
+				wxMessageBox(wxT("Grib data is not available for the present date/time or location"));
 			}
 			m_buttonWind->SetBackgroundColour(wxColour(83, 0, 24)); // m_buttonWind Red 
 			m_bUsingWind = false;
@@ -1943,10 +1974,10 @@ double Dlg::GetPolarSpeed(double lat, double lon, double cse){
 	}
 
 	wxString error;
-	wxString s = _T("/");
-	wxString polars_path = *GetpSharedDataLocation() + _T("plugins")
-		+ s + _T("Simulator_pi") + s + _T("data") + s;
-	wxString myFile = polars_path + _T("LoftyPerch.xml"); // was arcona.xml
+	wxString s = wxT("/");
+	wxString polars_path = *GetpSharedDataLocation() + wxT("plugins")
+		+ s + wxT("Simulator_pi") + s + wxT("data") + s;
+	wxString myFile = polars_path + wxT("LoftyPerch.xml"); // was arcona.xml
 
 	double twa = 360 - ((cse - dir) - 360);
 	if (twa > 360){
@@ -1967,7 +1998,7 @@ double Dlg::GetPolarSpeed(double lat, double lon, double cse){
 	relWind = 360 - relWind;
 	}
 	*/
-	//wxMessageBox(wxString::Format(_T("%f"), relWind));
+	//wxMessageBox(wxString::Format(wxT("%f"), relWind));
 
 	double polarSpeed = ReadPolars(myFile, twa, spd);
 	return polarSpeed;
@@ -2016,7 +2047,7 @@ double Dlg::ReadPolars(wxString filename, double windangle, double windspeed){
 			if (!strcmp(e->Value(), "TWA") && windangle > myWindAngle && !foundWindAngle && !foundWindSpeed) {
 				myWindAngle = AttributeDouble(e, "WindAngle", NAN);
 				if (prevAngle < windangle && windangle < myWindAngle){
-					theWindAngle = wxString::Format(_T("%5.2f"), prevAngle);
+					theWindAngle = wxString::Format(wxT("%5.2f"), prevAngle);
 					foundWindAngle = true;
 					break;
 				}
@@ -2034,7 +2065,7 @@ double Dlg::ReadPolars(wxString filename, double windangle, double windspeed){
 
 				if (!strcmp(e->Value(), "TWA")) {
 					myWindAngle = AttributeDouble(e, "WindAngle", NAN);
-					wxString angleOut = wxString::Format(_T("%5.2f"), myWindAngle);
+					wxString angleOut = wxString::Format(wxT("%5.2f"), myWindAngle);
 					if (angleOut == theWindAngle){  // we have found the correct section of the polars file	for the relative wind													
 						for (TiXmlElement* g = e->FirstChildElement(); g; g = g->NextSiblingElement()) {
 
@@ -2045,7 +2076,7 @@ double Dlg::ReadPolars(wxString filename, double windangle, double windspeed){
 								myPolarSpeed.ToDouble(& dSpeed);
 
 								if (prevSpeed < windspeed && windspeed < myWindSpeed){
-									//wxString boatSpeed = wxString::Format(_T("%5.2f"), prevPolarSpeed);
+									//wxString boatSpeed = wxString::Format(wxT("%5.2f"), prevPolarSpeed);
 									return prevPolarSpeed;
 								}
 

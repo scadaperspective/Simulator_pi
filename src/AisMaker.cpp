@@ -157,7 +157,7 @@ static const std::vector<std::pair<uint8_t, char>> SIXBIT_ASCII_TABLE = {
 		}
 		// Now intChars contains the encoded bits for the AIS string
 		for (chindex = 0; chindex < numsixes; chindex++) {
-			wxString mystring = wxString::Format(_T("%i"), intChars[chindex]);
+			wxString mystring = wxString::Format(wxT("%i"), intChars[chindex]);
 			//wxMessageBox(mystring);
 			char plChar = findCharFromNumber(intChars[chindex]);
 			capsule = capsule + plChar;
@@ -166,7 +166,18 @@ static const std::vector<std::pair<uint8_t, char>> SIXBIT_ASCII_TABLE = {
 		free(intChars);
 		return capsule;
 	}
+// The AIS Checksum Routine
 
+
+	 wxString AisMaker::makeCheckSum(wxString mySentence){
+
+		unsigned char mystr = 0;
+	    for (wxString::const_iterator i = mySentence.begin() +0; i != mySentence.end() && *i != '*'; ++i)
+	    	mystr ^= static_cast<unsigned char> (*i);
+
+	    return (wxString::Format(wxT("%2X"), mystr));
+
+/*
 	wxString AisMaker::makeCheckSum(wxString mySentence){
 		int i;
 		unsigned char XOR;
@@ -181,6 +192,8 @@ static const std::vector<std::pair<uint8_t, char>> SIXBIT_ASCII_TABLE = {
 		tmpss << hex << (int)XOR << endl;
 		wxString mystr = tmpss.str();
 		return mystr;
+
+*/
 	}
 
 	wxString AisMaker::nmeaEncode(wxString type, int iMMSI, wxString status, double spd, double ilat, double ilon, double crse, double hdg, wxString channel, wxString timestamp){
@@ -189,7 +202,7 @@ static const std::vector<std::pair<uint8_t, char>> SIXBIT_ASCII_TABLE = {
 
 		string RepeatIndicator = Int2BString(0, 2);
 
-		wxString MMSI = wxString::Format(_T("%i"), iMMSI);
+		wxString MMSI = wxString::Format(wxT("%i"), iMMSI);
 		string sMMSI = (const char*)MMSI.mb_str();
 
 		string oMMSI = Int2BString(Str2Int(sMMSI, ""), 30);
@@ -199,29 +212,29 @@ static const std::vector<std::pair<uint8_t, char>> SIXBIT_ASCII_TABLE = {
 		wxString sChannel;
 		string Channel = (const char*)sChannel.mb_str();
 
-		wxString SPEED = wxString::Format(_T("%3.1f"), spd*10);
+		wxString SPEED = wxString::Format(wxT("%3.1f"), spd*10);
 		string sSPEED = (const char*)SPEED.mb_str();
 		float  sog = Str2Float(sSPEED, "");
 		string SOG = Int2BString(sog, 10);
 
 		string PosAccuracy = Int2BString(1, 1);
 
-		wxString LON = wxString::Format(_T("%f"), ilon);
+		wxString LON = wxString::Format(wxT("%f"), ilon);
 		string sLON = (const char*)LON.mb_str();
 		float flon = Str2Float(sLON, "");
 		string Longitude = Int2BString(int(flon * 600000), 28);
 
-		wxString LAT = wxString::Format(_T("%f"), ilat);
+		wxString LAT = wxString::Format(wxT("%f"), ilat);
 		string sLAT = (const char*)LAT.mb_str();
 		float flat = Str2Float(sLAT, "");
 		string Latitude = Int2BString(int(flat * 600000), 27);
 
-		wxString COURSE = wxString::Format(_T("%3.1f"), crse);
+		wxString COURSE = wxString::Format(wxT("%3.1f"), crse);
 		string sCOURSE = (const char*)COURSE.mb_str();
 		float cog = Str2Float(sCOURSE, "");
 		string COG = Int2BString(int(cog * 10), 12);
 
-		wxString HEADING = wxString::Format(_T("%3.1f"), hdg);
+		wxString HEADING = wxString::Format(wxT("%3.1f"), hdg);
 		string sHEADING = (const char*)HEADING.mb_str();
 		int	heading = Str2Int(sHEADING, "");
 		string Heading = Int2BString(heading, 9);
@@ -244,11 +257,11 @@ static const std::vector<std::pair<uint8_t, char>> SIXBIT_ASCII_TABLE = {
 		BigString = BigString + State;
 
 		string capsule = NMEAencapsulate(BigString, 28);
-		string aisnmea = "AIVDM,1,1,," + Channel + "," + capsule + ",O";
+		string aisnmea = "AIVDM,1,1,," + Channel + "," + capsule + ",O" + "*";
 		wxString myNMEA = aisnmea;
 		wxString myCheck = makeCheckSum(myNMEA);
 
-		myNMEA = _T("!") + myNMEA + _T("*") + myCheck;
+		myNMEA = wxT("!") + myNMEA + myCheck;
 		
 		return myNMEA;
 	}
