@@ -20,16 +20,18 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,  USA.             *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,  USA.         *
  ***************************************************************************
- *
+ *                                                                         *
  *   S Blackburn's original source license:                                *
  *         "You can use it any way you like."                              *
  *   More recent (2010) license statement:                                 *
  *         "It is BSD license, do with it what you will"                   *
  */
 
-#include "nmea0183.h"
+
+#if ! defined( APB_CLASS_HEADER )
+#define APB_CLASS_HEADER
 
 /*
 ** Author: Samuel R. Blackburn
@@ -39,100 +41,47 @@
 ** You can use it any way you like.
 */
 
-//IMPLEMENT_DYNAMIC( MWV, RESPONSE )
-
-MWV::MWV()
+class APB : public RESPONSE
 {
-   Mnemonic = _T("MWV");
-   Empty();
-}
 
-MWV::~MWV()
-{
-   Mnemonic.Empty();
-   Empty();
-}
 
-void MWV::Empty( void )
-{
-//   ASSERT_VALID( this );
+   public:
 
-   WindAngle   = 0.0;
-   Reference.Empty();
-   WindSpeed   = 0.0;
-   WindSpeedUnits.Empty();
-   IsDataValid = Unknown0183;
-}
+      APB();
+     ~APB();
 
-bool MWV::Parse( const SENTENCE& sentence )
-{
-//   ASSERT_VALID( this );
+      /*
+      ** Data
+      */
 
-   /*
-   ** MWV - Wind Speed and Angle
-   **
-   **        1   2 3   4 5
-   **        |   | |   | |
-   ** $--MWV,x.x,a,x.x,a*hh<CR><LF>
-   **
-   ** Field Number: 
-   **  1) Wind Angle, 0 to 360 degrees
-   **  2) Reference, R = Relative, T = True
-   **  3) Wind Speed
-   **  4) Wind Speed Units, K/M/N
-   **  5) Status, A = Data Valid
-   **  6) Checksum
-   */
+      NMEA0183_BOOLEAN IsLoranBlinkOK;
+      NMEA0183_BOOLEAN IsLoranCCycleLockOK;
+      double           CrossTrackErrorMagnitude;
+      LEFTRIGHT        DirectionToSteer;
+      wxString          CrossTrackUnits;
+      NMEA0183_BOOLEAN IsArrivalCircleEntered;
+      NMEA0183_BOOLEAN IsPerpendicular;
+      double           BearingOriginToDestination;
+      wxString          BearingOriginToDestinationUnits;
+      wxString          To;
+      double           BearingPresentPositionToDestination;
+      wxString          BearingPresentPositionToDestinationUnits;
+      double           HeadingToSteer;
+      wxString          HeadingToSteerUnits;
 
-   /*
-   ** First we check the checksum...
-   */
+      /*
+      ** Methods
+      */
 
-   if ( sentence.IsChecksumBad( 6 ) == TRUE )
-   {
-      SetErrorMessage( _T("Invalid Checksum") );
-      return( FALSE );
-   } 
+      virtual void Empty( void );
+      virtual bool Parse( const SENTENCE& sentence );
+      virtual bool Write( SENTENCE& sentence );
 
-   WindAngle      = sentence.Double( 1 );
-   Reference      = sentence.Field( 2 );
-   WindSpeed      = sentence.Double( 3 );
-   WindSpeedUnits = sentence.Field( 4 );
-   IsDataValid    = sentence.Boolean( 5 );
+      /*
+      ** Operators
+      */
 
-   return( TRUE );
-}
+      virtual const APB& operator = ( const APB& source );
+};
 
-bool MWV::Write( SENTENCE& sentence )
-{
-//   ASSERT_VALID( this );
-
-   /*
-   ** Let the parent do its thing
-   */
-   
-   RESPONSE::Write( sentence );
-
-   sentence += WindAngle;
-   sentence += Reference;
-   sentence += WindSpeed;
-   sentence += WindSpeedUnits;
-   sentence += IsDataValid;
-
-   sentence.Finish();
-
-   return( TRUE );
-}
-
-const MWV& MWV::operator = ( const MWV& source )
-{
-//   ASSERT_VALID( this );
- 
-   WindAngle      = source.WindAngle;
-   Reference      = source.Reference;
-   WindSpeed      = source.WindSpeed;
-   WindSpeedUnits = source.WindSpeedUnits;
-   IsDataValid    = source.IsDataValid;
-
-   return( *this );
-}
+#endif // APB_CLASS_HEADER

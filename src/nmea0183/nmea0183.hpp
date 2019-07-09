@@ -64,7 +64,9 @@
 /*
 #include "AAM.hpp"
 #include "ALM.hpp"
+*/
 #include "APB.hpp"
+/*
 #include "ASD.hpp"
 #include "BEC.hpp"
 #include "BOD.hpp"
@@ -87,11 +89,12 @@
 #include "OSD.hpp"
 #include "P.hpp"
 #include "RMA.hpp"
-*/
 #include "hdm.hpp"
 #include "hdg.hpp"
 #include "hdt.hpp"
+*/
 #include "RMB.hpp"
+/*
 #include "RMC.HPP"
 #include "rsa.hpp"
 #include "wpl.hpp"
@@ -106,14 +109,17 @@
 #include "mtw.hpp" //Water temperature
 #include "mda.hpp" //barometric pressure
 #include "mwd.hpp"
+*/
 #include "mwv.hpp"
+/*
 #include "vhw.hpp"
+*/
 #include "vwr.hpp"
+/*
 #include "vwt.hpp"
 #include "zda.hpp"
 #include "vlw.hpp"
 #include "xdr.hpp" //transducer data
-/*
 #include "xte.hpp"
 #include "ROT.hpp"
 #include "RPM.hpp"
@@ -131,7 +137,9 @@
 #include "WCV.hpp"
 #include "WNC.hpp"
 #include "XDR.hpp"
+*/
 #include "XTE.hpp"
+/*
 #include "XTR.hpp"
 #include "ZDA.hpp"
 #include "ZFO.hpp"
@@ -168,89 +176,72 @@ class NMEA0183
 /*
       AAM Aam;
       ALM Alm;
+*/      
       APB Apb;
+/*      
       ASD Asd;
       BEC Bec;
       BOD Bod;
       BWC Bwc;
       BWR Bwr;
       BWW Bww;
-*/
       DBT Dbt;
-/*
       DCN Dcn;
-*/
       DPT Dpt;
-/*
       FSI Fsi;
-*/
       GGA Gga;
-/*
       GLC Glc;
-*/
       GLL Gll;
       GSV Gsv;
-/*
       GXA Gxa;
-*/
       HDM Hdm;
       HDG Hdg;
       HDT Hdt;
-/*
       HSC Hsc;
       LCD Lcd;
-*/
       MTA Mta; //Air temperature
       MTW Mtw;
       MWD Mwd;
+*/      
       MWV Mwv;
+/*      
       MDA Mda; //Metrological comopsite	
-/*
       OLN Oln;
       OSD Osd;
       P   Proprietary;
       RMA Rma;
-*/
+      */      
       RMB Rmb;
+/*      
       RMC Rmc;
-/*
       ROT Rot;
       RPM Rpm;
-*/
       RSA Rsa;
-/*
       RSD Rsd;
-*/
       RTE Rte;
-/*
       SFI Sfi;
       STN Stn;
       TRF Trf;
       TTM Ttm;
       VBW Vbw;
       VDR Vdr;
-*/
       VHW Vhw;
 	  VLW Vlw;
-/*
-      
       VPW Vpw;
-*/
       VTG Vtg;
+*/      
       VWR Vwr;
+/*      
       VWT Vwt;
-/*
       WCV Wcv;
       WNC Wnc;
-*/
       WPL Wpl;
-
       XDR Xdr;
-/*    XTE Xte;
+*/      
+      XTE Xte;
+/*      
       XTR Xtr;
-*/
       ZDA Zda;
-/*
       ZFO Zfo;
       ZTG Ztg;
 */

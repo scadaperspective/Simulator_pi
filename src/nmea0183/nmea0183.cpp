@@ -51,89 +51,72 @@ NMEA0183::NMEA0183()
 /*
    response_table.Append( (RESPONSE *) &Aam );
    response_table.Append( (RESPONSE *) &Alm );
+*/   
    response_table.Append( (RESPONSE *) &Apb );
+/*   
    response_table.Append( (RESPONSE *) &Asd );
    response_table.Append( (RESPONSE *) &Bec );
    response_table.Append( (RESPONSE *) &Bod );
    response_table.Append( (RESPONSE *) &Bwc );
    response_table.Append( (RESPONSE *) &Bwr );
    response_table.Append( (RESPONSE *) &Bww );
-*/
    response_table.Append( (RESPONSE *) &Dbt );
-/*
    response_table.Append( (RESPONSE *) &Dcn );
-*/
    response_table.Append( (RESPONSE *) &Dpt );
-/*
    response_table.Append( (RESPONSE *) &Fsi );
-*/
    response_table.Append( (RESPONSE *) &Gga );
-/*
    response_table.Append( (RESPONSE *) &Glc );
-*/
    response_table.Append( (RESPONSE *) &Gll );
    response_table.Append( (RESPONSE *) &Gsv );
-/*
    response_table.Append( (RESPONSE *) &Gxa );
-*/
    response_table.Append( (RESPONSE *) &Hdm );
    response_table.Append( (RESPONSE *) &Hdg );
    response_table.Append( (RESPONSE *) &Hdt );
-/*
    response_table.Append( (RESPONSE *) &Hsc );
    response_table.Append( (RESPONSE *) &Lcd );
-*/
    response_table.Append( (RESPONSE *) &Mwd );
    response_table.Append( (RESPONSE *) &Mda ); //Barometric pressure	
    response_table.Append( (RESPONSE *) &Mta ); //Air Temperature
    response_table.Append( (RESPONSE *) &Mtw ); //Water Temperature
+*/   
    response_table.Append( (RESPONSE *) &Mwv );
-/*
+/*   
    response_table.Append( (RESPONSE *) &Oln );
    response_table.Append( (RESPONSE *) &Osd );
    response_table.Append( (RESPONSE *) &Proprietary );
    response_table.Append( (RESPONSE *) &Rma );
-*/
+*/   
    response_table.Append( (RESPONSE *) &Rmb );
+/*   
    response_table.Append( (RESPONSE *) &Rmc );
-/*
    response_table.Append( (RESPONSE *) &Rot );
    response_table.Append( (RESPONSE *) &Rpm );
-*/
    response_table.Append( (RESPONSE *) &Rsa );
-/*
    response_table.Append( (RESPONSE *) &Rsd );
-*/
    response_table.Append( (RESPONSE *) &Rte );
-/*
    response_table.Append( (RESPONSE *) &Sfi );
    response_table.Append( (RESPONSE *) &Stn );
    response_table.Append( (RESPONSE *) &Trf );
    response_table.Append( (RESPONSE *) &Ttm );
    response_table.Append( (RESPONSE *) &Vbw );
-*/
    response_table.Append( (RESPONSE *) &Vhw );
    response_table.Append( (RESPONSE *) &Vlw );
-   /*
    response_table.Append( (RESPONSE *) &Vdr );
-
    response_table.Append( (RESPONSE *) &Vpw );
-*/
    response_table.Append( (RESPONSE *) &Vtg );
+*/   
    response_table.Append( (RESPONSE *) &Vwr );
+/*   
    response_table.Append( (RESPONSE *) &Vwt );
-/*
    response_table.Append( (RESPONSE *) &Wcv );
    response_table.Append( (RESPONSE *) &Wnc );
-*/
    response_table.Append( (RESPONSE *) &Wpl );
-
    response_table.Append( (RESPONSE *) &Xdr );
-/*   response_table.Append( (RESPONSE *) &Xte );
+*/   
+   //response_table.Append( (RESPONSE *) &Xte );
+/*   
    response_table.Append( (RESPONSE *) &Xtr );
-*/
    response_table.Append( (RESPONSE *) &Zda );
-/*
    response_table.Append( (RESPONSE *) &Zfo );
    response_table.Append( (RESPONSE *) &Ztg );
 */
@@ -221,7 +204,7 @@ bool NMEA0183::IsGood( void ) const
 //   ASSERT_VALID( this );
 
    /*
-   ** NMEA 0183 sentences begin with $ and end with CR LF
+   ** NMEA 0183 sentences begin with $ and and with CR LF
    */
 
    if ( sentence.Sentence[ 0 ] != '$' )
@@ -270,7 +253,7 @@ bool NMEA0183::PreParse( void )
                   mnemonic = mnemonic.Right( 3 );
 
 
-            LastSentenceIDReceived = mnemonic;
+            LastSentenceIDReceived.assign( mnemonic );
 
             return true;
       }

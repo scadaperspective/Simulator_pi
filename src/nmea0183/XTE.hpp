@@ -2,7 +2,7 @@
  *
  * Project:  OpenCPN
  * Purpose:  NMEA0183 Support Classes
- * Author:   Samuel R. Blackburn, David S. Register
+ * Author:   Samuel R. Blackburn, David S. Register, Jon Gough
  *
  ***************************************************************************
  *   Copyright (C) 2010 by Samuel R. Blackburn, David S Register           *
@@ -20,17 +20,18 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,  USA.             *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,  USA.         *
  ***************************************************************************
- *
+ *                                                                         *
  *   S Blackburn's original source license:                                *
  *         "You can use it any way you like."                              *
  *   More recent (2010) license statement:                                 *
  *         "It is BSD license, do with it what you will"                   *
  */
 
-#if ! defined( MWV_CLASS_HEADER )
-#define MWV_CLASS_HEADER
+
+#if ! defined( XTE_CLASS_HEADER )
+#define XTE_CLASS_HEADER
 
 /*
 ** Author: Samuel R. Blackburn
@@ -40,24 +41,24 @@
 ** You can use it any way you like.
 */
 
-class MWV : public RESPONSE
+class XTE : public RESPONSE
 {
-//   DECLARE_DYNAMIC( MWV )
+
 
    public:
 
-      MWV();
-     ~MWV();
+      XTE();
+     ~XTE();
 
       /*
       ** Data
       */
 
-      double           WindAngle;
-      wxString          Reference;
-      double           WindSpeed;
-      wxString          WindSpeedUnits;
-      NMEA0183_BOOLEAN IsDataValid;
+      NMEA0183_BOOLEAN IsLoranBlinkOK;
+      NMEA0183_BOOLEAN IsLoranCCycleLockOK;
+      double           CrossTrackErrorDistance;
+      LEFTRIGHT        DirectionToSteer;
+      wxString          CrossTrackUnits;
 
       /*
       ** Methods
@@ -66,12 +67,11 @@ class MWV : public RESPONSE
       virtual void Empty( void );
       virtual bool Parse( const SENTENCE& sentence );
       virtual bool Write( SENTENCE& sentence );
-
       /*
       ** Operators
       */
 
-      virtual const MWV& operator = ( const MWV& source );
+      virtual const XTE& operator = ( const XTE& source );
 };
 
-#endif // MWV_CLASS_HEADER
+#endif // XTE_CLASS_HEADER

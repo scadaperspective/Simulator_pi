@@ -66,8 +66,6 @@ void RMB::Empty( void )
    BearingToDestinationDegreesTrue = 0.0;
    DestinationClosingVelocityKnots = 0.0;
    IsArrivalCircleEntered          = Unknown0183;
-   something.Empty();
-
 }
 
 bool RMB::Parse( const SENTENCE& sentence )
@@ -94,15 +92,14 @@ bool RMB::Parse( const SENTENCE& sentence )
    ** 11) Bearing to destination in degrees True
    ** 12) Destination closing velocity in knots
    ** 13) Arrival Status, A = Arrival Circle Entered
-   ** 14) something
-   ** 15) Checksum
+   ** 14) Checksum
    */
 
    /*
    ** First we check the checksum...
    */
 
-   NMEA0183_BOOLEAN check = sentence.IsChecksumBad( 15 );
+   NMEA0183_BOOLEAN check = sentence.IsChecksumBad( 14 );
 
    if ( check == NTrue )
    {
@@ -128,7 +125,6 @@ bool RMB::Parse( const SENTENCE& sentence )
    BearingToDestinationDegreesTrue = sentence.Double( 11 );
    DestinationClosingVelocityKnots = sentence.Double( 12 );
    IsArrivalCircleEntered          = sentence.Boolean( 13 );
-   something = sentence.Field(14);
 
    return( TRUE );
 }
@@ -156,7 +152,6 @@ bool RMB::Write( SENTENCE& sentence )
    sentence += BearingToDestinationDegreesTrue;
    sentence += DestinationClosingVelocityKnots;
    sentence += IsArrivalCircleEntered;
-   sentence += something;
 
    sentence.Finish();
 
@@ -178,7 +173,6 @@ const RMB& RMB::operator = ( const RMB& source )
    BearingToDestinationDegreesTrue = source.BearingToDestinationDegreesTrue;
    DestinationClosingVelocityKnots = source.DestinationClosingVelocityKnots;
    IsArrivalCircleEntered          = source.IsArrivalCircleEntered;
-   something = source.something;
 
   return( *this );
 }

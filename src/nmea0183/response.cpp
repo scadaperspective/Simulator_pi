@@ -40,6 +40,7 @@
 ** You can use it any way you like.
 */
 
+extern wxString g_TalkerIdText;
 
 RESPONSE::RESPONSE()
 {
@@ -75,10 +76,11 @@ bool RESPONSE::Write( SENTENCE& sentence )
     sentence  = _T("$");
 
     if(NULL == container_p)
-          sentence.Sentence.Append(_T("--"));
-    else
-          sentence.Sentence.Append(container_p->TalkerID);
-
+        sentence.Sentence.Append(_T("--"));
+    else {
+        sentence.Sentence.Append(container_p->TalkerID);
+    }
+    
     sentence.Sentence.Append(Mnemonic);
 
    return( TRUE );
