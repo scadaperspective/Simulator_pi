@@ -1,7 +1,9 @@
 # Simulator_pi
 A Marine Automation Instrumented Vessel Simulator plugin for OpenCPN ov50. 
 
-Message Sentences Presently Generated
+Message Sentences Presently Communicated.
+
+(underlying code to correctly simulate the vessel position has not been implemented for all simulation paramaters generated.)  
 
 
 
